@@ -1,4 +1,4 @@
-import Navigation from "../../components/Navigation";
+// import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import Hero from "./Hero";
 
@@ -7,9 +7,8 @@ import Hero from "./Hero";
 const Home = () => {
   return (
     <>
-      <Navigation />
-      <Hero />
-      <Footer />
+      {/* <Hero />
+      <Footer /> */}
     </>
   );
 };

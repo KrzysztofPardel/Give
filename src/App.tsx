@@ -11,21 +11,7 @@ const App = () => {
   const element = useRoutes([
     { path: "/signin", element: <SignIn /> },
     { path: "/signup", element: <SignUp /> },
-    {
-      path: "/",
-      element: <Home />
-      // children: [
-      //   // {
-      //   //   path: "/home/start",
-      //   //   element: <Hero />
-      //   // }
-      //   // ,
-      //   // { path: "/aboutd", element: <AboutDonations /> },
-      //   // { path: "/aboutus", element: <AboutUs /> },
-      //   // { path: "/fo", element: <FoundationOrganizations /> },
-      //   // { path: "/contact", element: <Contact /> }
-      // ]
-    }
+    { path: "/", element: <Home /> }
   ]);
 
   return element;
