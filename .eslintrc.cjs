@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    node: true,
+    node: true
   },
   extends: [
     "airbnb",
@@ -10,25 +10,25 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     tsconfigRootDir: __dirname,
-    project: "./tsconfig.json",
+    project: "./tsconfig.json"
   },
   plugins: ["import", "@typescript-eslint", "prettier", "react"],
   settings: {
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
+      "@typescript-eslint/parser": [".ts", ".tsx"]
     },
     "import/resolver": {
       node: {
-        moduleDirectory: ["node_modules", "src"],
-      },
-    },
+        moduleDirectory: ["node_modules", "src"]
+      }
+    }
   },
   ignorePatterns: [
     "**/*.js",
@@ -38,12 +38,12 @@ module.exports = {
     "coverage",
     "dist",
     "build",
-    "cypress",
+    "cypress"
   ],
   rules: {
     "react/function-component-definition": [
       "error",
-      { namedComponents: "arrow-function" },
+      { namedComponents: "arrow-function" }
     ],
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
@@ -51,8 +51,8 @@ module.exports = {
     "prettier/prettier": [
       "error",
       {
-        endOfLine: "auto",
-      },
-    ],
-  },
+        endOfLine: "auto"
+      }
+    ]
+  }
 };
