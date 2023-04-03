@@ -1,6 +1,5 @@
-import { createContext, ReactNode, useEffect, useMemo, useState } from "react";
-
 import { useLocation } from "react-router-dom";
+import { createContext, ReactNode, useEffect, useMemo, useState } from "react";
 
 export type TlikesModalContext = {
   showModal: () => void;
@@ -23,11 +22,13 @@ export const LikesModalContextProvider = ({ children }: IProps) => {
     () => ({ toShowModal, showModal, hideModal }),
     [toShowModal]
   );
+
   // hide modal on location change
   const location = useLocation();
   useEffect(() => {
     setToShowModal(false);
   }, [location]);
+
   return (
     <likesModalContext.Provider value={contextValues}>
       {children}
