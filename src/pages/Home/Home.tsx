@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import AboutUs from "./AboutUs";
 import FourSteps from "./FourSteps";
 import Hero from "./Hero";
 import ThreeColumns from "./ThreeColumns";
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <ThreeColumns />
       <FourSteps />
+      <AboutUs />
       {/* <Footer /> */}
     </>
   );

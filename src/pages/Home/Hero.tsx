@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="text-container">
           <p className="text-paragraph">Start helping!</p>
           <p className="text-paragraph">
-            Let someone enjoy what you don't need.
+            Let someone enjoy what you don’t need.
           </p>
           <div className="text-decoration">
             <img src={Decoration} alt="box" className="decoration-image" />

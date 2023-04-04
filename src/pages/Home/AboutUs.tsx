@@ -1,45 +1,29 @@
 import "./SCSS/AboutUs.scss";
+import Decoration from "../../assets/Decoration.svg";
+import People from "../../assets/People.jpg";
+import Signature from "../../assets/Signature.svg";
 
 const AboutUs = () => {
   return (
-    <div className="three-background">
-      <div className="three-container">
-        <div className="three-columns-container">
-          <div className="three-single_column">
-            <div className="three-text-number">10</div>
-            <h1 className="three-text-header">Bags donated recently</h1>
-            <p className="three-text-paragraph">
-              Thanks to your generous donations we were able to distribute 10
-              large bags full of previously enjoyed things to those who would
-              not be able to afford themselves. We wish you could see their joy!
-            </p>
-          </div>
-          <div className="three-single_column">
-            <div className="three-text-number">5</div>
-            <h1 className="three-text-header">Organizations supported</h1>
-
-            <p className="three-text-paragraph">
-              We are a channel through which many goodies flow to organizations
-              which have direct contact with the needy families or single
-              people. We are privileged to partner with those who have a burden
-              for helping.
-            </p>
-          </div>
-          <div className="three-single_column">
-            <div className="three-text-number">7</div>
-            <h1 className="three-text-header">Collections organized</h1>
-
-            <p className="three-text-paragraph">
-              People just like you step up and organize collections which are
-              supervised by our organization, to make sure all items are well
-              prepared for transportation and later distribution. Why not try
-              yourself?
-            </p>
-          </div>
+    <div className="about-background">
+      <div className="about-container">
+        <div className="about-text_container">
+          <h1 className="about-text_header">About us</h1>
+          <img src={Decoration} alt="box" className="about-decoration_image" />
+          <p className="about-text_paragraph">
+            We are vibrant group of individuals who decided to join hands in
+            helping those in need. Most of us some were less privileged in life,
+            therefore we understand the challenges of the people we help. Our
+            hearts’ burden is to enable them to start a new chapter in their
+            lives and to live lives that many of us would call normal or
+            average. Surprisingly it takes only few steps and a piece of
+            determination to make someone smile and say “Thank you!”.
+          </p>
+          <img src={Signature} alt="signature" className="signature" />
         </div>
+        <img src={People} alt="group of people" className="about-image" />
       </div>
     </div>
   );
 };
-
 export default AboutUs;
