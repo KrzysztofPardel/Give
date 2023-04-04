@@ -1,0 +1,47 @@
+@import "../../../SCSS/variables.scss";
+
+.three-background {
+  margin-top: 3rem;
+  width: 100%;
+  height: 25rem;
+  position: relative;
+  &:before {
+    content: "";
+    background: url(../../../assets/ThreeBackground.png) no-repeat center
+      center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.three-columns-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 25rem;
+  font-family: $font-base;
+  .three-single_column {
+    width: 20%;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .three-text-number {
+      font-size: 4rem;
+      font-weight: 400;
+    }
+    .three-text-header {
+      font-size: 1.5rem;
+      margin: 1.5rem;
+      font-weight: 300;
+    }
+    .three-text-paragraph {
+      font-size: 0.9rem;
+    }
+  }
+}
