@@ -29,8 +29,8 @@
   .link {
     display: flex;
     align-self: center;
-    font-size: $font-links;
-    margin: 1rem;
+    font-size: 0.75rem;
+    margin: 0.5rem;
     color: lightgrey;
     padding: 1rem;
     text-decoration: none;
@@ -54,7 +54,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem;
+    font-size: 0.8rem;
+    margin: 0.5rem;
     padding: 1rem;
     background: none;
     border: none;

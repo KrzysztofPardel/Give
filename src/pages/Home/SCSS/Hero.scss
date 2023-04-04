@@ -1,0 +1,64 @@
+@import "../../../SCSS/variables.scss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $font-alt;
+}
+.hero-background {
+}
+.hero-container {
+  display: flex;
+  height: 40rem;
+}
+.image-container {
+  height: 30rem;
+  width: 40rem;
+
+  .hero-image {
+    height: 40rem;
+    width: 60rem;
+    margin-left: -20rem;
+    margin-top: -7rem;
+    z-index: -20;
+  }
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 33rem;
+  text-align: end;
+  .text-paragraph {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .text-decoration {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+.hero-button_container {
+  height: 4rem;
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  .button {
+    height: 5rem;
+    width: 25rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 2rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: gray;
+    font-family: $font-alt;
+    font-weight: 300;
+    border: 1px grey solid;
+  }
+}

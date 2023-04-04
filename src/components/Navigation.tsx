@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaBeer } from "react-icons/fa";
+// import { FaBeer } from "react-icons/fa";
 import "../SCSS/Navigation.scss";
 
 const Navigation = () => {
