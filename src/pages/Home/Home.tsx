@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import FourSteps from "./FourSteps";
 import Hero from "./Hero";
 import ThreeColumns from "./ThreeColumns";
 
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <Hero />
       <ThreeColumns />
+      <FourSteps />
       {/* <Footer /> */}
     </>
   );
