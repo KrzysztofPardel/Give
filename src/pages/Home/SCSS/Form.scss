@@ -39,22 +39,37 @@
   display: flex;
   justify-content: space-between;
   width: 30rem;
-  .form-input {
-    width: 12rem;
-    border: none;
-    border-bottom: 1px solid $color-dark-main;
-    padding: 0.5rem;
+  .form-input_container_small {
+    .form-label {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+    .form-input {
+      width: 12rem;
+      border: none;
+      border-bottom: 1px solid $color-dark-main;
+      padding: 0.5rem;
 
-    &:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
 
 .form-textarea_container {
   width: 30rem;
+  .form-label_textarea {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+  }
   .form-textarea {
     width: 28rem;
+    height: 12rem;
     padding: 0.5rem;
     border: none;
     border-bottom: 1px solid $color-dark-main;

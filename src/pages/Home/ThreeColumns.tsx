@@ -2,7 +2,7 @@ import "./SCSS/ThreeColumns.scss";
 
 const ThreeColumns = () => {
   return (
-    <div className="three-background">
+    <div id="start" className="three-background">
       <div className="three-container">
         <div className="three-columns-container">
           <div className="three-single_column">

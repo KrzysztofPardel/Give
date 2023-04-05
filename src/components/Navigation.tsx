@@ -1,35 +1,90 @@
-import { Link } from "react-router-dom";
-// import { FaBeer } from "react-icons/fa";
-import "../SCSS/Navigation.scss";
+import { Link, animateScroll as scroll } from "react-scroll";
+import { useNavigate } from "react-router-dom";
+import "./SCSS/Navigation.scss";
 
 const Navigation = () => {
+  const navigate = useNavigate();
+  const handleSignIn = () => {
+    navigate("/signin");
+  };
+  const handleSignUp = () => {
+    navigate("/signup");
+  };
+  const handleClick = () => {
+    scroll.scrollTo("contact", {
+      smooth: "easeInOutQuart",
+      duration: 1500
+    });
+  };
   return (
     <div className="navigation-background">
       <div className="container">
-        <div className="link-container">
-          <Link to="/signin" className="link">
+        <div className="btn-container">
+          <button onClick={handleSignIn} type="button" className="autho-btn">
             Sign In
-          </Link>
-          <Link to="/signup" className="link">
+          </button>
+          <button onClick={handleSignUp} type="button" className="autho-btn">
             Sign Up
-          </Link>
+          </button>
         </div>
-        <div className="button-container">
-          <button type="button" className="button">
+        <div className="homepage-links_container">
+          {/* <NavLink */}
+          <Link
+            // activeClass={({ isActive }) => isActive && "active"}
+            to="/#contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="homepage-link"
+          >
             Start
-          </button>
-          <button type="button" className="button">
+          </Link>
+          <Link
+            activeClass="active"
+            to="steps"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="homepage-link"
+          >
             What & Why?
-          </button>
-          <button type="button" className="button">
+          </Link>
+          <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="homepage-link"
+          >
             About Us
-          </button>
-          <button type="button" className="button">
+          </Link>
+          <Link
+            activeClass="active"
+            to="help"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="homepage-link"
+          >
             Foundation & Organization
-          </button>
-          <button type="button" className="button">
+          </Link>
+          <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={handleClick}
+            className="homepage-link"
+          >
             Contact
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import "./SCSS/FourSteps.scss";
 import IconOne from "../../assets/IconOne.svg";
 import IconTwo from "../../assets/IconTwo.svg";
@@ -6,8 +8,12 @@ import IconFour from "../../assets/IconFour.svg";
 import Decoration from "../../assets/Decoration.svg";
 
 const FourSteps = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/signin");
+  };
   return (
-    <div className="four-background">
+    <div id="steps" className="four-background">
       <div className="four-container">
         <h1 className="four-header">It takes 4 simple steps</h1>
         <img src={Decoration} alt="box" className="decoration-image" />
@@ -46,7 +52,7 @@ const FourSteps = () => {
             </p>
           </div>
         </div>
-        <button type="button" className="button">
+        <button onClick={handleClick} type="button" className="button">
           Donate
         </button>
       </div>

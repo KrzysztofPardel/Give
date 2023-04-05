@@ -5,7 +5,7 @@ import Signature from "../../assets/Signature.svg";
 
 const AboutUs = () => {
   return (
-    <div className="about-background">
+    <div id="about" className="about-background">
       <div className="about-container">
         <div className="about-container_left">
           <h1 className="about-text_header">About us</h1>

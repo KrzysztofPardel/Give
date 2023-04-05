@@ -3,7 +3,7 @@ import Decoration from "../../assets/Decoration.svg";
 
 const WhoWeHelp = () => {
   return (
-    <div className="who-background">
+    <div id="help" className="who-background">
       <div className="who-container">
         <div className="who-text-container">
           <h1 className="who-header">Who do we help?</h1>

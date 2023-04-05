@@ -1,10 +1,14 @@
+import { useState } from "react";
 import "./SCSS/Form.scss";
 import Decoration from "../../assets/Decoration.svg";
 import BgForm from "../../assets/BgForm.jpg";
 
 const Form = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
   return (
-    <div className="form-container">
+    <div id="contact" className="form-container">
       <div className="form-container_left">
         <img src={BgForm} alt="group of people" className="form-image" />
       </div>
@@ -13,16 +17,20 @@ const Form = () => {
         <img src={Decoration} alt="box" className="form-decoration_image" />
         <div className="form-input_container">
           <div className="form-input_container_small">
-            <label className="">Enter your name</label>
+            <label className="form-label">Enter your name</label>
             <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               type="text"
               placeholder="e.g. John Smith"
               className="form-input"
             />
           </div>
           <div className="form-input_container_small">
-            <label className="">Enter your email</label>
+            <label className="form-label">Enter your email</label>
             <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               type="emial"
               placeholder="johnsmith@gmail.com"
               className="form-input"
@@ -30,12 +38,11 @@ const Form = () => {
           </div>
         </div>
         <div className="form-textarea_container">
-          <label className="">Enter your message</label>
+          <label className="form-label_textarea">Enter your message</label>
           <textarea
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             type="text"
-            name=""
-            cols="50"
-            rows="10"
             placeholder="e.g. I wanted to reach out and commend your efforts in collecting used clothes. Your work is incredibly important and has a positive impact on both the environment and people in need."
             className="form-textarea"
           />
