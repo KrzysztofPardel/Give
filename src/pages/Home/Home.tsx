@@ -3,6 +3,8 @@ import AboutUs from "./AboutUs";
 import FourSteps from "./FourSteps";
 import Hero from "./Hero";
 import ThreeColumns from "./ThreeColumns";
+import WhoWeHelp from "./WhoWeHelp";
+import Form from "./Form";
 
 // import { Link, animateScroll as scroll } from "react-scroll";
 // {/* <Link to="section1"></Link> */}
@@ -13,7 +15,9 @@ const Home = () => {
       <ThreeColumns />
       <FourSteps />
       <AboutUs />
-      {/* <Footer /> */}
+      <WhoWeHelp />
+      <Form />
+      <Footer />
     </>
   );
 };

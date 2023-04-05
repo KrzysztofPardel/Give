@@ -23,8 +23,7 @@
   position: relative;
   &:before {
     content: "";
-    // background: url(../../../assets/ThreeBackground.png) no-repeat center
-    //   center/cover;
+
     background: #f0f1f1 0% 0% no-repeat padding-box;
     position: absolute;
     width: 100%;
@@ -54,8 +53,13 @@
     }
     .four-text-header {
       font-size: 1.2rem;
-      margin: 1.5rem;
+      margin: 1rem;
       font-weight: 300;
+    }
+    .line {
+      width: 70px;
+      border: 1px solid $color-dark-main;
+      margin-bottom: 1rem;
     }
     .four-text-paragraph {
       font-size: 0.9rem;

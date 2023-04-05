@@ -32,7 +32,6 @@
 // @include xl2 {}
 
 @mixin button {
-  @content;
   height: 5rem;
   width: 15rem;
   font-size: 1.2rem;
@@ -43,6 +42,7 @@
   font-family: $font-alt;
   font-weight: 300;
   border: 1px grey solid;
+  @content;
 }
 // @include button {
 // }

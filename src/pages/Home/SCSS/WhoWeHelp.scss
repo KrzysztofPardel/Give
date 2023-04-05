@@ -1,0 +1,53 @@
+@import "../../../SCSS/variables.scss";
+@import "../../../SCSS/mixins.scss";
+
+.who-background {
+  width: 100%;
+  height: 45rem;
+}
+.who-container {
+  width: 100%;
+  height: 45rem;
+}
+.who-text-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .who-header {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  .who-decoration_image {
+    width: 10rem;
+    margin-bottom: 3rem;
+  }
+  .who-text_paragraph {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.4rem;
+    width: 30rem;
+  }
+}
+.who-button_container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  .who-button {
+    @include button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      text-transform: none;
+      width: 14rem;
+      height: 4rem;
+      border: none;
+      &:hover {
+        border: 1px solid $color-dark-main;
+      }
+    }
+  }
+}

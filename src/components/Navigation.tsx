@@ -6,15 +6,12 @@ const Navigation = () => {
   return (
     <div className="navigation-background">
       <div className="container">
-        {/* <h1>Hello Navigation</h1> */}
         <div className="link-container">
           <Link to="/signin" className="link">
             Sign In
-            {/* <FaBeer style={{ color: "#709dff" }} className="link" /> */}
           </Link>
           <Link to="/signup" className="link">
             Sign Up
-            {/* <FaBeer style={{ color: "#709dff" }} className="link" /> */}
           </Link>
         </div>
         <div className="button-container">

@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <div className="about-background">
       <div className="about-container">
-        <div className="about-text_container">
+        <div className="about-container_left">
           <h1 className="about-text_header">About us</h1>
           <img src={Decoration} alt="box" className="about-decoration_image" />
           <p className="about-text_paragraph">
@@ -15,13 +15,15 @@ const AboutUs = () => {
             helping those in need. Most of us some were less privileged in life,
             therefore we understand the challenges of the people we help. Our
             hearts’ burden is to enable them to start a new chapter in their
-            lives and to live lives that many of us would call normal or
-            average. Surprisingly it takes only few steps and a piece of
-            determination to make someone smile and say “Thank you!”.
+            lives, to live lives that many of us would call normal or average
+            and later go beyond that. Surprisingly it takes only few steps and a
+            piece of determination to make someone smile and say “Thank you!”.
           </p>
           <img src={Signature} alt="signature" className="signature" />
         </div>
-        <img src={People} alt="group of people" className="about-image" />
+        <div className="about-container_right">
+          <img src={People} alt="group of people" className="about-image" />
+        </div>
       </div>
     </div>
   );

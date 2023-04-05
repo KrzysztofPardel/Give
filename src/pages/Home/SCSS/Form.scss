@@ -1,0 +1,84 @@
+@import "../../../SCSS/variables.scss";
+@import "../../../SCSS/mixins.scss";
+
+.form-container {
+  display: flex;
+  height: 45rem;
+}
+.form-container_left {
+  width: 60vw;
+  overflow: hidden;
+  height: 45rem;
+  .form-image {
+    height: 45rem;
+    width: 80rem;
+    opacity: 50%;
+    z-index: -20;
+  }
+}
+
+.form-container_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3rem 3rem;
+  width: 50%;
+  height: 40rem;
+  .form-text_header {
+    font-weight: 350;
+  }
+  .form-decoration_image {
+    width: 10rem;
+    margin-top: -1.5rem;
+  }
+}
+
+.form-input_container {
+  display: flex;
+  justify-content: space-between;
+  width: 30rem;
+  .form-input {
+    width: 12rem;
+    border: none;
+    border-bottom: 1px solid $color-dark-main;
+    padding: 0.5rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.form-textarea_container {
+  width: 30rem;
+  .form-textarea {
+    width: 28rem;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid $color-dark-main;
+    text-align: justify;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.form-container_button {
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+  .form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 5rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    background: none;
+    background-color: transparent;
+    border: 1px solid $color-dark-main;
+  }
+}
