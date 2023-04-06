@@ -6,11 +6,13 @@ import "./App.scss";
 import Home from "./pages/Home/Home";
 import SignUp from "./pages/Authorization/SignUp";
 import SignIn from "./pages/Authorization/SignIn";
+import SignOut from "./pages/Authorization/SignOut";
 
 const App = () => {
   const element = useRoutes([
     { path: "/signin", element: <SignIn /> },
     { path: "/signup", element: <SignUp /> },
+    { path: "/signout", element: <SignOut /> },
     { path: "/", element: <Home /> }
   ]);
 

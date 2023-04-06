@@ -13,12 +13,12 @@ const SignUp = () => {
   };
   const handleSignUp = () => {
     navigate("/signup");
-    //sending a form
+    // sending a form
   };
   return (
     <div className="signUp-container">
       <h1 className="signUp-header">Sign Up</h1>
-      <img src={Decoration} alt="" className="signIn-decoration" />
+      <img src={Decoration} alt="" className="signIn-decoration"/>
       <form className="signUp-form">
         <label className="signUp-label">Email</label>
         <input

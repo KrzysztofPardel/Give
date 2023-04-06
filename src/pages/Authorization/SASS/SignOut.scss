@@ -1,35 +1,38 @@
 @import "../../../SCSS/variables.scss";
 @import "../../../SCSS/mixins.scss";
 
-.signIn-container {
+@import "../../../SCSS/variables.scss";
+@import "../../../SCSS/mixins.scss";
+
+.signOut-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  .signIn-header {
+  .signOut-header {
     font-weight: 350;
     margin-top: 3rem;
   }
-  .signIn-decoration {
+  .signOut-decoration {
     width: 15rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
 }
-.signIn-form {
+.signOut-form {
   display: flex;
   flex-direction: column;
   background: #f0f1f1 0% 0% no-repeat padding-box;
   width: 20rem;
   height: 15rem;
   padding: 2.5rem;
-  .signIn-label {
+  .signOut-label {
     font-size: 0.9rem;
     text-align: left;
     margin: 0.8rem 0rem;
   }
-  .signIn-input {
+  .signOut-input {
     padding: 0.6rem;
     border: none;
     border-bottom: 1px solid;
@@ -41,20 +44,20 @@
   }
 }
 
-.signIn-button_container {
+.signOut-button_container {
   display: flex;
-  justify-content: space-between;
-
-  margin-top: 2rem;
+  justify-content: center;
   width: 25rem;
   height: auto;
-  .signIn-button {
+  .signOut-button {
     padding: 0.5rem 1rem;
     gap: 1rem;
     background: transparent;
     border: 1px lightgray solid;
     &:hover {
       border: 1px solid $color-dark-accent-first;
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
     }
   }
 }
