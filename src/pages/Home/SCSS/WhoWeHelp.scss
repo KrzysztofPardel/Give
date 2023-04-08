@@ -3,11 +3,11 @@
 
 .who-background {
   width: 100%;
-  height: 45rem;
+  height: 40rem;
 }
 .who-container {
   width: 100%;
-  height: 45rem;
+  height: 40rem;
 }
 .who-text-container {
   width: 100%;
@@ -18,10 +18,10 @@
 
   .who-header {
     margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .who-decoration_image {
-    width: 10rem;
+    width: 11rem;
     margin-bottom: 3rem;
   }
   .who-text_paragraph {
@@ -51,6 +51,173 @@
         transform: scale(0.8);
         transition: transform 0.3s ease-in-out;
       }
+    }
+  }
+}
+// Different foundations, organizations and collections
+//Foundations
+.who-foundations_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.foundation-text_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55rem;
+
+  .foundation-header {
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: start;
+    margin-bottom: 0.25rem;
+  }
+  .foundation-paragraph {
+    font-size: 0.7rem;
+    font-weight: 350;
+    margin-bottom: 0.5rem;
+  }
+  .foundation-span {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+}
+.line {
+  border: 0.01rem solid;
+  width: 55rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: $color-dark-main;
+}
+
+.who-foundations_button_number_container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  .button_number {
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px transparent solid;
+    font-weight: 300;
+    &:hover {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:focus {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s;
+    }
+  }
+}
+//Non-governmental organizations
+.who-non_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.non-text_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55rem;
+
+  .non-header {
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: start;
+    margin-bottom: 0.25rem;
+  }
+  .non-paragraph {
+    font-size: 0.7rem;
+    font-weight: 350;
+    margin-bottom: 0.5rem;
+  }
+  .non-span {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+}
+
+.who-non_button_number_container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  .button_number {
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px transparent solid;
+    font-weight: 300;
+    &:hover {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:focus {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s;
+    }
+  }
+}
+//Local collections
+.who-collections_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.collections-text_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55rem;
+
+  .collections-header {
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: start;
+    margin-bottom: 0.25rem;
+  }
+  .collections-paragraph {
+    font-size: 0.7rem;
+    font-weight: 350;
+    margin-bottom: 0.5rem;
+  }
+  .collections-span {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+}
+
+.who-collections_button_number_container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  .button_number {
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px transparent solid;
+    font-weight: 300;
+    &:hover {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:focus {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s;
     }
   }
 }

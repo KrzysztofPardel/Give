@@ -1,0 +1,86 @@
+@import "../../../SCSS/variables.scss";
+@import "../../../SCSS/mixins.scss";
+
+.application-container_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.7rem;
+  height: 10rem;
+  background-color: $color-bright-accent;
+  padding: 3rem 5rem;
+  color: black;
+  .application_top_header {
+    font-size: 1.5rem;
+  }
+}
+
+.application-container_bottom {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background-color: rgba(255, 245, 160, 0.1);
+  color: #fff;
+  padding: 3rem 6rem;
+  &:before {
+    content: "";
+    background: url(../../../assets/BackgroundForm.jpg) no-repeat center
+      center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+.application-steps {
+  text-align: start;
+  color: black;
+  font-weight: 300;
+}
+.application-text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 35rem;
+  height: 30rem;
+  color: black;
+  .application-text_header {
+    font-size: 1.3rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  .applicaton-point_container {
+    display: flex;
+    width: 30rem;
+    margin-top: 1.5rem;
+
+    .application-point_button {
+      border: 1px solid black;
+      background-color: transparent;
+      height: 2rem;
+      width: 1rem;
+    }
+    .application-point_text {
+      width: 10rem;
+    }
+  }
+}
+
+.application-button_container {
+  display: flex;
+  gap: 1rem;
+  .application-button {
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid $color-dark-main;
+    &:hover {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

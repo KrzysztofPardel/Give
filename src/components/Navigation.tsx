@@ -4,6 +4,9 @@ import "./SCSS/Navigation.scss";
 
 const Navigation = () => {
   const navigate = useNavigate();
+  const handleDonate = () => {
+    navigate("/donate");
+  };
   const handleSignIn = () => {
     navigate("/signin");
   };
@@ -20,6 +23,9 @@ const Navigation = () => {
     <div className="navigation-background">
       <div className="container">
         <div className="btn-container">
+          <button onClick={handleDonate} type="button" className="autho-btn">
+            Donate
+          </button>
           <button onClick={handleSignIn} type="button" className="autho-btn">
             Sign In
           </button>

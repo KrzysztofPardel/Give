@@ -1,0 +1,100 @@
+@import "../../../SCSS/variables.scss";
+@import "../../../SCSS/mixins.scss";
+
+body {
+  font-family: $font-alt;
+}
+
+.donate-hero_background {
+  height: 32rem;
+}
+.donate-hero_container {
+  display: flex;
+  height: 32rem;
+}
+.donate-image_container {
+  height: 30rem;
+  width: 40rem;
+  z-index: -20;
+
+  .donate-hero_image {
+    height: 40rem;
+    width: 50rem;
+    margin-top: -8rem;
+  }
+}
+.donate-text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 32rem;
+  text-align: end;
+  margin-top: -3rem;
+
+  .donate-text_paragraph {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .donate-text_decoration {
+    display: flex;
+    justify-content: center;
+    width: 30rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    .donate-decoration_image {
+      width: 12rem;
+    }
+  }
+  .donate-text_paragraph_bottom {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+}
+.donate-hero_diamond_container {
+  height: 4rem;
+  width: 19rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  .donate-diamond {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6.8rem;
+    height: 6.8rem;
+    border: 1px $color-dark-main solid;
+    background: transparent;
+    transform: translate(0, 0) rotate(45deg);
+    .donate-number_diamond {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -2rem;
+      margin-left: -4rem;
+      margin-bottom: -0.4rem;
+      width: 10rem;
+      height: 2.5rem;
+      color: $color-dark-main;
+      font-size: 1.2rem;
+      font-weight: 300;
+      transform: rotate(-45deg);
+    }
+    .donate-text_diamond {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 8rem;
+      height: 2.5rem;
+      color: $color-dark-main;
+      font-size: 1rem;
+      font-weight: 300;
+      transform: rotate(-45deg);
+    }
+  }
+}

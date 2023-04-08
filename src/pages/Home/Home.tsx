@@ -6,8 +6,7 @@ import ThreeColumns from "./ThreeColumns";
 import WhoWeHelp from "./WhoWeHelp";
 import Form from "./Form";
 
-// import { Link, animateScroll as scroll } from "react-scroll";
-// {/* <Link to="section1"></Link> */}
+
 const Home = () => {
   return (
     <>

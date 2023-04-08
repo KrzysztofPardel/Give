@@ -6,6 +6,7 @@ import Decoration from "../../assets/Decoration.svg";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [repeatpassword, setRepeatPassword] = useState("");
   const navigate = useNavigate();
   const handleSignIn = () => {
@@ -18,8 +19,8 @@ const SignUp = () => {
   return (
     <div className="signUp-container">
       <h1 className="signUp-header">Sign Up</h1>
-      <img src={Decoration} alt="" className="signIn-decoration"/>
-      <form className="signUp-form">
+      <img src={Decoration} alt="" className="signIn-decoration" />
+      <form onSubmit={hadleSubmit} className="signUp-form">
         <label className="signUp-label">Email</label>
         <input
           value={email}
