@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { jsx } from "react/jsx-runtime";
+import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -7,10 +8,10 @@ import {
 } from "firebase/auth";
 import { auth } from "../pages/Authorization/firebase";
 
-const UserContext = createContext();
+const UserContext = createContext(null);
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -23,24 +24,31 @@ export const AuthContextProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth);
   };
+  // const value = useMemo(
+  //   () => ({ createUser, user, logout, signIn }),
+  //   [createUser, user, logout, signIn]
+  // );
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
-      setUser(currentUser);
+      setUser(currentUser || {});
     });
-    return () => {
-      unsubscribe();
-    };
+    return unsubscribe;
   }, []);
 
-  return (
-    <UserContext.Provider value={{ createUser, user, logout, signIn }}>
-      {children}
-    </UserContext.Provider>
-  );
+  const values = {
+    createUser,
+    user
+  };
+
+  return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
 };
 
 export const UserAuth = () => {
   return useContext(UserContext);
 };
+
+// AuthContextProvider.propTypes = {
+//   children: jsx("element").isRequired
+// };

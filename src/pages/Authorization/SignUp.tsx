@@ -37,35 +37,36 @@ const SignUp = () => {
       <form onSubmit={handleSubmit} className="signUp-form">
         <label className="signUp-label" htmlFor="emailInputSignUp">
           Email
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="myemail@gmail.com"
+            className="signUp-input"
+            id="emailInputSignUp"
+          />
         </label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="myemail@gmail.com"
-          className="signUp-input"
-          id="emailInputSignUp"
-        />
         <label className="signUp-label" htmlFor="passwordInputSignUp">
           Hasło
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            className="signUp-input"
+            id="passwordInputSignUp"
+          />
         </label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          className="signUp-input"
-          id="passwordInputSignUp"
-        />
+
         <label className="signUp-label" htmlFor="repeatPasswordInputSignUp">
           Powtórz hasło
+          <input
+            value={repeatpassword}
+            onChange={(e) => setRepeatPassword(e.target.value)}
+            type="password"
+            className="signUp-input"
+            id="repeatPasswordInputSignUp"
+          />
         </label>
-        <input
-          value={repeatpassword}
-          onChange={(e) => setRepeatPassword(e.target.value)}
-          type="password"
-          className="signUp-input"
-          id="repeatPasswordInputSignUp"
-        />
       </form>
       <div className="signUp-button_container">
         <button onClick={handleSubmit} type="button" className="signUp-button">

@@ -1,8 +1,10 @@
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 import "./SCSS/Navigation.scss";
 
 const Navigation = () => {
+  const { user, logout } = UserAuth();
   const navigate = useNavigate();
   const handleDonate = () => {
     navigate("/donate");
@@ -19,19 +21,40 @@ const Navigation = () => {
       duration: 1500
     });
   };
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/signout");
+      console.log("You are logged out");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
   return (
     <div className="navigation-background">
       <div className="container">
         <div className="btn-container">
-          <button onClick={handleDonate} type="button" className="autho-btn">
-            Donate
-          </button>
-          <button onClick={handleSignIn} type="button" className="autho-btn">
-            Sign In
-          </button>
-          <button onClick={handleSignUp} type="button" className="autho-btn">
-            Sign Up
-          </button>
+          <p className="">Welcome: {user && user.email} </p>
+          {user ? (
+            <button onClick={handleDonate} type="button" className="autho-btn">
+              Donate
+            </button>
+          ) : null}
+          {user ? (
+            <button onClick={handleLogout} type="button" className="autho-btn">
+              Sign Out
+            </button>
+          ) : null}
+          {user ? null : (
+            <button onClick={handleSignIn} type="button" className="autho-btn">
+              Sign In
+            </button>
+          )}
+          {user ? null : (
+            <button onClick={handleSignUp} type="button" className="autho-btn">
+              Sign Up
+            </button>
+          )}
         </div>
         <div className="homepage-links_container">
           {/* <NavLink */}
