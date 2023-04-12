@@ -1,12 +1,12 @@
 import { jsx } from "react/jsx-runtime";
-import { createContext, useContext, useEffect, useState, useMemo } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged
 } from "firebase/auth";
-import { auth } from "../pages/Authorization/firebase";
+import { auth } from "../firebase";
 
 const UserContext = createContext(null);
 
@@ -24,22 +24,21 @@ export const AuthContextProvider = ({ children }) => {
   const logout = () => {
     return signOut(auth);
   };
-  // const value = useMemo(
-  //   () => ({ createUser, user, logout, signIn }),
-  //   [createUser, user, logout, signIn]
-  // );
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
-      setUser(currentUser || {});
+      setUser(currentUser);
     });
     return unsubscribe;
   }, []);
 
   const values = {
     createUser,
-    user
+    user,
+    logout,
+    signIn
   };
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;

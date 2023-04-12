@@ -1,7 +1,6 @@
 import { useState, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
-
 import "./SASS/SignIn.scss";
 import Decoration from "../../assets/Decoration.svg";
 
@@ -68,7 +67,7 @@ const SignIn: FC = () => {
         {/* <button type="button" className="signIn-button">
           Sign Up
         </button> */}
-        <button type="button" className="signIn-button">
+        <button onClick={handleSubmit} type="button" className="signIn-button">
           Sign In
         </button>
       </div>

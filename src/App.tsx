@@ -9,6 +9,7 @@ import SignUp from "./pages/Authorization/SignUp";
 import SignIn from "./pages/Authorization/SignIn";
 import SignOut from "./pages/Authorization/SignOut";
 import Donate from "./pages/Donate/Donate";
+import ProtectedRoute from "./pages/Authorization/ProtectedRoute";
 
 const App = () => {
   const element = useRoutes([
@@ -50,7 +51,9 @@ const App = () => {
       path: "/donate",
       element: (
         <AuthContextProvider>
-          <Donate />
+          <ProtectedRoute>
+            <Donate />
+          </ProtectedRoute>
         </AuthContextProvider>
       )
     }

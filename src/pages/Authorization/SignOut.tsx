@@ -11,7 +11,7 @@ import Decoration from "../../assets/Decoration.svg";
 const SignOut: FC = () => {
   const navigate = useNavigate();
   const handleClick = (): void => {
-    navigate("/");
+    navigate("/home");
   };
   return (
     <div className="signOut-container">

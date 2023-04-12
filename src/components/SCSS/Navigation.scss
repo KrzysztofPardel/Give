@@ -1,4 +1,5 @@
 @import "../../SCSS/variables.scss";
+@import "../../SCSS/mixins.scss";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +11,7 @@
   height: 8rem;
   padding: 1rem;
   background-color: transparent;
+  z-index: 20;
 }
 .container {
   display: flex;
@@ -20,13 +22,14 @@
 }
 
 .btn-container {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   gap: 1rem;
   width: 25%;
   height: 3rem;
-  text-transform: uppercase;
-
+  @include lg {
+    display: flex;
+  }
   .autho-btn {
     display: flex;
     align-self: center;
@@ -43,13 +46,42 @@
     }
   }
 }
+.btn-container_mobile {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  width: 75%;
+  height: 3rem;
+  text-transform: uppercase;
+  @include lg {
+    display: none;
+    z-index: 10;
+  }
+  .autho-btn_mobile {
+    display: flex;
+    align-self: center;
+    font-size: 0.75rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background: white;
+    border: none;
+    cursor: pointer;
+    border: 1px transparent solid;
+    &:hover {
+      border-color: orange;
+    }
+  }
+}
 
 .homepage-links_container {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   width: auto;
   height: 3rem;
-
+  @include lg {
+    display: flex;
+  }
   .homepage-link {
     display: flex;
     justify-content: space-between;
@@ -65,4 +97,65 @@
       border: 1px grey solid;
     }
   }
+}
+.homepage-links_container_mobile {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  height: 3rem;
+  @include lg {
+    display: none;
+  }
+
+  .homepage-link_mobile {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    margin: 0.5rem;
+    padding: 1rem;
+    background: none;
+    border: none;
+    border: 1px transparent solid;
+    cursor: pointer;
+    &:hover {
+      border: 1px black solid;
+    }
+  }
+}
+
+.mobile-navigation {
+  height: 20rem;
+  @include lg {
+    display: none;
+    z-index: 90;
+  }
+  .mobile-icon_close {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .mobile-icon_hamburger {
+    color: black;
+    font-size: 1.5rem;
+  }
+}
+
+.mobile_NavShown {
+  position: absolute;
+  color: black;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  background-color: $color-bright-accent;
+  padding: 1px 7px;
+  display: flex;
+  flex-direction: column;
+  z-index: -2;
+}
+.mobile_NavHidden {
+  position: absolute;
+  left: -150%;
 }

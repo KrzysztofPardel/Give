@@ -1,7 +1,37 @@
+import { useState, FC, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
+import Fetch from "./FetchedData";
+
 import "./SCSS/WhoWeHelp.scss";
 import Decoration from "../../assets/Decoration.svg";
 
-const WhoWeHelp = () => {
+const WhoWeHelp: FC = () => {
+  const [foundation, setFoundation] = useState([]);
+  interface Foundation {
+    data: any;
+    id: string;
+  }
+
+  // function getFoundation(): void {
+  //   const foundationCollectionRef = collection(db, "f_Collections");
+  //   getDocs(foundationCollectionRef)
+  //     .then((response) => {
+  //       const foundations: Foundation[] = response.docs.map((doc) => ({
+  //         data: doc.data(),
+  //         id: doc.id
+  //       }));
+  //       setFoundation(foundations);
+  //       console.log(response.docs);
+  //     })
+  //     .catch((error) => console.log(error.message));
+  // }
+  // useEffect(() => {
+  //   console.log(foundation);
+  // }, [foundation]);
+  // useEffect(() => {
+  //   getFoundation();
+  // }, []);
   return (
     <div id="help" className="who-background">
       <div className="who-container">
@@ -27,7 +57,9 @@ const WhoWeHelp = () => {
           </p>
         </div>
         {/* Foundations */}
-
+        <div className="">
+          <Fetch />
+        </div>
         {/* <div className="who-foundations_container">
           <div className="foundation_text_container">
             <div className="foundation-header&paragraph_container">
@@ -82,7 +114,9 @@ const WhoWeHelp = () => {
             3
           </button>
         </div> */}
+
         {/* Non-governmental organizations */}
+
         {/* <div className="who-non_container">
           <div className="non-text_container">
             <div className="non-header&paragraph_container">
@@ -131,9 +165,10 @@ const WhoWeHelp = () => {
             3
           </button>
         </div> */}
+
         {/* Local collections */}
 
-        <div className="who-collections_container">
+        {/* <div className="who-collections_container">
           <div className="collections-text_container">
             <div className="collections-header&paragraph_container">
               <h1 className="collections-header">
@@ -177,8 +212,8 @@ const WhoWeHelp = () => {
               clothes,food,AGD, furnitures,toys
             </span>
           </div>
-        </div>
-        <div className="who-collections_button_number_container">
+        </div> */}
+        {/* <div className="who-collections_button_number_container">
           <button type="button" className="button_number">
             1
           </button>
@@ -188,7 +223,7 @@ const WhoWeHelp = () => {
           <button type="button" className="button_number">
             3
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
