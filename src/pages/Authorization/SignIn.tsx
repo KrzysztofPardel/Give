@@ -31,7 +31,7 @@ const SignIn: FC = () => {
 
   const handleSignIn = (): void => {
     navigate("/signin");
-    //logging in to the homepage
+    // logging in to the homepage
   };
   const handleSignUp = (): void => {
     navigate("/signup");
@@ -43,25 +43,25 @@ const SignIn: FC = () => {
       <form className="signIn-form">
         <label className="signIn-label" htmlFor="emailInputSignIn">
           Email
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="myemail@gmail.com"
+            className="signIn-input"
+            id="emailInputSignIn"
+          />
         </label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="myemail@gmail.com"
-          className="signIn-input"
-          id="emailInputSignIn"
-        />
         <label className="signIn-label" htmlFor="passwordInputSignUp">
           Hasło
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            className="signIn-input"
+            id="passwordInputSignUp"
+          />
         </label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          className="signIn-input"
-          id="passwordInputSignUp"
-        />
       </form>
       <div className="signIn-button_container">
         {/* <button type="button" className="signIn-button">

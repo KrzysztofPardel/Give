@@ -1,41 +1,41 @@
-// import * as firebase from "firebase/app";
-// import "firebase/firestore";
-import { useState } from "react";
+import {
+  collection,
+  query,
+  onSnapshot,
+  QuerySnapshot,
+  doc,
+  getDocs
+} from "firebase/firestore";
+import { useState, useEffect } from "react";
 import { db } from "../../firebase";
-import { collection } from "firebase/firestore";
 
 const Fetch = () => {
   const [allDocs, setAllDocs] = useState([]);
-  const [singleDoc, setSingleDoc] = useState({});
-  // const db = firebase.firestore(); //-tak to powinno wyglądać, ale wywala błąd firebase.firestore() is not a function
-  // const db = firebase.firestore();
 
-  const fetchAll = (e) => {
-    e.preventDefault();
-    db.collection("f_Collections")
-      .get()
-      .then((snapshot) => {
-        if (snapshot.docs.length > 0) {
-          snapshot.docs.forEach((doc) => {
-            setAllDocs((prev) => {
-              return [...prev, doc.data()];
-            });
-          });
-        }
-      });
-    console.log(allDocs);
+  const fetchAll = async (e) => {
+    // e.preventDefault();
+
+    const querySnapshot = await getDocs(collection(db, "f_Collections"));
+
+    const documents = querySnapshot.docs.map((doc) => doc.data());
+    setAllDocs(documents);
   };
-
-  // useEffect(() => {
-  //   fetchAll();
-  // }, []);
-
+  useEffect(() => {
+    fetchAll();
+  }, []);
   return (
     <div className="">
-      qwerty
       <button type="button" onClick={fetchAll} className="">
         Fetch
       </button>
+
+      {allDocs.map((doc) => (
+        <div key={doc.id}>
+          <h2>{doc.name}</h2>
+          <p>{doc.mission}</p>
+          <span>{doc.items}</span>
+        </div>
+      ))}
     </div>
   );
 };
