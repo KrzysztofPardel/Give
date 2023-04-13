@@ -1,13 +1,19 @@
 @import "../../../SCSS/variables.scss";
 @import "../../../SCSS/mixins.scss";
+
 .four-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .four-header {
     margin: 3rem;
     margin-bottom: 1.5rem;
     font-family: $font-alt;
     font-weight: 300;
   }
-  .decoration-image {
+  .four-decoration_image {
+    // display: flex;
+    // justify-content: center;
   }
   .button {
     @include button {

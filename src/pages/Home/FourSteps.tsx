@@ -16,7 +16,7 @@ const FourSteps = () => {
     <div id="steps" className="four-background">
       <div className="four-container">
         <h1 className="four-header">It takes 4 simple steps</h1>
-        <img src={Decoration} alt="box" className="decoration-image" />
+        <img src={Decoration} alt="box" className="four-decoration_image" />
 
         <div className="four-columns-container">
           <div className="four-single_column">
