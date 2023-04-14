@@ -1,6 +1,12 @@
 import { useState, FC, useEffect } from "react";
 
-import { Fetch, FetchTwo, FetchThree } from "./FetchedData";
+import {
+  FoundationsOne,
+  FoundationsTwo,
+  FoundationsThree
+} from "./Foundations";
+import { OrganizationsOne, OrganizationsTwo } from "./Organizations";
+import { CollectionsOne, CollectionsTwo } from "./Collections";
 
 import "./SCSS/WhoWeHelp.scss";
 import Decoration from "../../assets/Decoration.svg";
@@ -10,10 +16,20 @@ interface Foundation {
   id: string;
 }
 const WhoWeHelp: FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const handleSwitchPage = (page: number) => {
-    setCurrentPage(page);
+  const [currentFoundationPage, setCurrentFoundationPage] = useState(1);
+  const [organizationPage, setOrganizationPage] = useState(1);
+  const [collectionPage, setCollectionPage] = useState(1);
+  const [foundations, setFoundations] = useState(1);
+  const [organization, setOrganizations] = useState(1);
+  const [collections, setCollections] = useState(1);
+  const handleFoundationPage = (page: number) => {
+    setCurrentFoundationPage(page);
+  };
+  const handleOrganizationPage = (page: number) => {
+    setOrganizationPage(page);
+  };
+  const handleCollectionPage = (page: number) => {
+    setCollectionPage(page);
   };
 
   return (
@@ -42,28 +58,28 @@ const WhoWeHelp: FC = () => {
         </div>
         {/* Foundations */}
         <div className="who-foundations_container">
-          {currentPage === 1 && <Fetch />}
-          {currentPage === 2 && <FetchTwo />}
-          {currentPage === 3 && <FetchThree />}
+          {currentFoundationPage === 1 && <FoundationsOne />}
+          {currentFoundationPage === 2 && <FoundationsTwo />}
+          {currentFoundationPage === 3 && <FoundationsThree />}
         </div>
 
         <div className="who-foundations_button_number_container">
           <button
-            onClick={() => handleSwitchPage(1)}
+            onClick={() => handleFoundationPage(1)}
             type="button"
             className="button_number"
           >
             1
           </button>
           <button
-            onClick={() => handleSwitchPage(2)}
+            onClick={() => handleFoundationPage(2)}
             type="button"
             className="button_number"
           >
             2
           </button>
           <button
-            onClick={() => handleSwitchPage(3)}
+            onClick={() => handleFoundationPage(3)}
             type="button"
             className="button_number"
           >
@@ -73,113 +89,49 @@ const WhoWeHelp: FC = () => {
 
         {/* Non-governmental organizations */}
 
-        {/* <div className="who-non_container">
-          <div className="non-text_container">
-            <div className="non-header&paragraph_container">
-              <h1 className="non-header">Organization:"Better with others"</h1>
-              <p className="non-paragraph">
-                {" "}
-                Goal & Mission: Helping those who are going through a hard
-                season of life.
-              </p>
-            </div>
-            <span className="non-span">All kinds and pieces of clothing</span>
-          </div>
-          <div className="line" />
-          <div className="non-text_container">
-            <div className="non-header&paragraph_container">
-              <h1 className="non-header">Organization:"Not on your own"</h1>
-              <p className="non-paragraph">
-                {" "}
-                Goal & Mission: Helping those who are going through a hard
-                season of life.
-              </p>
-            </div>
-            <span className="non-span">devices,AGD,toys</span>
-          </div>
-          <div className="line" />
-          <div className="non-text_container">
-            <div className="non-header&paragraph_container">
-              <h1 className="non-header">Organization:"Rescue"</h1>
-              <p className="non-paragraph">
-                {" "}
-                Goal & Mission: Helping those who are going through a hard
-                season of life.
-              </p>
-            </div>
-            <span className="non-span">Short and long term food products</span>
-          </div>
+        <div className="who-non_container">
+          {organizationPage === 1 && <OrganizationsOne />}
+          {organizationPage === 2 && <OrganizationsTwo />}
         </div>
         <div className="who-non_button_number_container">
-          <button type="button" className="button_number">
+          <button
+            onClick={() => handleOrganizationPage(1)}
+            type="button"
+            className="button_number"
+          >
             1
           </button>
-          <button type="button" className="button_number">
+          <button
+            onClick={() => handleOrganizationPage(2)}
+            type="button"
+            className="button_number"
+          >
             2
           </button>
-          <button type="button" className="button_number">
-            3
-          </button>
-        </div> */}
+        </div>
 
         {/* Local collections */}
 
-        {/* <div className="who-collections_container">
-          <div className="collections-text_container">
-            <div className="collections-header&paragraph_container">
-              <h1 className="collections-header">
-                Zbiórka:"Package from Mokotów"
-              </h1>
-              <p className="collections-paragraph">
-                {" "}
-                Goal & Mission: Helping those who are going through a hard
-                season of life.
-              </p>
-            </div>
-            <span className="collections-span">
-              clothes,food,AGD, furnitures,toys
-            </span>
-          </div>
-          <div className="line" />
-          <div className="collections-text_container">
-            <div className="collections-header&paragraph_container">
-              <h1 className="collections-header">Zbiórka:"League of Prague"</h1>
-              <p className="collections-paragraph">
-                {" "}
-                Goal & Mission: Helping those who are going through a hard
-                season of life.
-              </p>
-            </div>
-            <span className="collections-span">
-              clothes,food,AGD, furnitures,toys
-            </span>
-          </div>
-          <div className="line" />
-          <div className="collections-text_container">
-            <div className="collections-header&paragraph_container">
-              <h1 className="collections-header">Zbiórka:"Helping Teofilów"</h1>
-              <p className="collections-paragraph">
-                {" "}
-                Goal & Mission: Helping those who are going through a hard
-                season of life.
-              </p>
-            </div>
-            <span className="collections-span">
-              clothes,food,AGD, furnitures,toys
-            </span>
-          </div>
-        </div> */}
-        {/* <div className="who-collections_button_number_container">
-          <button type="button" className="button_number">
+        <div className="who-collections_container">
+          {collectionPage === 1 && <CollectionsOne />}
+          {collectionPage === 2 && <CollectionsTwo />}
+        </div>
+        <div className="who-collections_button_number_container">
+          <button
+            onClick={() => handleCollectionPage(1)}
+            type="button"
+            className="button_number"
+          >
             1
           </button>
-          <button type="button" className="button_number">
+          <button
+            onClick={() => handleCollectionPage(2)}
+            type="button"
+            className="button_number"
+          >
             2
           </button>
-          <button type="button" className="button_number">
-            3
-          </button>
-        </div> */}
+        </div>
       </div>
     </div>
   );

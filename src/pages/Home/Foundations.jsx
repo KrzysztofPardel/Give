@@ -1,15 +1,8 @@
-import {
-  collection,
-  query,
-  onSnapshot,
-  QuerySnapshot,
-  doc,
-  getDocs
-} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase";
 
-export const Fetch = () => {
+export const FoundationsOne = () => {
   const [allDocs, setAllDocs] = useState([]);
 
   const fetchAll = async () => {
@@ -22,7 +15,7 @@ export const Fetch = () => {
   useEffect(() => {
     fetchAll();
   }, []);
-  
+
   return (
     <div className="">
       {allDocs.map((doc) => (
@@ -41,7 +34,7 @@ export const Fetch = () => {
   );
 };
 
-export const FetchTwo = () => {
+export const FoundationsTwo = () => {
   const [allDocs, setAllDocs] = useState([]);
 
   const fetchAll = async () => {
@@ -73,7 +66,7 @@ export const FetchTwo = () => {
   );
 };
 
-export const FetchThree = () => {
+export const FoundationsThree = () => {
   const [allDocs, setAllDocs] = useState([]);
 
   const fetchAll = async () => {
@@ -82,7 +75,7 @@ export const FetchThree = () => {
     const documents = querySnapshot.docs.map((doc) => doc.data());
     setAllDocs(documents);
   };
-  
+
   useEffect(() => {
     fetchAll();
   }, []);
