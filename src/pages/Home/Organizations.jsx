@@ -23,7 +23,7 @@ export const OrganizationsOne = () => {
           <div className="non-text_container">
             <div className="non-header&paragraph_container">
               <h1 className="non-header">{doc.name}</h1>
-              <p className="non-paragraph">{doc.mission} </p>
+              <p className="non-paragraph">{doc.description} </p>
             </div>
             <span className="non-span">{doc.items}</span>
           </div>
@@ -55,7 +55,7 @@ export const OrganizationsTwo = () => {
           <div className="foundation-text_container">
             <div className="foundation-header&paragraph_container">
               <h1 className="foundation-header">{doc.name}</h1>
-              <p className="foundation-paragraph">{doc.mission} </p>
+              <p className="foundation-paragraph">{doc.description} </p>
             </div>
             <span className="foundation-span">{doc.items}</span>
           </div>

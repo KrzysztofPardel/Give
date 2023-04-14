@@ -6,7 +6,7 @@ export const CollectionsOne = () => {
   const [allDocs, setAllDocs] = useState([]);
 
   const fetchAll = async () => {
-    const querySnapshot = await getDocs(collection(db, "f_Collections"));
+    const querySnapshot = await getDocs(collection(db, "c_Collections"));
 
     const documents = querySnapshot.docs.map((doc) => doc.data());
     setAllDocs(documents);
@@ -23,7 +23,7 @@ export const CollectionsOne = () => {
           <div className="foundation-text_container">
             <div className="foundation-header&paragraph_container">
               <h1 className="foundation-header">{doc.name}</h1>
-              <p className="foundation-paragraph">{doc.mission} </p>
+              <p className="foundation-paragraph">{doc.description} </p>
             </div>
             <span className="foundation-span">{doc.items}</span>
           </div>
@@ -38,7 +38,7 @@ export const CollectionsTwo = () => {
   const [allDocs, setAllDocs] = useState([]);
 
   const fetchAll = async () => {
-    const querySnapshot = await getDocs(collection(db, "f_Collections_two"));
+    const querySnapshot = await getDocs(collection(db, "c_Collections_two"));
 
     const documents = querySnapshot.docs.map((doc) => doc.data());
     setAllDocs(documents);
@@ -55,9 +55,9 @@ export const CollectionsTwo = () => {
           <div className="collections-text_container">
             <div className="collections-header&paragraph_container">
               <h1 className="collections-header">{doc.name}</h1>
-              <p className="collections-paragraph">{doc.mission} </p>
+              <p className="collections-paragraph">{doc.description} </p>
             </div>
-            <span className="foundation-span">{doc.items}</span>
+            <span className="collections-span">{doc.items}</span>
           </div>
           <div className="line" />
         </div>

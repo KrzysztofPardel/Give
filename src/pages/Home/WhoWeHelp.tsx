@@ -19,9 +19,12 @@ const WhoWeHelp: FC = () => {
   const [currentFoundationPage, setCurrentFoundationPage] = useState(1);
   const [organizationPage, setOrganizationPage] = useState(1);
   const [collectionPage, setCollectionPage] = useState(1);
-  const [foundations, setFoundations] = useState(1);
-  const [organization, setOrganizations] = useState(1);
-  const [collections, setCollections] = useState(1);
+  const [currentSwitch, setCurrentSwitch] = useState(1);
+
+  const handleSwitch = (button: number) => {
+    setCurrentSwitch(button);
+  };
+
   const handleFoundationPage = (page: number) => {
     setCurrentFoundationPage(page);
   };
@@ -40,13 +43,25 @@ const WhoWeHelp: FC = () => {
           <img src={Decoration} alt="box" className="who-decoration_image" />
 
           <div className="who-button_container">
-            <button type="button" className="who-button">
+            <button
+              onClick={() => handleSwitch(1)}
+              type="button"
+              className="who-button"
+            >
               Foundations
             </button>
-            <button type="button" className="who-button">
+            <button
+              onClick={() => handleSwitch(2)}
+              type="button"
+              className="who-button"
+            >
               Non-governmental organizations
             </button>
-            <button type="button" className="who-button">
+            <button
+              onClick={() => handleSwitch(3)}
+              type="button"
+              className="who-button"
+            >
               Local collections
             </button>
           </div>
@@ -57,81 +72,89 @@ const WhoWeHelp: FC = () => {
           </p>
         </div>
         {/* Foundations */}
-        <div className="who-foundations_container">
-          {currentFoundationPage === 1 && <FoundationsOne />}
-          {currentFoundationPage === 2 && <FoundationsTwo />}
-          {currentFoundationPage === 3 && <FoundationsThree />}
-        </div>
+        {currentSwitch === 1 && (
+          <>
+            <div className="who-foundations_container">
+              {currentFoundationPage === 1 && <FoundationsOne />}
+              {currentFoundationPage === 2 && <FoundationsTwo />}
+              {currentFoundationPage === 3 && <FoundationsThree />}
+            </div>
 
-        <div className="who-foundations_button_number_container">
-          <button
-            onClick={() => handleFoundationPage(1)}
-            type="button"
-            className="button_number"
-          >
-            1
-          </button>
-          <button
-            onClick={() => handleFoundationPage(2)}
-            type="button"
-            className="button_number"
-          >
-            2
-          </button>
-          <button
-            onClick={() => handleFoundationPage(3)}
-            type="button"
-            className="button_number"
-          >
-            3
-          </button>
-        </div>
-
+            <div className="who-foundations_button_number_container">
+              <button
+                onClick={() => handleFoundationPage(1)}
+                type="button"
+                className="button_number"
+              >
+                1
+              </button>
+              <button
+                onClick={() => handleFoundationPage(2)}
+                type="button"
+                className="button_number"
+              >
+                2
+              </button>
+              <button
+                onClick={() => handleFoundationPage(3)}
+                type="button"
+                className="button_number"
+              >
+                3
+              </button>
+            </div>
+          </>
+        )}
         {/* Non-governmental organizations */}
-
-        <div className="who-non_container">
-          {organizationPage === 1 && <OrganizationsOne />}
-          {organizationPage === 2 && <OrganizationsTwo />}
-        </div>
-        <div className="who-non_button_number_container">
-          <button
-            onClick={() => handleOrganizationPage(1)}
-            type="button"
-            className="button_number"
-          >
-            1
-          </button>
-          <button
-            onClick={() => handleOrganizationPage(2)}
-            type="button"
-            className="button_number"
-          >
-            2
-          </button>
-        </div>
-
+        {currentSwitch === 2 && (
+          <>
+            <div className="who-non_container">
+              {organizationPage === 1 && <OrganizationsOne />}
+              {organizationPage === 2 && <OrganizationsTwo />}
+            </div>
+            <div className="who-non_button_number_container">
+              <button
+                onClick={() => handleOrganizationPage(1)}
+                type="button"
+                className="button_number"
+              >
+                1
+              </button>
+              <button
+                onClick={() => handleOrganizationPage(2)}
+                type="button"
+                className="button_number"
+              >
+                2
+              </button>
+            </div>
+          </>
+        )}
         {/* Local collections */}
-
-        <div className="who-collections_container">
-          {collectionPage === 1 && <CollectionsOne />}
-          {collectionPage === 2 && <CollectionsTwo />}
-        </div>
-        <div className="who-collections_button_number_container">
-          <button
-            onClick={() => handleCollectionPage(1)}
-            type="button"
-            className="button_number"
-          >
-            1
-          </button>
-          <button
-            onClick={() => handleCollectionPage(2)}
-            type="button"
-            className="button_number"
-          >
-            2
-          </button>
-        </div>
+        {currentSwitch === 3 && (
+          <>
+            <div className="who-collections_container">
+              {collectionPage === 1 && <CollectionsOne />}
+              {collectionPage === 2 && <CollectionsTwo />}
+            </div>
+            <div className="who-collections_button_number_container">
+              <button
+                onClick={() => handleCollectionPage(1)}
+                type="button"
+                className="button_number"
+              >
+                1
+              </button>
+              <button
+                onClick={() => handleCollectionPage(2)}
+                type="button"
+                className="button_number"
+              >
+                2
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
