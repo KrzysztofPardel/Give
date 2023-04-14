@@ -1,6 +1,12 @@
 @import "../../../SCSS/variables.scss";
 @import "../../../SCSS/mixins.scss";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .four-container {
   display: flex;
   flex-direction: column;
@@ -10,10 +16,6 @@
     margin-bottom: 1.5rem;
     font-family: $font-alt;
     font-weight: 300;
-  }
-  .four-decoration_image {
-    // display: flex;
-    // justify-content: center;
   }
   .button {
     @include button {
@@ -34,7 +36,6 @@
   position: relative;
   &:before {
     content: "";
-
     background: #f0f1f1 0% 0% no-repeat padding-box;
     position: absolute;
     width: 100%;
@@ -63,9 +64,13 @@
       height: 4rem;
     }
     .four-text-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: 1.2rem;
       margin: 1rem;
       font-weight: 300;
+      text-align: center;
     }
     .line {
       width: 70px;

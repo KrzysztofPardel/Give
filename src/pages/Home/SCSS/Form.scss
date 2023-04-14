@@ -61,8 +61,6 @@
   width: 30rem;
   .form-input_container_small {
     .form-label {
-      display: flex;
-      justify-content: flex-start;
       font-size: 0.8rem;
       margin-left: 0.3rem;
     }
@@ -82,8 +80,6 @@
 .form-textarea_container {
   width: 30rem;
   .form-label_textarea {
-    display: flex;
-    justify-content: flex-start;
     font-size: 0.8rem;
     margin-left: 0.3rem;
   }

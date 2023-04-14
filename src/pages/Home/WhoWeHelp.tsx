@@ -1,17 +1,21 @@
 import { useState, FC, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
-import Fetch from "./FetchedData";
+
+import { Fetch, FetchTwo, FetchThree } from "./FetchedData";
 
 import "./SCSS/WhoWeHelp.scss";
 import Decoration from "../../assets/Decoration.svg";
 
+interface Foundation {
+  data: any;
+  id: string;
+}
 const WhoWeHelp: FC = () => {
-  const [foundation, setFoundation] = useState([]);
-  interface Foundation {
-    data: any;
-    id: string;
-  }
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleSwitchPage = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div id="help" className="who-background">
       <div className="who-container">
@@ -38,17 +42,31 @@ const WhoWeHelp: FC = () => {
         </div>
         {/* Foundations */}
         <div className="who-foundations_container">
-          <Fetch />
+          {currentPage === 1 && <Fetch />}
+          {currentPage === 2 && <FetchTwo />}
+          {currentPage === 3 && <FetchThree />}
         </div>
 
         <div className="who-foundations_button_number_container">
-          <button type="button" className="button_number">
+          <button
+            onClick={() => handleSwitchPage(1)}
+            type="button"
+            className="button_number"
+          >
             1
           </button>
-          <button type="button" className="button_number">
+          <button
+            onClick={() => handleSwitchPage(2)}
+            type="button"
+            className="button_number"
+          >
             2
           </button>
-          <button type="button" className="button_number">
+          <button
+            onClick={() => handleSwitchPage(3)}
+            type="button"
+            className="button_number"
+          >
             3
           </button>
         </div>

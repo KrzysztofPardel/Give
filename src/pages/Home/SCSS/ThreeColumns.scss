@@ -1,5 +1,9 @@
 @import "../../../SCSS/variables.scss";
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .three-background {
   margin-top: 3rem;
   width: 100%;
@@ -39,6 +43,7 @@
       font-size: 1.5rem;
       margin: 1.5rem;
       font-weight: 300;
+      text-align: center;
     }
     .three-text-paragraph {
       font-size: 0.9rem;
