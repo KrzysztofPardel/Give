@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 import "./SCSS/Application.scss";
 
 const Application = () => {
@@ -17,43 +18,64 @@ const Application = () => {
         </div>
         <div className="application-container_bottom">
           <p className="application-steps">Krok 1/4</p>
-          <div className="application-text_container">
-            <h2 className="application-text_header">
-              Mark what you want to donate:
-            </h2>
-            <div className="application-point_container">
-              <label
-                className="application-point_text"
-                htmlFor="control_reused"
-              >
-                clothes, which can be reused
-                <button type="button" className="application-point_button" />
-              </label>
+          <div className="application-point_invisible_container">
+            {/* Step 1 */}
+            {/* <div className="application-text_container">
+              <h2 className="application-text_header">
+                Mark what you want to donate:
+              </h2>
+              <div className="application-point_container">
+                <label
+                  className="application-point_text"
+                  htmlFor="control_reused"
+                >
+                  clothes, which can be reused
+                  <button type="button" className="application-point_button" />
+                </label>
+              </div>
+              <div className="application-point_container">
+                <label className="application-point_text">
+                  clothes, which cannot be reused
+                  <button type="button" className="application-point_button" />
+                </label>
+              </div>
+              <div className="application-point_container">
+                <label className="application-point_text">
+                  toys
+                  <button type="button" className="application-point_button" />
+                </label>
+              </div>
+              <div className="application-point_container">
+                <label className="application-point_text">
+                  books
+                  <button type="button" className="application-point_button" />
+                </label>
+              </div>
+              <div className="application-point_container">
+                <label className="application-point_text">
+                  other
+                  <button type="button" className="application-point_button" />
+                </label>
+              </div>
+            </div> */}
+            {/* Step 2 */}
+            <div className="application-text_container">
+              <h2 className="application-text_header">
+                Choose the amount of 60 liter bags that you want to donate:
+              </h2>
+              <div className="application-point_container">
+                <label
+                  className="application-point_text"
+                  htmlFor="control_reused"
+                >
+                  clothes, which can be reused
+                  <input type="number" className="application-number_bags" />
+                </label>
+              </div>
             </div>
-            <div className="application-point_container">
-              <label className="application-point_text">
-                clothes, which cannot be reused
-                <button type="button" className="application-point_button" />
-              </label>
-            </div>
-            <div className="application-point_container">
-              <label className="application-point_text">
-                toys
-                <button type="button" className="application-point_button" />
-              </label>
-            </div>
-            <div className="application-point_container">
-              <label className="application-point_text">
-                books
-                <button type="button" className="application-point_button" />
-              </label>
-            </div>
-            <div className="application-point_container">
-              <label className="application-point_text">
-                other
-                <button type="button" className="application-point_button" />
-              </label>
-            </div>
+            {/* Step 3 */}
+
+            {/* Step 4 */}
           </div>
           <div className="application-button_container">
             <button type="button" className="application-button">

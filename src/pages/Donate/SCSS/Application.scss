@@ -41,18 +41,22 @@
   color: black;
   font-weight: 300;
 }
-.application-text_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  width: 35rem;
+.application-point_invisible_container {
+  border: 1px solid transparent;
   height: 30rem;
-  color: black;
-  .application-text_header {
-    font-size: 1.3rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+  .application-text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 35rem;
+    height: 30rem;
+    color: black;
+    .application-text_header {
+      font-size: 1.3rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
   }
 }
 .application-point_container {
@@ -66,6 +70,7 @@
     justify-content: start;
     gap: 1rem;
     width: 25rem;
+    font-weight: 350;
     .application-point_button {
       border: 1px solid black;
       background-color: transparent;
@@ -75,6 +80,9 @@
         background-color: $color-bright-accent;
       }
     }
+  }
+  .application-number_bags{
+    
   }
   // .application-point_checkbox {
   //   border: 1px solid black;
