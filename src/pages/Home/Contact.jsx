@@ -1,9 +1,9 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useState } from "react";
-import "./SCSS/Form.scss";
+import { collection, addDoc } from "firebase/firestore";
+import { dbContact } from "../../firebase";
+import "./SCSS/Contact.scss";
 import Decoration from "../../assets/Decoration.svg";
 import BgForm from "../../assets/BgForm.jpg";
-import { dbContact } from "../../firebase";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -30,14 +30,28 @@ const Contact = () => {
   //     setEmail("");
   //     setMessage("");
   // };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await dbContact.collection("contacts").add({ name, email, message });
+  //     alert("Message has been submitted!");
+  //     setName("");
+  //     setEmail("");
+  //     setMessage("");
+  //   } catch (error) {
+  //     alert(error.message);
+  //   }
+  //   console.log("form submitted");
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await dbContact.collection("contacts").add({
-        name: name,
-        email: email,
-        message: message
+      const docRef = await addDoc(collection(dbContact, "contacts"), {
+        name,
+        email,
+        message
       });
+      console.log("Document written with ID: ", docRef.id);
       alert("Message has been submitted!");
       setName("");
       setEmail("");
@@ -74,7 +88,7 @@ const Contact = () => {
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                type="emial"
+                type="email"
                 placeholder="johnsmith@gmail.com"
                 className="form-input"
                 id="emailForm"
@@ -96,11 +110,11 @@ const Contact = () => {
           </label>
           <div className="form-container_button">
             <button
-              onSubmit={handleSubmit}
-              type="button"
+              onClick={handleSubmit}
+              type="submit"
               className="form-button"
             >
-              Wyślij
+              Submit
             </button>
           </div>
         </div>
