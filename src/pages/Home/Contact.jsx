@@ -10,39 +10,6 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // const handleSubmit = (e) => {
-  //   epreventDefault();
-
-  //   dbContact
-  //     .collection("contacts")
-  //     .add({
-  //       name: name,
-  //       email: email,
-  //       message: message
-  //     })
-  //     .then(() => {
-  //       alert("Message has been submitted!");
-  //     });
-  //     .catch((error)=>{
-  //       alert(error.message)
-  //     });
-  //     setName("");
-  //     setEmail("");
-  //     setMessage("");
-  // };
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await dbContact.collection("contacts").add({ name, email, message });
-  //     alert("Message has been submitted!");
-  //     setName("");
-  //     setEmail("");
-  //     setMessage("");
-  //   } catch (error) {
-  //     alert(error.message);
-  //   }
-  //   console.log("form submitted");
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

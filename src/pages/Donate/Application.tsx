@@ -22,38 +22,37 @@ const Application = () => {
               Mark what you want to donate:
             </h2>
             <div className="application-point_container">
-              <button type="button" className="application-point_button">
-                2
-              </button>
-              <p className="application-point_text">
-                clothes,which can be reused
-              </p>
+              <label
+                className="application-point_text"
+                htmlFor="control_reused"
+              >
+                clothes, which can be reused
+                <button type="button" className="application-point_button" />
+              </label>
             </div>
             <div className="application-point_container">
-              <button type="button" className="application-point_button">
-                2
-              </button>
-              <p className="application-point_text">
+              <label className="application-point_text">
                 clothes, which cannot be reused
-              </p>
+                <button type="button" className="application-point_button" />
+              </label>
             </div>
             <div className="application-point_container">
-              <button type="button" className="application-point_button">
-                2
-              </button>
-              <p className="application-point_text">toys</p>
+              <label className="application-point_text">
+                toys
+                <button type="button" className="application-point_button" />
+              </label>
             </div>
             <div className="application-point_container">
-              <button type="button" className="application-point_button">
-                2
-              </button>
-              <p className="application-point_text">books</p>
+              <label className="application-point_text">
+                books
+                <button type="button" className="application-point_button" />
+              </label>
             </div>
             <div className="application-point_container">
-              <button type="button" className="application-point_button">
-                2
-              </button>
-              <p className="application-point_text">other</p>
+              <label className="application-point_text">
+                other
+                <button type="button" className="application-point_button" />
+              </label>
             </div>
           </div>
           <div className="application-button_container">
