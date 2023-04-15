@@ -1,6 +1,6 @@
 import DonateHero from "./Hero";
 import Application from "./Application";
-import Form from "../Home/Form";
+import Form from "../Home/Contact";
 import Footer from "../../components/Footer";
 
 const Donate = () => {

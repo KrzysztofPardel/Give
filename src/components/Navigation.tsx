@@ -1,10 +1,10 @@
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserAuth } from "../context/AuthContext";
 import "./SCSS/Navigation.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { UserAuth } from "../context/AuthContext";
 
 const Navigation = () => {
   const { user, logout } = UserAuth();
@@ -19,12 +19,7 @@ const Navigation = () => {
   const handleSignUp = () => {
     navigate("/signup");
   };
-  const handleClick = () => {
-    scroll.scrollTo("contact", {
-      smooth: "easeInOutQuart",
-      duration: 1500
-    });
-  };
+
   const handleSignout = async () => {
     try {
       await logout();
@@ -67,8 +62,7 @@ const Navigation = () => {
         <div className="homepage-links_container">
           {/* <NavLink */}
           <Link
-            // activeClass={({ isActive }) => isActive && "active"}
-            to="/#contact"
+            to="start"
             spy={true}
             smooth={true}
             offset={-70}
@@ -117,7 +111,6 @@ const Navigation = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            onClick={handleClick}
             className="homepage-link"
           >
             Contact
@@ -178,8 +171,7 @@ const Navigation = () => {
           <div className="homepage-links_container_mobile">
             {/* <NavLink */}
             <Link
-              // activeClass={({ isActive }) => isActive && "active"}
-              to="/#contact"
+              to="/start"
               spy={true}
               smooth={true}
               offset={-70}
@@ -228,7 +220,6 @@ const Navigation = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              onClick={handleClick}
               className="homepage-link_mobile "
             >
               Contact

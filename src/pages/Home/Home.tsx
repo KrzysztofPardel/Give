@@ -4,8 +4,7 @@ import FourSteps from "./FourSteps";
 import Hero from "./Hero";
 import ThreeColumns from "./ThreeColumns";
 import WhoWeHelp from "./WhoWeHelp";
-import Form from "./Form";
-
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -15,7 +14,7 @@ const Home = () => {
       <FourSteps />
       <AboutUs />
       <WhoWeHelp />
-      <Form />
+      <Contact />
       <Footer />
     </>
   );

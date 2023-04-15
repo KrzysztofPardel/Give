@@ -1,12 +1,51 @@
+import { collection, getDocs } from "firebase/firestore";
 import { useState } from "react";
 import "./SCSS/Form.scss";
 import Decoration from "../../assets/Decoration.svg";
 import BgForm from "../../assets/BgForm.jpg";
+import { dbContact } from "../../firebase";
 
-const Form = () => {
+const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
+  const [message, setMessage] = useState("");
+
+  // const handleSubmit = (e) => {
+  //   epreventDefault();
+
+  //   dbContact
+  //     .collection("contacts")
+  //     .add({
+  //       name: name,
+  //       email: email,
+  //       message: message
+  //     })
+  //     .then(() => {
+  //       alert("Message has been submitted!");
+  //     });
+  //     .catch((error)=>{
+  //       alert(error.message)
+  //     });
+  //     setName("");
+  //     setEmail("");
+  //     setMessage("");
+  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await dbContact.collection("contacts").add({
+        name: name,
+        email: email,
+        message: message
+      });
+      alert("Message has been submitted!");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   return (
     <div id="contact" className="form-container">
       <div className="form-container_left">
@@ -47,8 +86,8 @@ const Form = () => {
           <label className="form-label_textarea" htmlFor="messageForm">
             Enter your message
             <textarea
-              value={text}
-              onChange={(e) => setText(e.target.value)}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               type="text"
               placeholder="e.g. I wanted to reach out and commend your efforts in collecting used clothes. Your work is incredibly important and has a positive impact on both the environment and people in need."
               className="form-textarea"
@@ -56,7 +95,11 @@ const Form = () => {
             />
           </label>
           <div className="form-container_button">
-            <button type="button" className="form-button">
+            <button
+              onSubmit={handleSubmit}
+              type="button"
+              className="form-button"
+            >
               Wyślij
             </button>
           </div>
@@ -66,4 +109,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Contact;

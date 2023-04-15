@@ -22,8 +22,19 @@ const foundationsConfig = {
   databaseURL: "",
   appId: "1:734006185425:web:2d873ab82dc7fd0110a4f0"
 };
+const ContactConfig = {
+  apiKey: "AIzaSyDIzXKTk8qeEBbhe_aaXBkRzCJs1St_7EE",
+  authDomain: "give-contact-f83c8.firebaseapp.com",
+  projectId: "give-contact-f83c8",
+  storageBucket: "give-contact-f83c8.appspot.com",
+  messagingSenderId: "45664525901",
+  appId: "1:45664525901:web:4ab01466f6fc7a9f688604"
+};
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
 const foundationsApp = initializeApp(foundationsConfig, "foundations");
 export const db = getFirestore(foundationsApp);
+
+const contactApp = initializeApp(ContactConfig, "contact");
+export const dbContact = getFirestore(contactApp);
