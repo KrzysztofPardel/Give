@@ -114,7 +114,6 @@
     width: 10rem;
     padding: 0.5rem 1rem;
     background-color: transparent;
-
     .application-location_option {
       padding: 0.6rem 1.5rem;
     }
@@ -152,6 +151,48 @@
     padding: 0.4rem 1rem;
     border: 1px solid;
     width: 28rem;
+  }
+}
+//Step 4
+.application-delivery_both_containers {
+  display: flex;
+
+  .application-delivery_left_container,
+  .application-delivery_right_container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 350;
+    color: black;
+    height: 20rem;
+    justify-content: space-evenly;
+
+    padding: 1rem 0rem;
+    .application-delivery_subheader {
+      font-weight: 350;
+      text-align: left;
+    }
+    .application-delivery_small_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 15rem;
+
+      .application-delivery_label {
+        margin-right: 1rem;
+      }
+      .application-delivery_input {
+        width: 10rem;
+        padding: 0.2rem 0.5rem;
+        background: transparent;
+        border: 1px solid;
+      }
+    }
+    .application-delivery_textarea {
+      background-color: transparent;
+      width: 18rem;
+      height: 5rem;
+    }
   }
 }
 
