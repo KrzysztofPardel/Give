@@ -61,8 +61,9 @@
 }
 .application-point_container {
   display: flex;
-  width: 30rem;
+  width: 40rem;
   margin-top: 1.5rem;
+  font-weight: 300;
 
   .application-point_text {
     display: flex;
@@ -81,26 +82,79 @@
       }
     }
   }
-  .application-number_bags{
-    
+  //Step 2
+  .application-point_text_left {
+    margin-right: 1rem;
   }
-  // .application-point_checkbox {
-  //   border: 1px solid black;
-  //   background-color: transparent;
-  //   height: 1.5rem;
-  //   width: 1.5rem;
-  //   &:hover {
-  //     background-color: $color-bright-accent;
-  //   }
-  //   &:before {
-  //     content: "";
-  //     // border: 1px solid black;
-  //     background-color: transparent;
-  //     height: 1.5rem;
-  //     width: 1.5rem;
-  //   }
-  // }
+  .application-number_bags {
+    padding: 0.1rem;
+    width: 3rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $color-dark-accent-first;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $color-bright-accent;
+    }
+  }
 }
+//Step 3
+.application-location_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  .application-location_header {
+    font-weight: 300;
+    color: $color-dark-accent-first;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .application-location_select {
+    width: 10rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+
+    .application-location_option {
+      padding: 0.6rem 1.5rem;
+    }
+  }
+  .application-location_subheader {
+    font-weight: 300;
+    color: $color-dark-accent-first;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .application-help_container {
+    flex-wrap: wrap;
+    width: 25rem;
+    .application-help_button {
+      background-color: transparent;
+      font-weight: 300;
+      padding: 0.5rem 1rem;
+      margin: 0.3rem;
+      border: 1px solid;
+      cursor: pointer;
+      &:hover {
+        border: 1px solid $color-bright-accent;
+        background-color: $color-bright-accent;
+      }
+      &:focus {
+        transform: scale(0.9);
+        transition: transform 0.3s ease-in-out;
+        border: 1px solid $color-bright-accent;
+        background-color: $color-bright-accent;
+      }
+    }
+  }
+  .application-organization_input {
+    background-color: transparent;
+    padding: 0.4rem 1rem;
+    border: 1px solid;
+    width: 28rem;
+  }
+}
+
 .application-button_container {
   display: flex;
   gap: 1rem;
