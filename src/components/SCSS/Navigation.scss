@@ -24,11 +24,17 @@
 .btn-container {
   display: none;
   justify-content: flex-end;
+  align-items: center;
   gap: 1rem;
-  width: 25%;
+  width: 45%;
   height: 3rem;
   @include lg {
     display: flex;
+  }
+  .welcome-sign {
+    width: 20rem;
+    font-weight: 350;
+    font-size: 0.9rem;
   }
   .autho-btn {
     display: flex;

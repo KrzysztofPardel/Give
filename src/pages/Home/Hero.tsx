@@ -2,11 +2,17 @@ import { useNavigate } from "react-router-dom";
 import "./SCSS/Hero.scss";
 import HeroImage from "../../assets/HeroImage.jpg";
 import Decoration from "../../assets/Decoration.svg";
+import { UserAuth } from "../../context/AuthContext";
 
 const Hero = () => {
+  const { user, logout } = UserAuth();
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/signin");
+    if (user) {
+      navigate("/donate");
+    } else if (user === null) {
+      navigate("/");
+    }
   };
   return (
     <div id="start" className="hero-background">

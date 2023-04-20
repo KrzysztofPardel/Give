@@ -20,7 +20,7 @@ const Navigation = () => {
     navigate("/signup");
   };
 
-  const handleSignout = async () => {
+  const handleSignout = async (e) => {
     try {
       await logout();
       navigate("/signout");
@@ -37,7 +37,9 @@ const Navigation = () => {
     <div className="navigation-background">
       <div className="container">
         <div className="btn-container">
-          {user ? <p className="">Welcome: {user && user.email} </p> : null}
+          {user ? (
+            <p className="welcome-sign">Welcome: {user && user.email} </p>
+          ) : null}
           {user ? (
             <button onClick={handleDonate} type="button" className="autho-btn">
               Donate
@@ -61,22 +63,14 @@ const Navigation = () => {
         </div>
         <div className="homepage-links_container">
           {/* <NavLink */}
-          <Link
-            to="start"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="homepage-link"
-          >
+          <Link to="/home" spy smooth duration={500} className="homepage-link">
             Start
           </Link>
           <Link
             activeClass="active"
             to="steps"
-            spy={true}
-            smooth={true}
-            offset={-70}
+            spy
+            smooth
             duration={500}
             className="homepage-link"
           >
@@ -85,9 +79,8 @@ const Navigation = () => {
           <Link
             activeClass="active"
             to="about"
-            spy={true}
-            smooth={true}
-            offset={-70}
+            spy
+            smooth
             duration={500}
             className="homepage-link"
           >
@@ -96,9 +89,8 @@ const Navigation = () => {
           <Link
             activeClass="active"
             to="help"
-            spy={true}
-            smooth={true}
-            offset={-70}
+            spy
+            smooth
             duration={500}
             className="homepage-link"
           >
@@ -107,9 +99,8 @@ const Navigation = () => {
           <Link
             activeClass="active"
             to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
+            spy
+            smooth
             duration={500}
             className="homepage-link"
           >
@@ -117,7 +108,13 @@ const Navigation = () => {
           </Link>
         </div>
         {/* Hamburger */}
-        <div onClick={handleNav} className="mobile-navigation">
+        <div
+          onClick={handleNav}
+          onKeyDown={handleNav}
+          role="button"
+          tabIndex={0}
+          className="mobile-navigation"
+        >
           {nav ? (
             <AiOutlineClose className="mobile-icon_close" />
           ) : (
@@ -127,6 +124,9 @@ const Navigation = () => {
         {/* Mobile menu */}
         <div
           onClick={handleNav}
+          onKeyDown={handleNav}
+          role="button"
+          tabIndex={0}
           className={nav ? "mobile_NavShown" : "mobile_NavHidden"}
         >
           <div className="btn-container_mobile">
@@ -172,8 +172,8 @@ const Navigation = () => {
             {/* <NavLink */}
             <Link
               to="/start"
-              spy={true}
-              smooth={true}
+              spy
+              smooth
               offset={-70}
               duration={500}
               className="homepage-link_mobile "
@@ -183,8 +183,8 @@ const Navigation = () => {
             <Link
               activeClass="active"
               to="steps"
-              spy={true}
-              smooth={true}
+              spy
+              smooth
               offset={-70}
               duration={500}
               className="homepage-link_mobile "
@@ -194,8 +194,8 @@ const Navigation = () => {
             <Link
               activeClass="active"
               to="about"
-              spy={true}
-              smooth={true}
+              spy
+              smooth
               offset={-70}
               duration={500}
               className="homepage-link_mobile "
@@ -205,8 +205,8 @@ const Navigation = () => {
             <Link
               activeClass="active"
               to="help"
-              spy={true}
-              smooth={true}
+              spy
+              smooth
               offset={-70}
               duration={500}
               className="homepage-link_mobile "
@@ -216,8 +216,8 @@ const Navigation = () => {
             <Link
               activeClass="active"
               to="contact"
-              spy={true}
-              smooth={true}
+              spy
+              smooth
               offset={-70}
               duration={500}
               className="homepage-link_mobile "

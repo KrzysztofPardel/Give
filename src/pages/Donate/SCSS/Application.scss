@@ -154,6 +154,11 @@
   }
 }
 //Step 4
+.application-delivery_header {
+  color: $color-dark-accent-first;
+  font-weight: 300;
+  margin-top: 1.5rem;
+}
 .application-delivery_both_containers {
   display: flex;
 
@@ -166,7 +171,7 @@
     color: black;
     height: 20rem;
     justify-content: space-evenly;
-
+    color: $color-dark-accent-first;
     padding: 1rem 0rem;
     .application-delivery_subheader {
       font-weight: 350;
@@ -182,16 +187,107 @@
         margin-right: 1rem;
       }
       .application-delivery_input {
+        color: $color-dark-accent-first;
         width: 10rem;
         padding: 0.2rem 0.5rem;
         background: transparent;
         border: 1px solid;
+        &:focus {
+          outline: none;
+          background-color: $color-bright-main;
+        }
       }
     }
     .application-delivery_textarea {
       background-color: transparent;
       width: 18rem;
       height: 5rem;
+      &:focus {
+        outline: none;
+        background-color: $color-bright-main;
+      }
+    }
+  }
+}
+//Summary
+.application-summary_container {
+  .application-summary_header {
+    color: $color-dark-accent-first;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+}
+.application-summary_iconSpan_container {
+  .application-summary_iconSpan_whatsgiven_container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    .application-summary_icon {
+      height: 3rem;
+      margin-right: 1rem;
+    }
+    .application-summary_span {
+      color: black;
+      font-weight: 300;
+    }
+  }
+}
+.application-summary_both_containers {
+  display: flex;
+  margin-top: -1rem;
+}
+.application-summary_left_container,
+.application-summary_right_container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 350;
+  color: black;
+  height: 20rem;
+  justify-content: space-evenly;
+  color: $color-dark-accent-first;
+  padding: 1rem 0rem;
+  .application-summary_subheader {
+    font-weight: 350;
+  }
+  .application-summary_small_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15rem;
+
+    .application-summary_label {
+      margin-right: 1rem;
+      font-weight: 400;
+    }
+    .application-summary_span {
+      color: $color-dark-accent-first;
+      width: 10rem;
+      padding: 0.2rem 0.5rem;
+      background: transparent;
+      border: 1px solid;
+      text-align: center;
+    }
+  }
+}
+//Appreciation
+.application-appreciation_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45rem;
+  height: 25rem;
+  .application-appreciation_container_small {
+    width: 25rem;
+    text-align: center;
+    .application-appreciation_header {
+      color: $color-dark-main;
+      font-weight: 300;
+    }
+    .application-appreciation_decoration {
+      width: 12rem;
     }
   }
 }
