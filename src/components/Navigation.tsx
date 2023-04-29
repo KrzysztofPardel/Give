@@ -19,6 +19,9 @@ const Navigation = () => {
   const handleSignUp = () => {
     navigate("/signup");
   };
+  const handleHomePage = () => {
+    navigate("/home");
+  };
 
   const handleSignout = async (e) => {
     try {
@@ -63,9 +66,13 @@ const Navigation = () => {
         </div>
         <div className="homepage-links_container">
           {/* <NavLink */}
-          <Link to="/home" spy smooth duration={500} className="homepage-link">
+          <button
+            onClick={handleHomePage}
+            className="homepage-link"
+            type="button"
+          >
             Start
-          </Link>
+          </button>
           <Link
             activeClass="active"
             to="steps"
