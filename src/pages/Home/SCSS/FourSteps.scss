@@ -12,15 +12,17 @@
   flex-direction: column;
   align-items: center;
   .four-header {
-    margin: 3rem;
-    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
     font-family: $font-alt;
     font-weight: 300;
   }
+
   .button {
     @include button {
       margin-top: 2rem;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2rem;
       cursor: pointer;
       &:hover {
         transform: scale(1.1);
@@ -29,6 +31,7 @@
     }
   }
 }
+
 .four-columns-container {
   margin-top: 3rem;
   width: 100%;
@@ -53,21 +56,23 @@
   width: 100%;
   height: 20rem;
   font-family: $font-alt;
+
   .four-single_column {
-    width: 10%;
+    width: 17%;
     height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .four-text_icon {
-      height: 4rem;
+      height: 6rem;
     }
     .four-text-header {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin: 1rem;
       font-weight: 300;
       text-align: center;
@@ -78,7 +83,7 @@
       margin-bottom: 1rem;
     }
     .four-text-paragraph {
-      font-size: 0.9rem;
+      font-size: 1rem;
       text-align: center;
     }
   }

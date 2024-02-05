@@ -4,38 +4,39 @@ import { useNavigate } from "react-router-dom";
 import "./SCSS/Navigation.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { UserAuth } from "../context/AuthContext";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../Redux/authSlice";
+import { RootState } from "../Redux/store";
+
+const MENU_ITEMS = [
+  { id: 1, item: "Start", to: "home" },
+  { id: 2, item: "What & Why?", to: "steps" },
+  { id: 3, item: "About us", to: "about" },
+  { id: 4, item: "Foundations & Organizations", to: "help" },
+  { id: 5, item: "Contact", to: "contact" }
+];
 
 const Navigation = () => {
-  const { user, logout } = UserAuth();
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState<boolean>(false);
   const navigate = useNavigate();
-  const handleDonate = () => {
-    navigate("/donate");
-  };
-  const handleSignIn = () => {
-    navigate("/");
-  };
-  const handleSignUp = () => {
-    navigate("/signup");
-  };
-  const handleHomePage = () => {
-    navigate("/home");
-  };
 
-  const handleSignout = async (e) => {
+  //Redux
+  const user = useSelector((state: RootState) => state.auth.user);
+  const dispatch = useDispatch();
+
+  const handleSignout = async (e: any) => {
     try {
-      await logout();
+      dispatch(logout());
       navigate("/signout");
       console.log("You are logged out");
-    } catch (e) {
+    } catch (e: any) {
       console.log(e.message);
     }
   };
-  const handleNav = () => {
-    setNav(!nav);
-  };
 
+  //TODO: -osobne komponent
+  // make desktop navigation component
+  // make mobile navigation component
   return (
     <div className="navigation-background">
       <div className="container">
@@ -44,7 +45,11 @@ const Navigation = () => {
             <p className="welcome-sign">Welcome: {user && user.email} </p>
           ) : null}
           {user ? (
-            <button onClick={handleDonate} type="button" className="autho-btn">
+            <button
+              onClick={() => navigate("/donate")}
+              type="button"
+              className="autho-btn"
+            >
               Donate
             </button>
           ) : null}
@@ -54,70 +59,44 @@ const Navigation = () => {
             </button>
           ) : null}
           {user ? null : (
-            <button onClick={handleSignIn} type="button" className="autho-btn">
+            <button
+              onClick={() => navigate("/signin")}
+              type="button"
+              className="autho-btn"
+            >
               Sign In
             </button>
           )}
           {user ? null : (
-            <button onClick={handleSignUp} type="button" className="autho-btn">
+            <button
+              onClick={() => navigate("/signup")}
+              type="button"
+              className="autho-btn"
+            >
               Sign Up
             </button>
           )}
         </div>
         <div className="homepage-links_container">
-          {/* <NavLink */}
-          <button
-            onClick={handleHomePage}
-            className="homepage-link"
-            type="button"
-          >
-            Start
-          </button>
-          <Link
-            activeClass="active"
-            to="steps"
-            spy
-            smooth
-            duration={500}
-            className="homepage-link"
-          >
-            What & Why?
-          </Link>
-          <Link
-            activeClass="active"
-            to="about"
-            spy
-            smooth
-            duration={500}
-            className="homepage-link"
-          >
-            About Us
-          </Link>
-          <Link
-            activeClass="active"
-            to="help"
-            spy
-            smooth
-            duration={500}
-            className="homepage-link"
-          >
-            Foundation & Organization
-          </Link>
-          <Link
-            activeClass="active"
-            to="contact"
-            spy
-            smooth
-            duration={500}
-            className="homepage-link"
-          >
-            Contact
-          </Link>
+          {/* Menu Items*/}
+          {MENU_ITEMS.map(({ id, item, to }) => (
+            <Link
+              key={id}
+              activeClass="active"
+              to={to}
+              spy
+              smooth
+              duration={500}
+              className="homepage-link"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
         {/* Hamburger */}
         <div
-          onClick={handleNav}
-          onKeyDown={handleNav}
+          onClick={() => setNav(!nav)}
+          onKeyDown={() => setNav(!nav)}
           role="button"
           tabIndex={0}
           className="mobile-navigation"
@@ -130,8 +109,8 @@ const Navigation = () => {
         </div>
         {/* Mobile menu */}
         <div
-          onClick={handleNav}
-          onKeyDown={handleNav}
+          onClick={() => setNav(!nav)}
+          onKeyDown={() => setNav(!nav)}
           role="button"
           tabIndex={0}
           className={nav ? "mobile_NavShown" : "mobile_NavHidden"}
@@ -140,7 +119,7 @@ const Navigation = () => {
             {user ? <p className="">Welcome: {user && user.email} </p> : null}
             {user ? (
               <button
-                onClick={handleDonate}
+                onClick={() => navigate("/donate")}
                 type="button"
                 className="autho-btn_mobile"
               >
@@ -158,7 +137,7 @@ const Navigation = () => {
             ) : null}
             {user ? null : (
               <button
-                onClick={handleSignIn}
+                onClick={() => navigate("/signin")}
                 type="button"
                 className="autho-btn_mobile"
               >
@@ -167,7 +146,7 @@ const Navigation = () => {
             )}
             {user ? null : (
               <button
-                onClick={handleSignUp}
+                onClick={() => navigate("/signup")}
                 type="button"
                 className="autho-btn_mobile"
               >
@@ -177,60 +156,20 @@ const Navigation = () => {
           </div>
           <div className="homepage-links_container_mobile">
             {/* <NavLink */}
-            <Link
-              to="/start"
-              spy
-              smooth
-              offset={-70}
-              duration={500}
-              className="homepage-link_mobile "
-            >
-              Start
-            </Link>
-            <Link
-              activeClass="active"
-              to="steps"
-              spy
-              smooth
-              offset={-70}
-              duration={500}
-              className="homepage-link_mobile "
-            >
-              What & Why?
-            </Link>
-            <Link
-              activeClass="active"
-              to="about"
-              spy
-              smooth
-              offset={-70}
-              duration={500}
-              className="homepage-link_mobile "
-            >
-              About Us
-            </Link>
-            <Link
-              activeClass="active"
-              to="help"
-              spy
-              smooth
-              offset={-70}
-              duration={500}
-              className="homepage-link_mobile "
-            >
-              Foundation & Organization
-            </Link>
-            <Link
-              activeClass="active"
-              to="contact"
-              spy
-              smooth
-              offset={-70}
-              duration={500}
-              className="homepage-link_mobile "
-            >
-              Contact
-            </Link>
+            {MENU_ITEMS.map(({ id, item, to }) => (
+              <Link
+                key={id}
+                activeClass="active"
+                to={to}
+                spy
+                smooth
+                offset={-70}
+                duration={500}
+                className="homepage-link"
+              >
+                {item}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

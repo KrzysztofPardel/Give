@@ -1,17 +1,59 @@
 import { useNavigate } from "react-router-dom";
-
 import "./SCSS/FourSteps.scss";
 import IconOne from "../../assets/IconOne.svg";
 import IconTwo from "../../assets/IconTwo.svg";
 import IconThree from "../../assets/IconThree.svg";
 import IconFour from "../../assets/IconFour.svg";
 import Decoration from "../../assets/Decoration.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../Redux/store";
+
+const FOUR_ITEMS = [
+  {
+    id: 1,
+    img: IconOne,
+    alt: "shirt",
+    header: "Choose things",
+    paragraph: "Clothes, toys, devices and others."
+  },
+  {
+    id: 2,
+    img: IconTwo,
+    alt: "bag",
+    header: "Use trash bags",
+    paragraph: "Clothes, toys, devices and others."
+  },
+  {
+    id: 3,
+    img: IconThree,
+    alt: "magnifying glass",
+    header: "Decide where you help",
+    paragraph: "Choose a trusted place."
+  },
+  {
+    id: 4,
+    img: IconFour,
+    alt: "arrow loop",
+    header: "Order delivery",
+    paragraph: "Courier will arrive when convenient."
+  }
+];
 
 const FourSteps = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/signin");
+
+  //Redux
+  const user = useSelector((state: RootState) => state.auth.user);
+  const dispatch = useDispatch();
+
+  const handleRedirect = () => {
+    if (user) {
+      navigate("/donate");
+    } else {
+      navigate("/signin");
+    }
   };
+
   return (
     <div id="steps" className="four-background">
       <div className="four-container">
@@ -19,40 +61,16 @@ const FourSteps = () => {
         <img src={Decoration} alt="box" className="four-decoration_image" />
 
         <div className="four-columns-container">
-          <div className="four-single_column">
-            <img src={IconOne} alt="shirt" className="four-text_icon" />
-            <h2 className="four-text-header">Choose things</h2>
-            <div className="line" />
-            <p className="four-text-paragraph">
-              clothes, toys, devices and others
-            </p>
-          </div>
-          <div className="four-single_column">
-            <img src={IconTwo} alt="bag" className="four-text_icon" />
-            <h2 className="four-text-header">Pack them</h2>
-            <div className="line" />
-            <p className="four-text-paragraph">use trash bags</p>
-          </div>
-          <div className="four-single_column">
-            <img
-              src={IconThree}
-              alt="magnifying glass"
-              className="four-text_icon"
-            />
-            <h2 className="four-text-header">Decide where you help</h2>
-            <div className="line" />
-            <p className="four-text-paragraph">choose a trusted place</p>
-          </div>
-          <div className="four-single_column">
-            <img src={IconFour} alt="arrow loop" className="four-text_icon" />
-            <h2 className="four-text-header">Order delivery</h2>
-            <div className="line" />
-            <p className="four-text-paragraph">
-              courier will arrive when convenient
-            </p>
-          </div>
+          {FOUR_ITEMS.map(({ id, img, alt, header, paragraph }) => (
+            <div key={id} className="four-single_column">
+              <img src={img} alt={alt} className="four-text_icon" />
+              <h2 className="four-text-header">{header}</h2>
+              <div className="line" />
+              <p className="four-text-paragraph">{paragraph}</p>
+            </div>
+          ))}
         </div>
-        <button onClick={handleClick} type="button" className="button">
+        <button onClick={handleRedirect} type="button" className="button">
           Donate
         </button>
       </div>

@@ -1,17 +1,12 @@
 import { FC } from "react";
-import { useNavigate } from "react-router-dom";
 import "./SASS/SignOut.scss";
+import { useNavigate } from "react-router-dom";
 import Decoration from "../../assets/Decoration.svg";
-
-// type UserCredencials = {
-//   email: string;
-//   password: string;
-// }
 
 const SignOut: FC = () => {
   const navigate = useNavigate();
   const handleClick = (): void => {
-    navigate("/home");
+    navigate("/");
   };
   return (
     <div className="signOut-container">

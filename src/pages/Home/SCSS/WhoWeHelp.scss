@@ -25,18 +25,19 @@
   .who-header {
     margin-top: 3rem;
     margin-bottom: 1rem;
+    font-size: 2rem;
   }
   .who-decoration_image {
-    width: 11rem;
+    width: 15rem;
     margin-bottom: 3rem;
   }
   .who-text_paragraph {
     display: flex;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 300;
     line-height: 1.4rem;
-    width: 30rem;
+    width: 40rem;
   }
 }
 .who-button_container {
@@ -49,10 +50,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1rem;
+      font-size: 1.5rem;
       text-transform: none;
-      width: 14rem;
-      height: 4rem;
+      width: 20rem;
+      height: 5rem;
       border: none;
       &:hover {
         border: 1px solid $color-dark-main;
@@ -64,31 +65,31 @@
 }
 // Different foundations, organizations and collections
 //Foundations
-.who-foundations_container {
+.Item-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 2.5rem;
 }
 
-.foundation-text_container {
+.Item-text_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 55rem;
 
-  .foundation-header {
+  .Item-header {
     font-size: 1rem;
     font-weight: 300;
     text-align: start;
     margin-bottom: 0.25rem;
   }
-  .foundation-paragraph {
+  .Item-paragraph {
     font-size: 0.7rem;
     font-weight: 350;
     margin-bottom: 0.5rem;
   }
-  .foundation-span {
+  .Item-span {
     font-size: 0.7rem;
     font-weight: 300;
   }
@@ -101,113 +102,7 @@
   color: $color-dark-main;
 }
 
-.who-foundations_button_number_container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  .button_number {
-    padding: 0.5rem;
-    background: transparent;
-    border: 1px transparent solid;
-    font-weight: 300;
-    &:hover {
-      border: 1px solid $color-dark-main;
-      transform: scale(0.9);
-      transition: transform 0.3s ease-in-out;
-    }
-    &:focus {
-      border: 1px solid $color-dark-main;
-      transform: scale(0.9);
-      transition: transform 0.3s;
-    }
-  }
-}
-// Non-governmental organizations
-.who-non_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2.5rem;
-}
-
-.non-text_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 55rem;
-
-  .non-header {
-    font-size: 1rem;
-    font-weight: 300;
-    text-align: start;
-    margin-bottom: 0.25rem;
-  }
-  .non-paragraph {
-    font-size: 0.7rem;
-    font-weight: 350;
-    margin-bottom: 0.5rem;
-  }
-  .non-span {
-    font-size: 0.7rem;
-    font-weight: 300;
-  }
-}
-
-.who-non_button_number_container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  .button_number {
-    padding: 0.5rem;
-    background: transparent;
-    border: 1px transparent solid;
-    font-weight: 300;
-    &:hover {
-      border: 1px solid $color-dark-main;
-      transform: scale(0.9);
-      transition: transform 0.3s ease-in-out;
-    }
-    &:focus {
-      border: 1px solid $color-dark-main;
-      transform: scale(0.9);
-      transition: transform 0.3s;
-    }
-  }
-}
-//Local collections
-.who-collections_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2.5rem;
-}
-
-.collections-text_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 55rem;
-
-  .collections-header {
-    font-size: 1rem;
-    font-weight: 300;
-    text-align: start;
-    margin-bottom: 0.25rem;
-  }
-  .collections-paragraph {
-    font-size: 0.7rem;
-    font-weight: 350;
-    margin-bottom: 0.5rem;
-  }
-  .collections-span {
-    font-size: 0.7rem;
-    font-weight: 300;
-  }
-}
-
-.who-collections_button_number_container {
+.button_nr_container {
   display: flex;
   justify-content: center;
   gap: 1rem;

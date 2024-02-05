@@ -1,29 +1,29 @@
-import { useState, FC } from "react";
-import { useNavigate } from "react-router-dom";
-import { UserAuth } from "../../context/AuthContext";
+import { useState } from "react";
 import "./SASS/SignIn.scss";
+import { useNavigate } from "react-router-dom";
+// import { UserAuth } from "../../context/AuthContext";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../../Redux/authSlice";
+import { RootState } from "../../Redux/store";
 import Decoration from "../../assets/Decoration.svg";
 
-// type UserCredencials = {
-//   email: string;
-//   password: string;
-// }
-
-const SignIn: FC = () => {
-  // const [email, setEmail] = useState<>("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+const SignIn = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const navigate = useNavigate();
-  const { signIn } = UserAuth();
 
-  const handleSubmit = async (e) => {
+  //Redux
+  const authState = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     try {
-      await signIn(email, password);
-      navigate("/home");
-    } catch (e) {
+      dispatch(login({ email, password }));
+      navigate("/");
+    } catch (e: any) {
       setError(e.message);
       console.log(e.message);
     }
@@ -31,8 +31,8 @@ const SignIn: FC = () => {
 
   const handleSignIn = (): void => {
     navigate("/signin");
-    // logging in to the homepage
   };
+
   const handleSignUp = (): void => {
     navigate("/signup");
   };
@@ -40,7 +40,7 @@ const SignIn: FC = () => {
     <div className="signIn-container">
       <h1 className="signIn-header">Sign in</h1>
       <img src={Decoration} alt="" className="signIn-decoration" />
-      <form className="signIn-form">
+      <form className="signIn-form" onSubmit={handleSubmit}>
         <label className="signIn-label" htmlFor="emailInputSignIn">
           Email
           <input
@@ -62,15 +62,12 @@ const SignIn: FC = () => {
             id="passwordInputSignUp"
           />
         </label>
+        <div className="signIn-button_container">
+          <button type="submit" className="signIn-button">
+            Sign In
+          </button>
+        </div>
       </form>
-      <div className="signIn-button_container">
-        {/* <button type="button" className="signIn-button">
-          Sign Up
-        </button> */}
-        <button onClick={handleSubmit} type="button" className="signIn-button">
-          Sign In
-        </button>
-      </div>
     </div>
   );
 };

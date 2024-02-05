@@ -45,10 +45,11 @@
     padding: 3rem 3rem;
   }
   .form-text_header {
+    font-size: 2rem;
     font-weight: 350;
   }
   .form-decoration_image {
-    width: 10rem;
+    width: 15rem;
     @include lg {
       margin-top: -1.5rem;
     }
