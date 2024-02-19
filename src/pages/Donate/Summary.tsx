@@ -37,7 +37,6 @@ export const Summary = () => {
               htmlFor="application_summary_input_street"
               className="application-summary_label"
             >
-              {" "}
               Street
             </label>
             <span className="application-summary_span">Niecała 9</span>
@@ -73,12 +72,11 @@ export const Summary = () => {
             <span className="application-summary_span">17:15</span>
           </div>
           <label className="application-summary_label">
-            {" "}
             Additional information for the courier :
           </label>
           <span className="application-summary_info_span">
             Please, call when you arrive at the street. I will ask my husband to
-            help you pack the bags to the car.{" "}
+            help you pack the bags to the car.
           </span>
         </div>
       </div>

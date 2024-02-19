@@ -10,10 +10,12 @@ const BUTTONS_GENERAL = [
   { id: 2, option: 2, content: " Non-governmental organizations" },
   { id: 3, option: 3, content: "Local collections" }
 ];
+
 const BUTTONS_PAGES_TWO = [
   { id: 1, number: 1 },
   { id: 2, number: 2 }
 ];
+
 const BUTTONS_PAGES_THREE = [
   { id: 1, number: 1 },
   { id: 2, number: 2 },
