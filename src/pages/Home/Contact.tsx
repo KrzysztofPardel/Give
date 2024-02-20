@@ -52,7 +52,6 @@ const Contact = () => {
         message
       });
       console.log("Document written with ID: ", docRef.id);
-      // alert("Message has been submitted!");
       setName("");
       setEmail("");
       setMessage("");
@@ -60,6 +59,7 @@ const Contact = () => {
       alert(error.message);
     }
   };
+
   return (
     <div id="contact" className="form-container">
       <div className="form-container_left">

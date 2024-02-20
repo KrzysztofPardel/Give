@@ -1,6 +1,6 @@
 import { FC } from "react";
-import "./SASS/SignOut.scss";
 import { useNavigate } from "react-router-dom";
+import "./SASS/SignOut.scss";
 import Decoration from "../../assets/Decoration.svg";
 
 const SignOut: FC = () => {

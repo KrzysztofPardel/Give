@@ -1,11 +1,18 @@
 import { useState } from "react";
 import "./SASS/SignIn.scss";
 import { useNavigate } from "react-router-dom";
-// import { UserAuth } from "../../context/AuthContext";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../../Redux/authSlice";
 import { RootState } from "../../Redux/store";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 import Decoration from "../../assets/Decoration.svg";
+
+type SignIn = {
+  id: number;
+  email: string;
+  password: string;
+};
 
 const SignIn = () => {
   const [email, setEmail] = useState<string>("");
@@ -21,21 +28,14 @@ const SignIn = () => {
     e.preventDefault();
     setError("");
     try {
+      await signInWithEmailAndPassword(auth, email, password);
       dispatch(login({ email, password }));
       navigate("/");
     } catch (e: any) {
       setError(e.message);
-      console.log(e.message);
     }
   };
 
-  const handleSignIn = (): void => {
-    navigate("/signin");
-  };
-
-  const handleSignUp = (): void => {
-    navigate("/signup");
-  };
   return (
     <div className="signIn-container">
       <h1 className="signIn-header">Sign in</h1>

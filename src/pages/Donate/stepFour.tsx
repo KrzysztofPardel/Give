@@ -1,14 +1,18 @@
 import React, { useState, ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 import { setStep4Data } from "../../Redux/formSlice";
+import { Step4 } from "../../Redux/formSlice";
 
 export const StepFour = () => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState<string>();
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setInputValue(value);
-    dispatch(setStep4Data({}))
+
+  const handleInputChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = event.target;
+    const updatedData: Partial<Step4> = { [id]: value };
+    dispatch(setStep4Data(updatedData as Step4));
   };
 
   return (
@@ -32,7 +36,7 @@ export const StepFour = () => {
               onChange={handleInputChange}
               type="text"
               className="application-delivery_input"
-              id="application_delivery_input_street"
+              id="street"
             />
           </div>
           <div className="application-delivery_small_container">
@@ -46,7 +50,7 @@ export const StepFour = () => {
               onChange={handleInputChange}
               type="text"
               className="application-delivery_input"
-              id="application_delivery_input_city"
+              id="city"
             />
           </div>
           <div className="application-delivery_small_container">
@@ -60,7 +64,7 @@ export const StepFour = () => {
             <input
               onChange={handleInputChange}
               type="text"
-              className="application-delivery_input"
+              className="zipCode"
               id="application_delivery_input_zip"
             />
           </div>
@@ -75,7 +79,7 @@ export const StepFour = () => {
               onChange={handleInputChange}
               type="text"
               className="application-delivery_input"
-              id="application_delivery_input_phone"
+              id="number"
             />
           </div>
         </div>
@@ -90,12 +94,7 @@ export const StepFour = () => {
             >
               Date
             </label>
-            <input
-              onChange={handleInputChange}
-              type="date"
-              className="application-delivery_input"
-              id="application_delivery_input_date"
-            />
+            <input onChange={handleInputChange} type="date" className="date" />
           </div>
           <div className="application-delivery_small_container">
             <label
@@ -108,7 +107,7 @@ export const StepFour = () => {
               onChange={handleInputChange}
               type="time"
               className="application-delivery_input"
-              id="application_delivery_input_time"
+              id="time"
             />
           </div>
           <label
@@ -118,7 +117,7 @@ export const StepFour = () => {
             Additional information for the courier
             <textarea
               onChange={handleInputChange}
-              id="application_delivery_textarea_info"
+              id="courietInfo"
               className="application-delivery_textarea"
             />
           </label>

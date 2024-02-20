@@ -1,6 +1,8 @@
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 import "./SCSS/Navigation.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
@@ -26,17 +28,19 @@ const Navigation = () => {
 
   const handleSignout = async (e: any) => {
     try {
+      await signOut(auth);
       dispatch(logout());
       navigate("/signout");
       console.log("You are logged out");
     } catch (e: any) {
-      console.log(e.message);
+      console.error("Error signing out", e.message);
     }
   };
 
   //TODO: -osobne komponent
   // make desktop navigation component
   // make mobile navigation component
+
   return (
     <div className="navigation-background">
       <div className="container">

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { UserAuth } from "../../context/AuthContext";
-import "./SASS/SignUp.scss";
-import Decoration from "../../assets/Decoration.svg";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../Redux/regSlice";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import "./SASS/SignUp.scss";
+import Decoration from "../../assets/Decoration.svg";
 
 const SignUp = () => {
   const [email, setEmail] = useState<string>("");
@@ -16,14 +17,15 @@ const SignUp = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setError("");
     try {
       // dispatch the registerUser action with email and password
+      await createUserWithEmailAndPassword(auth, email, password);
       dispatch(registerUser({ email, password }));
       navigate("/");
-    } catch (e: any) {
-      setError(e.message);
-      console.log(e.message);
+    } catch (error: any) {
+      setError(error.message);
     }
   };
 

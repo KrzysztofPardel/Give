@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import "./SCSS/Application.scss";
 import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";
@@ -6,10 +7,11 @@ import StepThree from "./stepThree";
 import StepFour from "./stepFour";
 import Summary from "./Summary";
 import Appreciation from "./Appreciation";
+import { resetForm } from "../../Redux/formSlice";
 
 const Multiform = () => {
+  const dispatch = useDispatch();
   const [page, setPage] = useState<number>(1);
-
   const handleBack = () => {
     setPage((prev) => prev - 1);
   };
@@ -20,8 +22,7 @@ const Multiform = () => {
     //tutaj logika wysyłania danych do Firebase
   };
   const handleNewForm = () => {
-    //tutaj logika, która czyści wszystkie inputy
-    //i przenosi uzytkownika do kroku pierwszego
+    dispatch(resetForm);
   };
   return (
     <div className="application-background">
@@ -102,20 +103,6 @@ const Multiform = () => {
                 </button>
               </>
             )}
-            {/* <button
-              type="button"
-              className="application-button"
-              onClick={handleBack}
-            >
-              Back
-            </button>
-            <button
-              type="button"
-              className="application-button"
-              onClick={handleNext}
-            >
-              Next
-            </button> */}
           </div>
         </div>
       </div>

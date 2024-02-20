@@ -1,8 +1,4 @@
-import {
-  ActionCreatorWithPayload,
-  createSlice,
-  PayloadAction
-} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Timestamp } from "firebase/firestore";
 
 type Step1 = {
@@ -16,21 +12,7 @@ type Step3 = {
   receivers: string;
   organization: string;
 };
-type Step4 = {
-  address: string;
-  city: string;
-  zipCode: string;
-  phone: string;
-  date: string;
-  time: number;
-  courierInfo: string;
-};
-
-type Summary = {
-  bagsAmount: number;
-  typeOfHelp: string[];
-  location: string;
-  organization?: string; // Make organization optional as it's not always filled
+export type Step4 = {
   address: string;
   city: string;
   zipCode: string;
@@ -40,19 +22,33 @@ type Summary = {
   courierInfo: string;
 };
 
+// type SummaryData = {
+//   bagsAmount: number;
+//   typeOfHelp: string[];
+//   location: string;
+//   organization?: string; // Make organization optional as it's not always filled
+//   address: string;
+//   city: string;
+//   zipCode: string;
+//   phone: string;
+//   date: string;
+//   time: string;
+//   courierInfo: string;
+// };
+
 interface Form {
   step1: Step1 | null;
   step2: Step2 | null;
   step3: Step3 | null;
   step4: Step4 | null;
-  summary: Summary | null;
+  // summary: SummaryData | null;
 }
 const initialState: Form = {
   step1: null,
   step2: null,
   step3: null,
-  step4: null,
-  summary: null
+  step4: null
+  // summary: null
 };
 
 const formSlice = createSlice({
@@ -71,9 +67,15 @@ const formSlice = createSlice({
     setStep4Data: (state, action: PayloadAction<Step4>) => {
       state.step4 = action.payload;
     },
-    setSummary: (state, action: PayloadAction<Summary>) => {
-      state.summary = action.payload;
+    resetForm: (state) => {
+      state.step1 = null;
+      state.step2 = null;
+      state.step3 = null;
+      state.step4 = null;
     }
+    // setSummary: (state, action: PayloadAction<SummaryData>) => {
+    //   state.summary = action.payload;
+    // }
   }
 });
 
@@ -82,6 +84,7 @@ export const {
   setStep2Data,
   setStep3Data,
   setStep4Data,
-  setSummary
+  resetForm
+  // setSummary
 } = formSlice.actions;
 export default formSlice.reducer;
