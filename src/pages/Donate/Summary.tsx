@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 // import { setSummary } from "../../Redux/formSlice";
 
 export const Summary = () => {
-
   const formData = useSelector((state: any) => state.form);
   const { step1, step2, step3, step4 } = formData;
 
@@ -24,7 +23,7 @@ export const Summary = () => {
           {/* Data form Step 1 and Step 2 */}
           <span className="application-summary_span">
             {step1 &&
-              `I donate ${step2.basAmount}' bags and I want to help by providing ${step1.typeOfHelp}`}
+              `I donate ${step2.bagsAmount} bag(s) and I want to help by providing ${step1.typeOfHelp}`}
           </span>
         </div>
         <div className="application-summary_iconSpan_whatsgiven_container">
@@ -55,10 +54,10 @@ export const Summary = () => {
                   htmlFor="application_summary_input_street"
                   className="application-summary_label"
                 >
-                  Street -
+                  Street
                 </label>
                 <span className="application-summary_span">
-                  ${step4.street}
+                  {step4 && `${step4.address}`}
                 </span>
               </div>
               <div className="application-summary_small_container">
@@ -66,21 +65,25 @@ export const Summary = () => {
                   htmlFor="application_summary_input_city"
                   className="application-summary_label"
                 >
-                  City -
+                  City
                 </label>
-                <span className="application-summary_span">${step4.city}</span>
+                <span className="application-summary_span">
+                  {step4 && `${step4.city}`}
+                </span>
               </div>
               <div className="application-summary_small_container">
-                <label className="application-summary_label">Zip Code -</label>
+                <label className="application-summary_label">Zip Code</label>
                 <span className="application-summary_span">
-                  ${step4.zipCode}
+                  {step4 && `${step4.zipCode}`}
                 </span>
               </div>
               <div className="application-summary_small_container">
                 <label className="application-summary_label">
-                  Phone number -
+                  Phone number
                 </label>
-                <span className="application-summary_span">${step4.phone}</span>
+                <span className="application-summary_span">
+                  {step4 && `${step4.phone}`}
+                </span>
               </div>
             </div>
             <div className="application-summary_right_container">
@@ -88,18 +91,22 @@ export const Summary = () => {
                 Enter the collection date:
               </h3>
               <div className="application-summary_small_container">
-                <label className="application-summary_label">Date -</label>
-                <span className="application-summary_span">{step4.date}</span>
+                <label className="application-summary_label">Date</label>
+                <span className="application-summary_span">
+                  {step4 && `${step4.date}`}
+                </span>
               </div>
               <div className="application-summary_small_container">
-                <label className="application-summary_label">Time -</label>
-                <span className="application-summary_span">{step4.time}</span>
+                <label className="application-summary_label">Time</label>
+                <span className="application-summary_span">
+                  {step4 && `${step4.time}`}
+                </span>
               </div>
               <label className="application-summary_label">
                 Additional information for the courier:
               </label>
               <span className="application-summary_info_span">
-                ${step4.courietInfo}
+                {step4 && `${step4.courierInfo}`}
               </span>
             </div>
           </>

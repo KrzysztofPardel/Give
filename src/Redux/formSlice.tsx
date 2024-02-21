@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Timestamp } from "firebase/firestore";
 
 type Step1 = {
   typeOfHelp: string;
@@ -22,33 +21,17 @@ export type Step4 = {
   courierInfo: string;
 };
 
-// type SummaryData = {
-//   bagsAmount: number;
-//   typeOfHelp: string[];
-//   location: string;
-//   organization?: string; // Make organization optional as it's not always filled
-//   address: string;
-//   city: string;
-//   zipCode: string;
-//   phone: string;
-//   date: string;
-//   time: string;
-//   courierInfo: string;
-// };
-
 interface Form {
   step1: Step1 | null;
   step2: Step2 | null;
   step3: Step3 | null;
   step4: Step4 | null;
-  // summary: SummaryData | null;
 }
 const initialState: Form = {
   step1: null,
   step2: null,
   step3: null,
   step4: null
-  // summary: null
 };
 
 const formSlice = createSlice({
@@ -73,9 +56,6 @@ const formSlice = createSlice({
       state.step3 = null;
       state.step4 = null;
     }
-    // setSummary: (state, action: PayloadAction<SummaryData>) => {
-    //   state.summary = action.payload;
-    // }
   }
 });
 
@@ -85,6 +65,5 @@ export const {
   setStep3Data,
   setStep4Data,
   resetForm
-  // setSummary
 } = formSlice.actions;
 export default formSlice.reducer;

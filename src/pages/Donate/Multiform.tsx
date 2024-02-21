@@ -12,16 +12,20 @@ import { resetForm } from "../../Redux/formSlice";
 const Multiform = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState<number>(1);
-  const handleBack = () => {
+  const handleBack = (e: any) => {
+    e.preventDefault();
+
     setPage((prev) => prev - 1);
   };
-  const handleNext = () => {
+  const handleNext = (e: any) => {
+    e.preventDefault();
     setPage((prev) => prev + 1);
   };
-  const handleSubmitForm = () => {
+  const handleSubmitForm = (e: any) => {
     //tutaj logika wysyłania danych do Firebase
   };
-  const handleNewForm = () => {
+  const handleNewForm = (e: any) => {
+    e.preventDefault();
     dispatch(resetForm);
   };
   return (

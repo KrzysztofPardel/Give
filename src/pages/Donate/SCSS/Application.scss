@@ -72,9 +72,9 @@
     gap: 1rem;
     width: 25rem;
     font-weight: 350;
+
     .application-point_button {
       border: 1px solid black;
-      background-color: transparent;
       height: 1.5rem;
       width: 1.5rem;
       &:hover {
@@ -82,6 +82,7 @@
       }
     }
   }
+
   //Step 2
   .application-point_text_left {
     margin-right: 1rem;
@@ -128,7 +129,7 @@
     flex-wrap: wrap;
     width: 25rem;
     .application-help_button {
-      background-color: transparent;
+      // background-color: transparent;
       font-weight: 300;
       padding: 0.5rem 1rem;
       margin: 0.3rem;
@@ -239,7 +240,7 @@
 }
 .application-summary_left_container,
 .application-summary_right_container {
-  width: 30%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   font-weight: 350;
@@ -255,7 +256,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 15rem;
+    width: 20rem;
 
     .application-summary_label {
       margin-right: 1rem;
@@ -263,11 +264,13 @@
     }
     .application-summary_span {
       color: $color-dark-accent-first;
-      width: 10rem;
-      padding: 0.2rem 0.5rem;
+      width: 15rem;
+      padding: 0.5rem;
       background: transparent;
       border: 1px solid;
       text-align: center;
+      font-family: $font-alt;
+      font-weight: 300;
     }
   }
 }
@@ -305,4 +308,11 @@
       transition: transform 0.3s ease-in-out;
     }
   }
+}
+
+.chosen {
+  background: $color-bright-accent;
+  transform: scale(0.8);
+  position: relative;
+  z-index: 15;
 }

@@ -17,7 +17,7 @@ export const Foundations = ({ collectionName }: CollectionProps) => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       {allDocs.map(({ id, name, mission, items }) => (
         <>
           <div key={id} className="Item-text_container">

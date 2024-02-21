@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setStep1Data } from "../../Redux/formSlice";
 
 export const StepOne = () => {
   const dispatch = useDispatch();
+  const { step1 } = useSelector((state: any) => state.form);
+  const [activeButton, setActiveButton] = useState<string | null>(null);
 
   const handleButtonChange = (typeOfHelp: string) => {
     dispatch(setStep1Data({ typeOfHelp }));
+    setActiveButton(typeOfHelp);
   };
 
   return (
@@ -18,7 +21,12 @@ export const StepOne = () => {
           <button
             onClick={() => handleButtonChange("clothes, which can be reused")}
             type="button"
-            className="application-point_button"
+            id="control_reused"
+            className={`application-point_button ${
+              step1 && step1.typeOfHelp === "clothes, which can be reused"
+                ? "chosen"
+                : ""
+            }`}
           />
         </label>
       </div>
@@ -30,7 +38,11 @@ export const StepOne = () => {
               handleButtonChange("clothes, which cannot be reused")
             }
             type="button"
-            className="application-point_button"
+            className={`application-point_button ${
+              step1 && step1.typeOfHelp === "clothes, which cannot be reused"
+                ? "chosen"
+                : ""
+            }`}
           />
         </label>
       </div>
@@ -40,7 +52,9 @@ export const StepOne = () => {
           <button
             onClick={() => handleButtonChange("toys")}
             type="button"
-            className="application-point_button"
+            className={`application-point_button ${
+              step1 && step1.typeOfHelp === "toys" ? "chosen" : ""
+            }`}
           />
         </label>
       </div>
@@ -50,7 +64,9 @@ export const StepOne = () => {
           <button
             onClick={() => handleButtonChange("books")}
             type="button"
-            className="application-point_button"
+            className={`application-point_button ${
+              step1 && step1.typeOfHelp === "books" ? "chosen" : ""
+            }`}
           />
         </label>
       </div>
@@ -60,7 +76,9 @@ export const StepOne = () => {
           <button
             onClick={() => handleButtonChange("other")}
             type="button"
-            className="application-point_button"
+            className={`application-point_button ${
+              step1 && step1.typeOfHelp === "other" ? "chosen" : ""
+            }`}
           />
         </label>
       </div>
