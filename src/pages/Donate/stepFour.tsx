@@ -17,7 +17,7 @@ export const StepFour = () => {
     time: step4?.time || "",
     courierInfo: step4?.courierInfo || ""
   }));
-  
+
   //Handles text area input
   const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = event.target;
@@ -102,7 +102,7 @@ export const StepFour = () => {
               onChange={handleInputChange}
               value={inputValue?.zipCode}
               type="text"
-              className="zipCode"
+              className="application-delivery_input"
               id="zipCode"
             />
           </div>

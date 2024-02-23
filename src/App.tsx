@@ -7,6 +7,7 @@ import SignIn from "./pages/Authorization/SignIn";
 import SignOut from "./pages/Authorization/SignOut";
 import Donate from "./pages/Donate/Donate";
 import ProtectedRoute from "./pages/Authorization/ProtectedRoute";
+import Organize from "./pages/Organize/Organize";
 
 const App = () => {
   const element = useRoutes([
@@ -26,12 +27,19 @@ const App = () => {
       path: "/signout",
       element: <SignOut />
     },
-
     {
       path: "/donate",
       element: (
         <ProtectedRoute>
           <Donate />
+        </ProtectedRoute>
+      )
+    },
+    {
+      path: "/organize",
+      element: (
+        <ProtectedRoute>
+          <Organize />
         </ProtectedRoute>
       )
     }

@@ -27,6 +27,7 @@ interface Form {
   step3: Step3 | null;
   step4: Step4 | null;
 }
+
 const initialState: Form = {
   step1: null,
   step2: null,

@@ -26,7 +26,7 @@ const Hero = () => {
                 Donate things
               </button>
             </Link>
-            <Link to={"/signin"}>
+            <Link to={"/organize"}>
               <button type="button" className="button">
                 Organize a collection
               </button>

@@ -73,13 +73,22 @@ const WhoWeHelp: FC = () => {
           <>
             <div className="Item-container">
               {currentFoundationPage === 1 && (
-                <Foundations collectionName="f_Collections" />
+                <Foundations
+                  collectionName="f_Collections"
+                  key="f_Collections"
+                />
               )}
               {currentFoundationPage === 2 && (
-                <Foundations collectionName="f_Collections_two" />
+                <Foundations
+                  collectionName="f_Collections_two"
+                  key="f_Collections_two"
+                />
               )}
               {currentFoundationPage === 3 && (
-                <Foundations collectionName="f_Collections_three" />
+                <Foundations
+                  collectionName="f_Collections_three"
+                  key="f_Collections_three"
+                />
               )}
             </div>
 
@@ -102,10 +111,16 @@ const WhoWeHelp: FC = () => {
           <>
             <div className="Item-container">
               {organizationPage === 1 && (
-                <Organizations collectionName="o_Collections" />
+                <Organizations
+                  collectionName="o_Collections"
+                  key="o_Collections"
+                />
               )}
               {organizationPage === 2 && (
-                <Organizations collectionName="o_Collections" />
+                <Organizations
+                  collectionName="o_Collections"
+                  key="o_Collections_two"
+                />
               )}
             </div>
             <div className="button_nr_container">
@@ -127,10 +142,16 @@ const WhoWeHelp: FC = () => {
           <>
             <div className="Item-container">
               {collectionPage === 1 && (
-                <Collections collectionName="c_Collections" />
+                <Collections
+                  collectionName="c_Collections"
+                  key="c_Collections"
+                />
               )}
               {collectionPage === 2 && (
-                <Collections collectionName="c_Collections_two" />
+                <Collections
+                  collectionName="c_Collections_two"
+                  key="c_Collections_two"
+                />
               )}
             </div>
             <div className="button_nr_container">

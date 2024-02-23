@@ -19,8 +19,8 @@ export const Foundations = ({ collectionName }: CollectionProps) => {
   return (
     <div className="">
       {allDocs.map(({ id, name, mission, items }) => (
-        <>
-          <div key={id} className="Item-text_container">
+        <div key={id}>
+          <div className="Item-text_container">
             <div className="Item-header&paragraph_container">
               <h1 className="Item-header">{name}</h1>
               <p className="Item-paragraph">{mission} </p>
@@ -28,7 +28,7 @@ export const Foundations = ({ collectionName }: CollectionProps) => {
             <span className="Item-span">{items}</span>
           </div>
           <div className="line" />
-        </>
+        </div>
       ))}
     </div>
   );

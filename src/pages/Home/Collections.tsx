@@ -34,7 +34,7 @@ export const Collections = ({ collectionName }: CollectionProps) => {
           <div className="Item-text_container">
             <div className="Item-header&paragraph_container">
               <h1 className="Item-header">{name}</h1>
-              <p className="Item-paragraph">{description} </p>
+              <p className="Item-paragraph">{description}</p>
             </div>
             <span className="Item-span">{items}</span>
           </div>

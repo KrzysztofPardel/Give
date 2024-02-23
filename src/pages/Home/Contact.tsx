@@ -56,7 +56,7 @@ const Contact = () => {
       setEmail("");
       setMessage("");
     } catch (error: any) {
-      alert(error.message);
+      console.error(error.message);
     }
   };
 

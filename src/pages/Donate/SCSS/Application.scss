@@ -1,6 +1,5 @@
 // @import "../../../SCSS/reset.scss";
-@import "../../../SCSS/variables.scss";
-@import "../../../SCSS/mixins.scss";
+@import "../../../SCSS/main.scss";
 
 .application-container_top {
   display: flex;
@@ -186,6 +185,7 @@
 
       .application-delivery_label {
         margin-right: 1rem;
+        margin-bottom: 1rem;
       }
       .application-delivery_input {
         color: $color-dark-accent-first;
@@ -203,6 +203,7 @@
       background-color: transparent;
       width: 18rem;
       height: 5rem;
+      padding: 0.2rem 0.5rem;
       &:focus {
         outline: none;
         background-color: $color-bright-main;
@@ -269,8 +270,8 @@
       background: transparent;
       border: 1px solid;
       text-align: center;
-      font-family: $font-alt;
-      font-weight: 300;
+      font-family: $font-base;
+      font-weight: 600;
     }
   }
 }
@@ -309,10 +310,15 @@
     }
   }
 }
-
+// Overall
 .chosen {
   background: $color-bright-accent;
   transform: scale(0.8);
   position: relative;
   z-index: 15;
+}
+.summary-span_bold {
+  font-family: $font-base;
+  font-weight: 600;
+  // text-decoration: underline;
 }

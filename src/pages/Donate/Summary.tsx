@@ -22,8 +22,16 @@ export const Summary = () => {
           />
           {/* Data form Step 1 and Step 2 */}
           <span className="application-summary_span">
-            {step1 &&
-              `I donate ${step2.bagsAmount} bag(s) and I want to help by providing ${step1.typeOfHelp}`}
+            I donate{" "}
+            <span className="summary-span_bold">
+              {step1 && `${step2.bagsAmount}`}
+            </span>{" "}
+            bag(s)
+            {""} and I want to help by providing{" "}
+            <span className="summary-span_bold">
+              {step1 && ` ${step1.typeOfHelp}`}
+            </span>{" "}
+            .
           </span>
         </div>
         <div className="application-summary_iconSpan_whatsgiven_container">
@@ -34,9 +42,14 @@ export const Summary = () => {
           />
           {/* Data from Step 3 */}
           <span className="application-summary_span">
-            {step3 && `I desire to help people in ${step3.help}`}
-            {step3.organization &&
-              `In particular, I want to help ${step3.organization} foundation/ organization`}
+            I desire to help people in{" "}
+            <span className="summary-span_bold">
+              {step3 && ` ${step3.help}`}{" "}
+            </span>
+            and I'm going to help this particular foundation/ organization -
+            <span className="summary-span_bold">
+              {step3?.organization && ` ${step3.organization}`}
+            </span>
           </span>
         </div>
       </div>

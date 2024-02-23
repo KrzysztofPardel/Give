@@ -1,0 +1,217 @@
+@import "../../../SCSS/main.scss";
+
+//Step 1
+.multiform-stepsContainer {
+  border: 1px solid transparent;
+  height: 30rem;
+  .steps-generalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 45rem;
+    height: 30rem;
+    color: black;
+    .generalContainer-header {
+      font-size: 1.3rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+.personalDetails-data,
+.collectionDetails-data {
+  display: flex;
+  width: 40rem;
+  margin-top: 1.5rem;
+  font-weight: 300;
+
+  .personalDetails-label,
+  .collectionDetails-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 350;
+    color: $color-dark-accent-first;
+    font-family: $font-alt;
+    width: 30rem;
+  }
+  .personalDetails-input,
+  .collectionDetails-input {
+    padding: 0.5rem;
+    width: 20rem;
+  }
+}
+.chooseHelp-container {
+  flex-wrap: wrap;
+  width: 25rem;
+  .chooseHelp-header {
+    font-weight: 550;
+    color: $color-dark-accent-first;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .chooseHelp-button {
+    background: $color-bright-main;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+    border: 1px solid;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $color-bright-accent;
+      background-color: $color-bright-accent;
+    }
+    &:focus {
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+      border: 1px solid $color-bright-accent;
+      background-color: $color-bright-accent;
+    }
+  }
+}
+
+//Step 2
+.collectionDetails-data {
+  .collectionDetails-label {
+  }
+  .collectionDetails-textarea {
+    margin-top: 1rem;
+    width: 25rem;
+    height: 5rem;
+    padding: 0.5rem;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+//Summary
+.summary-main_container {
+  .summary_header {
+    color: $color-dark-accent-first;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+}
+.summary-container {
+  .container-personalData {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    margin-top: 1rem;
+    .personalData-header {
+      color: $color-dark-accent-first;
+      font-family: $font-base;
+      font-size: 1.5rem;
+    }
+    .personalData-p {
+      color: $color-dark-accent-first;
+      font-family: $font-base;
+      font-size: 1.2rem;
+    }
+    .personalData_icon {
+      height: 3rem;
+      margin-right: 1rem;
+    }
+    .personalData-span,
+    .collcectionData-span {
+      color: black;
+      font-weight: 300;
+    }
+    .bold {
+      font-family: $font-base;
+      font-weight: 600;
+    }
+  }
+}
+.summary-collectionData {
+  display: flex;
+  margin-top: -1rem;
+}
+.summary-side {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 350;
+  color: black;
+  height: 20rem;
+  justify-content: space-evenly;
+  color: $color-dark-accent-first;
+  padding: 1rem 0rem;
+  .side-header {
+    color: $color-dark-accent-first;
+    font-family: $font-base;
+    font-size: 1.5rem;
+    font-weight: 350;
+  }
+  .side-dataBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-dark-accent-first;
+    width: 20rem;
+
+    .dataBox-label {
+      margin-right: 1rem;
+      font-weight: 400;
+    }
+    .multiform-summary_span {
+      color: $color-dark-accent-first;
+      width: 15rem;
+      padding: 0.5rem;
+      background: transparent;
+      border: 1px solid;
+      text-align: center;
+      font-family: $font-base;
+      font-weight: 600;
+    }
+  }
+}
+
+//Appreciation
+.multiform-appreciation_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45rem;
+  height: 25rem;
+  .multiform-appreciation_container_small {
+    width: 25rem;
+    text-align: center;
+    .multiform-appreciation_header {
+      color: $color-dark-main;
+      font-weight: 300;
+    }
+    .multiform-appreciation_decoration {
+      width: 12rem;
+    }
+  }
+}
+
+//buttons
+.multiform-button_container {
+  display: flex;
+  gap: 1rem;
+  .multiform-button {
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid $color-dark-main;
+    &:hover {
+      border: 1px solid $color-dark-main;
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+// Overall
+.chosen {
+  background: $color-bright-accent;
+  transform: scale(0.8);
+  position: relative;
+  z-index: 15;
+}

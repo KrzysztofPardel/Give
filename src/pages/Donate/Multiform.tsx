@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./SCSS/Application.scss";
 import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";
@@ -8,25 +8,61 @@ import StepFour from "./stepFour";
 import Summary from "./Summary";
 import Appreciation from "./Appreciation";
 import { resetForm } from "../../Redux/formSlice";
+import { dbMultiform } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const Multiform = () => {
   const dispatch = useDispatch();
+  const formData = useSelector((state: any) => state.form);
+  const { step1, step2, step3, step4 } = formData;
   const [page, setPage] = useState<number>(1);
+  //previous form page
   const handleBack = (e: any) => {
     e.preventDefault();
-
     setPage((prev) => prev - 1);
   };
+  //next form page
   const handleNext = (e: any) => {
     e.preventDefault();
     setPage((prev) => prev + 1);
   };
-  const handleSubmitForm = (e: any) => {
-    //tutaj logika wysyłania danych do Firebase
+  //form submission
+  const handleSubmitForm = async (e: any) => {
+    e.preventDefault();
+
+    const addSummary = async (summaryData: any) => {
+      try {
+        const docRef = await addDoc(
+          collection(dbMultiform, "summaries"),
+          summaryData
+        );
+        console.log("Summary document written with ID", docRef.id);
+        return docRef.id;
+      } catch (e: any) {
+        console.error("Error adding summary document: ", e);
+      }
+    };
+    const summaryData = formatSummaryData();
+    await addSummary(summaryData);
+    dispatch(resetForm());
+    setPage(6);
   };
+
+  //begin a new form
   const handleNewForm = (e: any) => {
     e.preventDefault();
-    dispatch(resetForm);
+    setPage(1);
+  };
+
+  //format Summary data
+  const formatSummaryData = () => {
+    const summaryData = {
+      step1: formData.step1,
+      step2: formData.step2,
+      step3: formData.step3,
+      step4: formData.step4
+    };
+    return summaryData;
   };
   return (
     <div className="application-background">
