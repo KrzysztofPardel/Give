@@ -70,6 +70,12 @@
       background-color: $color-bright-accent;
     }
   }
+  .chosen {
+    background: $color-bright-accent;
+    transform: scale(0.8);
+    position: relative;
+    z-index: 15;
+  }
 }
 
 //Step 2
@@ -108,38 +114,39 @@
       font-family: $font-base;
       font-size: 1.5rem;
     }
-    .personalData-p {
-      color: $color-dark-accent-first;
-      font-family: $font-base;
-      font-size: 1.2rem;
-    }
+
     .personalData_icon {
       height: 3rem;
       margin-right: 1rem;
     }
     .personalData-span,
     .collcectionData-span {
-      color: black;
-      font-weight: 300;
+      color: $color-dark-accent-first;
+      font-weight: 500;
     }
     .bold {
-      font-family: $font-base;
       font-weight: 600;
     }
   }
 }
+.personalData-p {
+  color: $color-dark-accent-first;
+  font-family: $font-base;
+  font-size: 1.2rem;
+}
 .summary-collectionData {
   display: flex;
   margin-top: -1rem;
+  color: $color-dark-accent-first;
 }
 .summary-side {
   width: 35%;
   display: flex;
+  justify-content: start;
   flex-direction: column;
   font-weight: 350;
   color: black;
   height: 20rem;
-  justify-content: space-evenly;
   color: $color-dark-accent-first;
   padding: 1rem 0rem;
   .side-header {
@@ -148,27 +155,16 @@
     font-size: 1.5rem;
     font-weight: 350;
   }
-  .side-dataBox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: $color-dark-accent-first;
-    width: 20rem;
 
-    .dataBox-label {
-      margin-right: 1rem;
-      font-weight: 400;
-    }
-    .multiform-summary_span {
-      color: $color-dark-accent-first;
-      width: 15rem;
-      padding: 0.5rem;
-      background: transparent;
-      border: 1px solid;
-      text-align: center;
-      font-family: $font-base;
-      font-weight: 600;
-    }
+  .multiform-summary_span {
+    color: $color-dark-accent-first;
+    width: 15rem;
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid;
+    text-align: center;
+    font-family: $font-base;
+    font-weight: 600;
   }
 }
 
@@ -209,9 +205,3 @@
   }
 }
 // Overall
-.chosen {
-  background: $color-bright-accent;
-  transform: scale(0.8);
-  position: relative;
-  z-index: 15;
-}

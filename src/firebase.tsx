@@ -34,7 +34,7 @@ const ContactConfig = {
   messagingSenderId: "45664525901",
   appId: "1:45664525901:web:4ab01466f6fc7a9f688604"
 };
-//Multiform
+//Multiform-donate
 const MultiformConfig = {
   apiKey: "AIzaSyCd0EqB2ZmKgk8QU5x2xt9W0M92rIANSL4",
   authDomain: "give-multiformdata.firebaseapp.com",
@@ -43,6 +43,16 @@ const MultiformConfig = {
   messagingSenderId: "73959872601",
   appId: "1:73959872601:web:0a3a6fef984b372801f948",
   measurementId: "G-7LZBXS6LVR"
+};
+//Multiform-organize
+const MultiformOrganizeConfig = {
+  apiKey: "AIzaSyCMcmRP6ixtNDSCyLpWLq3c0FQh4O8YyPM",
+  authDomain: "give-multiform-organize-8938d.firebaseapp.com",
+  projectId: "give-multiform-organize-8938d",
+  storageBucket: "give-multiform-organize-8938d.appspot.com",
+  messagingSenderId: "431779636835",
+  appId: "1:431779636835:web:7b800a2cb534d0c0f2ba56",
+  measurementId: "G-KBCRPC0TCM"
 };
 
 //Initializations
@@ -56,6 +66,12 @@ export const db = getFirestore(foundationsApp);
 //Contact form
 const contactApp = initializeApp(ContactConfig, "contact");
 export const dbContact = getFirestore(contactApp);
-//Multiform
+//Multiform-donate
 const multiformApp = initializeApp(MultiformConfig, "summaries");
 export const dbMultiform = getFirestore(multiformApp);
+//Multiform-organize
+const multiformOrganizeApp = initializeApp(
+  MultiformOrganizeConfig,
+  "summaries Organize"
+);
+export const dbMultiformOrganize = getFirestore(multiformOrganizeApp);

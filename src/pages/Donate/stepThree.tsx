@@ -5,6 +5,7 @@ import { setStep3Data } from "../../Redux/formSlice";
 export const StepThree = () => {
   const dispatch = useDispatch();
   const { step3 } = useSelector((state: any) => state.form);
+  
   const [organizations, setOrganizations] = useState<string | null>(
     step3?.organization || ""
   );
@@ -12,9 +13,11 @@ export const StepThree = () => {
   const handleSelect = (help: string) => {
     dispatch(setStep3Data({ ...step3, help }));
   };
+
   const handleButtonSelect = (receivers: string) => {
     dispatch(setStep3Data({ ...step3, receivers }));
   };
+
   const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setOrganizations(value);
@@ -109,6 +112,15 @@ export const StepThree = () => {
           }`}
         >
           the elderly
+        </button>
+        <button
+          onClick={() => handleButtonSelect("anyone")}
+          type="button"
+          className={`application-help_button ${
+            step3 && step3.receivers === "anyone" ? "chosen" : ""
+          }`}
+        >
+          anyone
         </button>
       </div>
       <h3 className="application-location_subheader">

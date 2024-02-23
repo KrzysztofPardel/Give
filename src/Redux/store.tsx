@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "./authSlice";
 import regSlice from "./regSlice";
 import formSlice from "./formSlice";
+import organizeSlice from "./organizeSlice";
 
 export interface UserState {
   isLoggedIn: boolean;
@@ -11,7 +12,8 @@ const store = configureStore({
   reducer: {
     auth: authSlice,
     reg: regSlice,
-    form: formSlice
+    form: formSlice,
+    organize: organizeSlice
   }
 });
 

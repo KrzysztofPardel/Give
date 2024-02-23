@@ -1,26 +1,54 @@
-import React, { useState, ChangeEvent } from "react";
-import "./SCSS/Steps.scss";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setStep2Data } from "../../Redux/formSlice";
+import { setStep2Data } from "../../Redux/organizeSlice";
+import { Step2 } from "../../Redux/organizeSlice";
+import { RootState } from "../../Redux/store";
 
 export const StepTwo = () => {
   const dispatch = useDispatch();
-  const [amount, setAmount] = useState<number | undefined>(undefined);
-  const { step2 } = useSelector((state: any) => state.form);
+  const step2 = useSelector(
+    (state: RootState) => state.organize.step2
+  ) as Step2;
 
-  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    // const { value } = event.target;
-    // setInputValue((prevInputValue: Step4) => ({
-    //   ...prevInputValue,
-    //   courierInfo: value
-    // }));
-  };
+  const [data, setData] = useState<Step2>(() => ({
+    date: step2?.date || "",
+    time: step2?.time || "",
+    city: step2?.city || "",
+    street: step2?.street || "",
+    addInfo: step2?.addInfo || ""
+  }));
 
+  //Handles the rest of the inputs
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    const bagsAmount = parseInt(event.target.value);
-    setAmount(bagsAmount);
-    dispatch(setStep2Data({ bagsAmount }));
+    const { value, id } = event.target;
+    setData((prevInputData: Step2) => ({
+      ...prevInputData,
+      [id]: value
+    }));
+    dispatch(setStep2Data({ ...step2, [id]: value }));
+  };
+
+  //Handles date input
+  const handleDateChange = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const { value } = event.target;
+    setData((prevInputData: Step2) => ({
+      ...prevInputData,
+      date: value
+    }));
+    dispatch(setStep2Data({ ...step2, date: value }));
+  };
+
+  //Handles textarea input
+  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    event.preventDefault();
+    const { value } = event.target;
+    setData((prevInputData: Step2) => ({
+      ...prevInputData,
+      addInfo: value
+    }));
+    dispatch(setStep2Data({ ...step2, addInfo: value }));
   };
 
   return (
@@ -30,11 +58,11 @@ export const StepTwo = () => {
         <label className="collectionDetails-label" htmlFor="name">
           Date
           <input
-            // onChange={handleInputChange}
-            // value={inputValue?.address}
+            onChange={handleDateChange}
+            value={data?.date}
             type="date"
             className="collectionDetails-input"
-            id="name"
+            id="date"
           />
         </label>
       </div>
@@ -42,11 +70,11 @@ export const StepTwo = () => {
         <label className="collectionDetails-label">
           Time
           <input
-            // onChange={handleInputChange}
-            // value={inputValue?.address}
+            onChange={handleInputChange}
+            value={data?.time}
             type="time"
             className="collectionDetails-input"
-            id="lastName"
+            id="time"
           />
         </label>
       </div>
@@ -54,11 +82,11 @@ export const StepTwo = () => {
         <label className="collectionDetails-label">
           City
           <input
-            // onChange={handleInputChange}
-            // value={inputValue?.address}
+            onChange={handleInputChange}
+            value={data?.city}
             type="text"
             className="collectionDetails-input"
-            id="lastName"
+            id="city"
           />
         </label>
       </div>
@@ -66,11 +94,11 @@ export const StepTwo = () => {
         <label className="collectionDetails-label">
           Street
           <input
-            // onChange={handleInputChange}
-            // value={inputValue?.address}
+            onChange={handleInputChange}
+            value={data?.street}
             type="text"
             className="collectionDetails-input"
-            id="lastName"
+            id="street"
           />
         </label>
       </div>
@@ -79,7 +107,7 @@ export const StepTwo = () => {
           Additional information:
           <textarea
             onChange={handleTextAreaChange}
-            // value={inputValue?.courierInfo}
+            value={data?.addInfo}
             id="courierInfo"
             className="collectionDetails-textarea"
           />

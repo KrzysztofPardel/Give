@@ -2,7 +2,6 @@ import React from "react";
 import IconOne from "../../assets/IconOne.svg";
 import IconFour from "../../assets/IconFour.svg";
 import { useSelector } from "react-redux";
-// import { setSummary } from "../../Redux/formSlice";
 
 export const Summary = () => {
   const formData = useSelector((state: any) => state.form);
@@ -48,7 +47,7 @@ export const Summary = () => {
             </span>
             and I'm going to help this particular foundation/ organization -
             <span className="summary-span_bold">
-              {step3?.organization && ` ${step3.organization}`}
+              {step3.organization && ` ${step3.organization}`}
             </span>
           </span>
         </div>

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./SCSS/Multiform.scss";
+import "./SCSS/Steps.scss";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import Summary from "./Summary";
 import Appreciation from "./Appreciation";
 import { resetForm } from "../../Redux/formSlice";
-import { dbMultiform } from "../../firebase";
+import { dbMultiformOrganize } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Multiform = () => {
@@ -34,7 +35,7 @@ const Multiform = () => {
     const addSummary = async (summaryData: any) => {
       try {
         const docRef = await addDoc(
-          collection(dbMultiform, "summaries"),
+          collection(dbMultiformOrganize, "summaries Organize"),
           summaryData
         );
         console.log("Summary document written with ID", docRef.id);
@@ -43,6 +44,7 @@ const Multiform = () => {
         console.error("Error adding summary document: ", e);
       }
     };
+
     const summaryData = formatSummaryData();
     await addSummary(summaryData);
     dispatch(resetForm());
