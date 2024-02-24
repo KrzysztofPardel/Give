@@ -31,7 +31,10 @@ const SignUp = () => {
         /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/,
         "Password must contain at least one special character"
       )
-      .required("Password is required")
+      .required("Password is required"),
+    repeatpassword: Yup.string()
+      .oneOf([Yup.ref("password")], "Passwords must match")
+      .required("Please repeat the password")
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -39,8 +42,10 @@ const SignUp = () => {
     setError("");
 
     try {
-      await schema.validate({ email, password }, { abortEarly: false });
-
+      await schema.validate(
+        { email, password, repeatpassword },
+        { abortEarly: false }
+      );
       // dispatch the registerUser action with email and password
       await createUserWithEmailAndPassword(auth, email, password);
       dispatch(registerUser({ email, password }));
@@ -48,7 +53,7 @@ const SignUp = () => {
     } catch (e: any) {
       if (e instanceof Yup.ValidationError) {
         const errors = e.inner.map((err: any) => err.message);
-        setError(errors.join(","));
+        setError(errors.join(", "));
       } else {
         setError(e.messgage);
       }
@@ -59,7 +64,7 @@ const SignUp = () => {
     <div className="auth-container ">
       <h1 className="header-text">Sign Up</h1>
       <img src={Decoration} alt="" className="header-decoration" />
-      <form onSubmit={handleSubmit} className="auth-form">
+      <form onSubmit={handleSubmit} className="auth-form prolonged">
         <div className="form-inputs">
           <div className="form-input">
             <label className="data-label" htmlFor="emailInputSignUp">

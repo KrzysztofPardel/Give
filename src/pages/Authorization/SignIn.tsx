@@ -54,7 +54,7 @@ const SignIn = () => {
     } catch (e: any) {
       if (e instanceof Yup.ValidationError) {
         const errors = e.inner.map((err: any) => err.message);
-        setError(errors.join(","));
+        setError(errors.join(", "));
       } else {
         setError(e.messgage);
       }
