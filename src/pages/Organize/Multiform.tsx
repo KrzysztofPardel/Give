@@ -15,6 +15,7 @@ const Multiform = () => {
   const formData = useSelector((state: any) => state.form);
   const { step1, step2 } = formData;
   const [page, setPage] = useState<number>(1);
+  const [collectionsCounter, setCollectionsCounter] = useState<number>(0);
 
   //previous form page
   const handleBack = (e: any) => {
@@ -45,8 +46,16 @@ const Multiform = () => {
       }
     };
 
+    const CountData = (e: any) => {
+      e.preventDefault();
+      setCollectionsCounter((prevValue) => prevValue + 1);
+    };
+
     const summaryData = formatSummaryData();
     await addSummary(summaryData);
+    //add one form the the users' amount of forms
+    CountData(collectionsCounter);
+    //reseting all pages of the form
     dispatch(resetForm());
     setPage(6);
   };

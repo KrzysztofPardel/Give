@@ -3,6 +3,7 @@ import authSlice from "./authSlice";
 import regSlice from "./regSlice";
 import formSlice from "./formSlice";
 import organizeSlice from "./organizeSlice";
+import dataCounter from "./dataCounterSlice";
 
 export interface UserState {
   isLoggedIn: boolean;
@@ -13,7 +14,8 @@ const store = configureStore({
     auth: authSlice,
     reg: regSlice,
     form: formSlice,
-    organize: organizeSlice
+    organize: organizeSlice,
+    dataCounter: dataCounter
   }
 });
 

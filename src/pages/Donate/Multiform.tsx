@@ -10,22 +10,27 @@ import Appreciation from "./Appreciation";
 import { resetForm } from "../../Redux/formSlice";
 import { dbMultiform } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { incrementCounter } from "../../Redux/dataCounterSlice";
 
 const Multiform = () => {
   const dispatch = useDispatch();
   const formData = useSelector((state: any) => state.form);
   const { step1, step2, step3, step4 } = formData;
   const [page, setPage] = useState<number>(1);
+  const [donationsCounter, setDonationsCounter] = useState<number>(0);
+
   //previous form page
   const handleBack = (e: any) => {
     e.preventDefault();
     setPage((prev) => prev - 1);
   };
+
   //next form page
   const handleNext = (e: any) => {
     e.preventDefault();
     setPage((prev) => prev + 1);
   };
+
   //form submission
   const handleSubmitForm = async (e: any) => {
     e.preventDefault();
@@ -42,8 +47,17 @@ const Multiform = () => {
         console.error("Error adding summary document: ", e);
       }
     };
+
+    const CountData = () => {
+      setDonationsCounter((prevValue) => prevValue + 1);
+    };
+
     const summaryData = formatSummaryData();
     await addSummary(summaryData);
+    //add one form the the users' amount of forms
+    CountData();
+    dispatch(incrementCounter());
+    //reseting all pages of the form
     dispatch(resetForm());
     setPage(6);
   };

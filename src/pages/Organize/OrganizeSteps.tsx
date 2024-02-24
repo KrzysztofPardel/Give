@@ -44,7 +44,7 @@ const FourSteps = () => {
   };
 
   return (
-    <div id="steps" className="organizeSteps-background">
+    <div id="" className="organizeSteps-background">
       <div className="organizeSteps-container">
         <h1 className="organizeSteps-header">Just 3 easy steps</h1>
         <img

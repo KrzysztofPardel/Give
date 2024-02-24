@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SASS/SignIn.scss";
+import "./SASS/AuthStyles.scss";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../../Redux/authSlice";
@@ -7,6 +7,7 @@ import { RootState } from "../../Redux/store";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import Decoration from "../../assets/Decoration.svg";
+import * as Yup from "yup"; // Import Yup
 
 type SignIn = {
   id: number;
@@ -24,46 +25,77 @@ const SignIn = () => {
   const authState = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
 
+  //validation shema
+  const schema = Yup.object().shape({
+    email: Yup.string()
+      .email("Invalid email")
+      .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/, "Invalid email format")
+      .min(5, "Email is too short")
+      .max(30, "Email is too long")
+      .required("Email is required"),
+    password: Yup.string()
+      .matches(/[A-Z]+/, "Password must contain at least one uppercase letter")
+      .matches(/[0-9]+/, "Password must contain at least one number")
+      .matches(
+        /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/,
+        "Password must contain at least one special character"
+      )
+      .required("Password is required")
+  });
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     try {
+      await schema.validate({ email, password }, { abortEarly: false });
       await signInWithEmailAndPassword(auth, email, password);
       dispatch(login({ email, password }));
       navigate("/");
     } catch (e: any) {
-      setError(e.message);
+      if (e instanceof Yup.ValidationError) {
+        const errors = e.inner.map((err: any) => err.message);
+        setError(errors.join(","));
+      } else {
+        setError(e.messgage);
+      }
     }
   };
 
   return (
-    <div className="signIn-container">
-      <h1 className="signIn-header">Sign in</h1>
-      <img src={Decoration} alt="" className="signIn-decoration" />
-      <form className="signIn-form" onSubmit={handleSubmit}>
-        <label className="signIn-label" htmlFor="emailInputSignIn">
-          Email
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="myemail@gmail.com"
-            className="signIn-input"
-            id="emailInputSignIn"
-          />
-        </label>
-        <label className="signIn-label" htmlFor="passwordInputSignUp">
-          Hasło
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            className="signIn-input"
-            id="passwordInputSignUp"
-          />
-        </label>
-        <div className="signIn-button_container">
-          <button type="submit" className="signIn-button">
+    <div className="auth-container ">
+      <h1 className="header-text">Sign in</h1>
+      <img src={Decoration} alt="" className="header-decoration" />
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="form-inputs">
+          <div className="form-input">
+            <label className="data-label " htmlFor="emailInputSignIn">
+              Email
+            </label>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="myemail@gmail.com"
+              className="data-input"
+              id="emailInputSignIn"
+            />
+          </div>
+          <div className="form-input">
+            <label className="data-label" htmlFor="passwordInputSignUp">
+              Hasło
+            </label>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              className="data-input"
+              id="passwordInputSignUp"
+            />
+          </div>
+          {error && <p className="auth-error-message">{error}</p>}
+        </div>
+        <div className="auth-button_container">
+          <button type="submit" className="auth-button">
             Sign In
           </button>
         </div>

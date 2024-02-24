@@ -11,11 +11,11 @@ import { logout } from "../Redux/authSlice";
 import { RootState } from "../Redux/store";
 
 const MENU_ITEMS = [
-  { id: 1, item: "Start", to: "home" },
-  { id: 2, item: "What & Why?", to: "steps" },
-  { id: 3, item: "About us", to: "about" },
-  { id: 4, item: "Foundations & Organizations", to: "help" },
-  { id: 5, item: "Contact", to: "contact" }
+  { id: 1, to: "start", item: "Start" },
+  { id: 2, to: "steps", item: "What & Why?" },
+  { id: 3, to: "about", item: "About us" },
+  { id: 4, to: "help", item: "Foundations & Organizations" },
+  { id: 5, to: "contact", item: "Contact" }
 ];
 
 const Navigation = () => {
@@ -112,6 +112,13 @@ const Navigation = () => {
           )}
         </div>
         {/* Mobile menu */}
+
+        {/* 
+        
+        
+        
+        
+        */}
         <div
           onClick={() => setNav(!nav)}
           onKeyDown={() => setNav(!nav)}
@@ -160,20 +167,20 @@ const Navigation = () => {
           </div>
           <div className="homepage-links_container_mobile">
             {/* <NavLink */}
-            {MENU_ITEMS.map(({ id, item, to }) => (
+            {/* {MENU_ITEMS.map(({ id, item, to }) => (
               <Link
                 key={id}
                 activeClass="active"
                 to={to}
                 spy
-                smooth
+                smooth={true}
                 offset={-70}
                 duration={500}
                 className="homepage-link"
               >
                 {item}
               </Link>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>

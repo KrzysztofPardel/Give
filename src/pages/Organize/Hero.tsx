@@ -8,16 +8,14 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div id="start" className="hero-background">
+    <div id="" className="hero-background">
       <div className="hero-container">
         <div className="image-container">
           <img src={HeroImage} alt="box" className="hero-image" />
         </div>
         <div className="text-container">
           <p className="text-paragraph main">Organize a collection</p>
-          <p className="text-paragraph">
-            Be a host of a collection
-          </p>
+          <p className="text-paragraph">Be a host of a collection</p>
           <div className="text-decoration">
             <img src={Decoration} alt="box" className="decoration-image" />
           </div>
