@@ -3,7 +3,7 @@
 //Step 1
 .multiform-stepsContainer {
   border: 1px solid transparent;
-  height: 30rem;
+  height: 100%;
   .steps-generalContainer {
     display: flex;
     flex-direction: column;
@@ -16,13 +16,14 @@
       font-size: 1.3rem;
       margin-top: 3rem;
       margin-bottom: 1rem;
+      font-family: $font-alt;
     }
   }
 }
 .personalDetails-data,
 .collectionDetails-data {
   display: flex;
-  width: 40rem;
+  width: 30rem;
   margin-top: 1.5rem;
   font-weight: 300;
 
@@ -40,7 +41,7 @@
   .personalDetails-input,
   .collectionDetails-input {
     padding: 0.5rem;
-    width: 20rem;
+    width: 40rem;
   }
 }
 .chooseHelp-container {
@@ -48,9 +49,10 @@
   width: 25rem;
   .chooseHelp-header {
     font-weight: 550;
+    font-family: $font-alt;
     color: $color-dark-accent-first;
     margin-top: 2.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   .chooseHelp-button {
     background: $color-bright-main;
@@ -79,13 +81,25 @@
 }
 
 //Step 2
-.collectionDetails-data {
-  .collectionDetails-label {
+.multiform-text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 35rem;
+  height: 30rem;
+  color: black;
+  .multiform-text_header {
+    font-size: 1.3rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
+}
+.collectionDetails-data {
   .collectionDetails-textarea {
     margin-top: 1rem;
-    width: 25rem;
-    height: 5rem;
+    width: 40rem;
+    height: 10rem;
     padding: 0.5rem;
     &:focus {
       outline: none;
@@ -95,6 +109,7 @@
 
 //Summary
 .summary-main_container {
+  font-family: $font-alt;
   .summary_header {
     color: $color-dark-accent-first;
     font-weight: 400;
@@ -103,37 +118,45 @@
   }
 }
 .summary-container {
-  .container-personalData {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1rem;
-    margin-top: 1rem;
-    .personalData-header {
-      color: $color-dark-accent-first;
-      font-family: $font-base;
-      font-size: 1.5rem;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+  margin-top: 2rem;
 
-    .personalData_icon {
-      height: 3rem;
-      margin-right: 1rem;
-    }
-    .personalData-span,
-    .collcectionData-span {
-      color: $color-dark-accent-first;
-      font-weight: 500;
-    }
-    .bold {
-      font-weight: 600;
-    }
+  .personalData-header {
+    color: $color-dark-accent-first;
+    font-weight: 350;
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
+  .personalData_icon {
+    height: 3rem;
+    margin-right: 1rem;
   }
 }
-.personalData-p {
-  color: $color-dark-accent-first;
-  font-family: $font-base;
-  font-size: 1.2rem;
+
+.personalData-dataBox {
+  width: 20em;
+  display: flex;
+  justify-content: space-between;
+
+  .personalData-p {
+    color: $color-dark-accent-first;
+    font-family: $font-alt;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+  .data-span {
+    color: $color-dark-accent-first;
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+  .bold {
+    font-weight: 600;
+  }
 }
+
 .summary-collectionData {
   display: flex;
   margin-top: -1rem;
@@ -166,6 +189,9 @@
     font-family: $font-base;
     font-weight: 600;
   }
+}
+.bold {
+  font-weight: 600;
 }
 
 //Appreciation

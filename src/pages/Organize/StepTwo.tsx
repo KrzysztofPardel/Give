@@ -57,61 +57,55 @@ export const StepTwo = () => {
       <div className="collectionDetails-data">
         <label className="collectionDetails-label" htmlFor="name">
           Date
-          <input
-            onChange={handleDateChange}
-            value={data?.date}
-            type="date"
-            className="collectionDetails-input"
-            id="date"
-          />
         </label>
+        <input
+          onChange={handleDateChange}
+          value={data?.date}
+          type="date"
+          className="collectionDetails-input"
+          id="date"
+        />
       </div>
       <div className="collectionDetails-data">
-        <label className="collectionDetails-label">
-          Time
-          <input
-            onChange={handleInputChange}
-            value={data?.time}
-            type="time"
-            className="collectionDetails-input"
-            id="time"
-          />
-        </label>
+        <label className="collectionDetails-label">Time</label>
+        <input
+          onChange={handleInputChange}
+          value={data?.time}
+          type="time"
+          className="collectionDetails-input"
+          id="time"
+        />
       </div>
       <div className="collectionDetails-data">
-        <label className="collectionDetails-label">
-          City
-          <input
-            onChange={handleInputChange}
-            value={data?.city}
-            type="text"
-            className="collectionDetails-input"
-            id="city"
-          />
-        </label>
+        <label className="collectionDetails-label">City</label>
+        <input
+          onChange={handleInputChange}
+          value={data?.city}
+          type="text"
+          className="collectionDetails-input"
+          id="city"
+        />
       </div>
       <div className="collectionDetails-data">
-        <label className="collectionDetails-label">
-          Street
-          <input
-            onChange={handleInputChange}
-            value={data?.street}
-            type="text"
-            className="collectionDetails-input"
-            id="street"
-          />
-        </label>
+        <label className="collectionDetails-label">Street</label>
+        <input
+          onChange={handleInputChange}
+          value={data?.street}
+          type="text"
+          className="collectionDetails-input"
+          id="street"
+        />
       </div>
       <div className="collectionDetails-data">
         <label htmlFor="courierInfo" className="collectionDetails-label">
           Additional information:
-          <textarea
-            onChange={handleTextAreaChange}
-            value={data?.addInfo}
-            id="courierInfo"
-            className="collectionDetails-textarea"
-          />
         </label>
+        <textarea
+          onChange={handleTextAreaChange}
+          value={data?.addInfo}
+          id="courierInfo"
+          className="collectionDetails-textarea"
+        />
       </div>
     </div>
   );

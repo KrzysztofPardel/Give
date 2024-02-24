@@ -39,38 +39,38 @@ export const StepOne = () => {
       <div className="personalDetails-data">
         <label className="personalDetails-label" htmlFor="name">
           Name
-          <input
-            onChange={handleInputChange}
-            value={inputValue?.name}
-            type="text"
-            className="personalDetails-input"
-            id="name"
-          />
         </label>
+        <input
+          onChange={handleInputChange}
+          value={inputValue?.name}
+          type="text"
+          className="personalDetails-input"
+          id="name"
+        />
       </div>
       <div className="personalDetails-data">
         <label className="personalDetails-label" htmlFor="lastName">
           Last name
-          <input
-            onChange={handleInputChange}
-            value={inputValue?.lastName}
-            type="text"
-            className="personalDetails-input"
-            id="lastName"
-          />
         </label>
+        <input
+          onChange={handleInputChange}
+          value={inputValue?.lastName}
+          type="text"
+          className="personalDetails-input"
+          id="lastName"
+        />
       </div>
       <div className="personalDetails-data">
         <label className="personalDetails-label" htmlFor="phoneNumber">
           Phone
-          <input
-            onChange={handleInputChange}
-            value={inputValue?.phoneNumber}
-            type="text"
-            className="personalDetails-input"
-            id="phoneNumber"
-          />
         </label>
+        <input
+          onChange={handleInputChange}
+          value={inputValue?.phoneNumber}
+          type="text"
+          className="personalDetails-input"
+          id="phoneNumber"
+        />
       </div>
       <div className="chooseHelp-container">
         <h3 className="chooseHelp-header">Who are you planning to help?</h3>
