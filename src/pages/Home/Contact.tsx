@@ -1,63 +1,98 @@
-import { useState, useRef, FormEvent } from "react";
+import { useState, useRef, FormEvent, useEffect } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { dbContact } from "../../firebase";
 import "./SCSS/Contact.scss";
 import Decoration from "../../assets/Decoration.svg";
 import BgForm from "../../assets/BgForm.jpg";
 import emailjs from "@emailjs/browser";
+import * as Yup from "yup"; // Import Yup
 
 const Contact = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const [showSentConfirmation, setShowSentConfirmation] =
     useState<boolean>(false);
   const form = useRef<null>(null); //initial ref value changed from undefined to ref
 
+  //validation shema
+  const schema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, "Name is too short")
+      .max(30, "Name is too long")
+      .required("Name is required"),
+    email: Yup.string()
+      .email("Invalid email")
+      .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/, "Invalid email format")
+      .min(5, "Email is too short")
+      .max(55, "Email is too long")
+      .required("Email is required"),
+    message: Yup.string()
+      .min(5, "Message is too short- min. 2 characters")
+      .max(150, "Message is too long- max. 150 characters")
+      .required("Message is required")
+  });
+
+  //show confirmation that the email has been sent
+  const showConfirmation = () => {
+    setShowSentConfirmation(true);
+    setTimeout(() => {
+      setShowSentConfirmation(false);
+    }, 5000);
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (form.current) {
-      //form cannot be null
-      emailjs
-        .sendForm("service_gjk9kuj", "template_jszkhc6", form.current, {
-          publicKey: "7ZBJB5X4YZcVd9q9X"
-        })
-        .then(
-          (result) => {
-            console.log("Email has been sent successfully.", result.text);
-            showConfirmation();
-          },
-          (error: any) => {
-            console.log("Email has NOT been sent due to an error.", error.text);
-          }
-        );
-    } else {
-      console.log("Form reference is null.");
-    }
-
-    const showConfirmation = () => {
-      setShowSentConfirmation(true);
-      setTimeout(() => {
-        setShowSentConfirmation(
-          (prevShowIConfirmation) => !prevShowIConfirmation
-        );
-      }, 5000);
-    };
-
+    setError(""); // Reset error state
+    //validation and adding data to Firebase
     try {
-      const docRef = await addDoc(collection(dbContact, "contacts"), {
-        name,
-        email,
-        message
-      });
-      console.log("Document written with ID: ", docRef.id);
-      setName("");
-      setEmail("");
-      setMessage("");
+      await schema.validate({ name, email, message }, { abortEarly: false });
+      if (form.current) {
+        // Sending email through emailJS
+        emailjs
+          .sendForm("service_gjk9kuj", "template_jszkhc6", form.current, {
+            publicKey: "7ZBJB5X4YZcVd9q9X"
+          })
+          .then(
+            (result) => {
+              console.log("Email has been sent successfully.", result.text);
+              showConfirmation(); // Show confirmation if email is sent successfully
+            },
+            (error: any) => {
+              console.log(
+                "Email has NOT been sent due to an error.",
+                error.text
+              );
+            }
+          );
+
+        // Add data to Firebase
+        const docRef = await addDoc(collection(dbContact, "contacts"), {
+          name,
+          email,
+          message
+        });
+
+        console.log("Document written with ID: ", docRef.id);
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
     } catch (error: any) {
-      console.error(error.message);
+      if (error instanceof Yup.ValidationError) {
+        const errors = error.inner.map((err: any) => err.message);
+        setError(errors.join(", "));
+      } else {
+        setError(error.messgage);
+      }
     }
+    //show confirmation message once the error was cleared out
+    useEffect(() => {
+      if (!error) {
+        showConfirmation();
+      }
+    }, [error]);
   };
 
   return (
@@ -77,7 +112,7 @@ const Contact = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 type="text"
-                placeholder="e.g. John Smith"
+                placeholder="John Smith"
                 className="form-input"
                 id="nameForm"
               />
@@ -110,6 +145,8 @@ const Contact = () => {
               id="messageForm"
             />
           </label>
+          {error && <p className="auth-error-message">{error}</p>}
+
           <div className="form-container_button">
             <button type="submit" className="form-button">
               Submit

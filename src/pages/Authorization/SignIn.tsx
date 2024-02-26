@@ -31,15 +31,15 @@ const SignIn = () => {
       .email("Invalid email")
       .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/, "Invalid email format")
       .min(5, "Email is too short")
-      .max(30, "Email is too long")
+      .max(55, "Email is too long")
       .required("Email is required"),
     password: Yup.string()
       .matches(/[A-Z]+/, "Password must contain at least one uppercase letter")
       .matches(/[0-9]+/, "Password must contain at least one number")
-      .matches(
-        /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/,
-        "Password must contain at least one special character"
-      )
+      // .matches(
+      //   /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/,
+      //   "Password must contain at least one special character"
+      // )
       .required("Password is required")
   });
 
