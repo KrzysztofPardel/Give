@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setStep1Data } from "../../Redux/formSlice";
 
@@ -6,10 +6,12 @@ export const StepOne = () => {
   const dispatch = useDispatch();
   const { step1 } = useSelector((state: any) => state.form);
   const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [error, setError] = useState<string>("");
 
   const handleButtonChange = (typeOfHelp: string) => {
     dispatch(setStep1Data({ typeOfHelp }));
     setActiveButton(typeOfHelp);
+    setError("");
   };
 
   return (
@@ -82,6 +84,9 @@ export const StepOne = () => {
           />
         </label>
       </div>
+      {/* {step1.typeOfHelp === "" && (
+        <p className="error-message">You need to pick at least one option!</p>
+      )} */}
     </div>
   );
 };

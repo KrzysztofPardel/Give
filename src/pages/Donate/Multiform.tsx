@@ -18,6 +18,11 @@ const Multiform = () => {
   const { step1, step2, step3, step4 } = formData;
   const [page, setPage] = useState<number>(1);
   const [donationsCounter, setDonationsCounter] = useState<number>(0);
+  const [isStepTwoCompleted, setIsStepTwoCompleted] = useState<boolean>(false);
+  const [isStepThreeCompleted, setIsStepThreeCompleted] =
+    useState<boolean>(false);
+  const [isStepFourCompleted, setIsStepFourCompleted] =
+    useState<boolean>(false);
 
   //previous form page
   const handleBack = (e: any) => {
@@ -28,8 +33,59 @@ const Multiform = () => {
   //next form page
   const handleNext = (e: any) => {
     e.preventDefault();
+    //sparks off the functions which enable Next button
+    // handleStepTwoCompleted();
+    // handleStepThreeCompleted();
+    // handleStepFourCompleted();
+    // if (step1 && step1.typeOfHelp) {
+    //   return setPage(2);
+    // } else if (isStepTwoCompleted) {
+    //   return setPage(3);
+    // } else if (isStepThreeCompleted) {
+    //   return setPage(2);
+    // } else if (isStepFourCompleted) {
+    //   return page === 5;
+    // }
     setPage((prev) => prev + 1);
   };
+
+  // const handleStepTwoCompleted = () => {
+  //   if (step2 && step2.bagsAmount) {
+  //     return setIsStepTwoCompleted(true);
+  //   }
+  // };
+
+  // const handleStepThreeCompleted = () => {
+  //   const help = step3.help;
+  //   const receivers = step3.receivers;
+  //   const organizations = step3.organizations;
+  //   if (step3 && help && receivers && organizations) {
+  //     return setIsStepThreeCompleted(true);
+  //   }
+  // };
+
+  // const handleStepFourCompleted = () => {
+  //   const address = step4.address;
+  //   const city = step4.city;
+  //   const zipCode = step4.zipCode;
+  //   const phone = step4.phone;
+  //   const date = step4.date;
+  //   const time = step4.time;
+  //   const courierInfo = step4.courierInfo;
+
+  //   if (
+  //     step4 &&
+  //     address &&
+  //     city &&
+  //     zipCode &&
+  //     phone &&
+  //     date &&
+  //     time &&
+  //     courierInfo
+  //   ) {
+  //     return setIsStepFourCompleted(true);
+  //   }
+  // };
 
   //form submission
   const handleSubmitForm = async (e: any) => {
@@ -59,6 +115,11 @@ const Multiform = () => {
     dispatch(incrementCounter());
     //reseting all pages of the form
     dispatch(resetForm());
+    //Cealr the states for completed steps
+    // setIsStepTwoCompleted(false);
+    // setIsStepThreeCompleted(false);
+    // setIsStepFourCompleted(false);
+
     setPage(6);
   };
 
@@ -105,6 +166,7 @@ const Multiform = () => {
                   type="button"
                   className="application-button"
                   onClick={handleNext}
+                  disabled={!step1 || !step1.typeOfHelp}
                 >
                   Next
                 </button>
