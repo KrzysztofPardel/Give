@@ -1,6 +1,4 @@
-// import { useState } from "react";
 import { useRoutes } from "react-router-dom";
-// import "./App.scss";
 import Home from "./pages/Home/Home";
 import SignUp from "./pages/Authorization/SignUp";
 import SignIn from "./pages/Authorization/SignIn";

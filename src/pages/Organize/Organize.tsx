@@ -1,18 +1,21 @@
-import Footer from "../../components/Footer";
-import Hero from "../Organize/Hero";
-import OrganizeSteps from "./OrganizeSteps";
-import Multiform from "./Multiform";
-import Contact from "../Home/Contact";
+import { Suspense, lazy } from "react";
+import Loading from "../../Errors/Loading";
+
+const HeroLazy = lazy(() => import("./Hero"));
+const OrganizeStepsLazy = lazy(() => import("./OrganizeSteps"));
+const MultiformLazy = lazy(() => import("./Multiform"));
+const ContactLazy = lazy(() => import("../Home/Contact"));
+const FooterLazy = lazy(() => import("../../components/Footer"));
 
 const Organize = () => {
   return (
-    <>
-      <Hero />
-      <OrganizeSteps />
-      <Multiform />
-      <Contact />
-      <Footer />
-    </>
+    <Suspense fallback={<Loading />}>
+      <HeroLazy />
+      <OrganizeStepsLazy />
+      <MultiformLazy />
+      <ContactLazy />
+      <FooterLazy />
+    </Suspense>
   );
 };
 

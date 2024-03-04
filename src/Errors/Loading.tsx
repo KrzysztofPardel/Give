@@ -1,4 +1,4 @@
-import "./SCSS/errors.scss";
+import "./errors.scss";
 import { FaUndoAlt } from "react-icons/fa";
 
 const Loading = () => {
