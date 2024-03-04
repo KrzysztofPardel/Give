@@ -23,7 +23,6 @@ const Multiform = () => {
     useState<boolean>(false);
   const [isStepFourCompleted, setIsStepFourCompleted] =
     useState<boolean>(false);
-
   //previous form page
   const handleBack = (e: any) => {
     e.preventDefault();

@@ -1,16 +1,18 @@
-import DonateHero from "./Hero";
-import Multiform from "./Multiform";
-import Form from "../Home/Contact";
-import Footer from "../../components/Footer";
+import { Suspense, lazy } from "react";
+import Loading from "../../Errors/Loading";
+const HeroLazy = lazy(() => import("./Hero"));
+const MultiformLazy = lazy(() => import("./Multiform"));
+const ContactLazy = lazy(() => import("../Home/Contact"));
+const FooterLazy = lazy(() => import("../Home/Contact"));
 
 const Donate = () => {
   return (
-    <>
-      <DonateHero />
-      <Multiform />
-      <Form />
-      <Footer />
-    </>
+    <Suspense fallback={<Loading />}>
+      <HeroLazy />
+      <MultiformLazy />
+      <ContactLazy />
+      <FooterLazy />
+    </Suspense>
   );
 };
 

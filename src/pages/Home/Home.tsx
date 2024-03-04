@@ -1,22 +1,25 @@
-import Footer from "../../components/Footer";
-import AboutUs from "./AboutUs";
-import FourSteps from "./FourSteps";
-import Hero from "./Hero";
-import ThreeColumns from "./ThreeColumns";
-import WhoWeHelp from "./WhoWeHelp";
-import Contact from "./Contact";
+import { Suspense, lazy } from "react";
+import Loading from "../../Errors/Loading";
+
+const HeroLazy = lazy(() => import("./Hero"));
+const ThreeColumnsLazy = lazy(() => import("./ThreeColumns"));
+const FourStepsLazy = lazy(() => import("./FourSteps"));
+const AboutLazy = lazy(() => import("./AboutUs"));
+const WhoWeHelpLazy = lazy(() => import("./WhoWeHelp"));
+const ContactLazy = lazy(() => import("../Home/Contact"));
+const FooterLazy = lazy(() => import("../Home/Contact"));
 
 const Home = () => {
   return (
-    <>
-      <Hero />
-      <ThreeColumns />
-      <FourSteps />
-      <AboutUs />
-      <WhoWeHelp />
-      <Contact />
-      <Footer />
-    </>
+    <Suspense fallback={<Loading />}>
+      <HeroLazy />
+      <ThreeColumnsLazy />
+      <FourStepsLazy />
+      <AboutLazy />
+      <WhoWeHelpLazy />
+      <ContactLazy />
+      <FooterLazy />
+    </Suspense>
   );
 };
 
