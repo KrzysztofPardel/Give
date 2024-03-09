@@ -1,4 +1,5 @@
 import { Link, animateScroll as scroll } from "react-scroll";
+import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
@@ -11,11 +12,11 @@ import { logout } from "../Redux/authSlice";
 import { RootState } from "../Redux/store";
 
 const MENU_ITEMS = [
-  { id: 1, to: "start", item: "Start" },
-  { id: 2, to: "steps", item: "What & Why?" },
-  { id: 3, to: "about", item: "About us" },
-  { id: 4, to: "help", item: "Foundations & Organizations" },
-  { id: 5, to: "contact", item: "Contact" }
+  { id: 1, to: "/#start", item: "Start" },
+  { id: 2, to: "/#steps", item: "What & Why?" },
+  { id: 3, to: "/#about", item: "About us" },
+  { id: 4, to: "/#help", item: "Foundations & Organizations" },
+  { id: 5, to: "/#contact", item: "Contact" }
 ];
 
 const Navigation = () => {
@@ -84,17 +85,17 @@ const Navigation = () => {
         <div className="homepage-links_container">
           {/* Menu Items*/}
           {MENU_ITEMS.map(({ id, item, to }) => (
-            <Link
+            <HashLink
               key={id}
-              activeClass="active"
+              // activeClass="active"
               to={to}
-              spy
+              // spy
               smooth
-              duration={500}
+              // duration={500}
               className="homepage-link"
             >
               {item}
-            </Link>
+            </HashLink>
           ))}
         </div>
         {/* Hamburger */}

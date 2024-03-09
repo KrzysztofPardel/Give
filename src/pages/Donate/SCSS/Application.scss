@@ -43,6 +43,9 @@
 .application-point_invisible_container {
   border: 1px solid transparent;
   height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .application-text_container {
     display: flex;
     flex-direction: column;

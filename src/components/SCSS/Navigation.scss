@@ -82,7 +82,6 @@
     }
   }
 }
-
 .homepage-links_container {
   display: none;
   justify-content: flex-end;
@@ -94,6 +93,8 @@
   .homepage-link {
     display: flex;
     justify-content: space-between;
+    text-decoration: none;
+    color: black;
     align-items: center;
     font-size: 1.2rem;
     margin: 0.5rem;
