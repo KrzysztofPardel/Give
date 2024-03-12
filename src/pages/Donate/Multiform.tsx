@@ -7,6 +7,8 @@ import StepThree from "./stepThree";
 import StepFour from "./stepFour";
 import Summary from "./Summary";
 import Appreciation from "./Appreciation";
+import { useNavigate } from "react-router-dom";
+import { RootState } from "../../Redux/store";
 import { resetForm } from "../../Redux/formSlice";
 import { dbMultiform } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
@@ -14,7 +16,9 @@ import { incrementCounter } from "../../Redux/dataCounterSlice";
 
 const Multiform = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const formData = useSelector((state: any) => state.form);
+  const user = useSelector((state: RootState) => state.auth.user);
   const { step1, step2, step3, step4 } = formData;
   const [page, setPage] = useState<number>(1);
   const [donationsCounter, setDonationsCounter] = useState<number>(0);
@@ -74,6 +78,14 @@ const Multiform = () => {
     setPage(1);
   };
 
+  const handleRedirect = () => {
+    if (user) {
+      navigate("/organize");
+    } else {
+      navigate("/signin");
+    }
+  };
+
   //format Summary data
   const formatSummaryData = () => {
     const summaryData = {
@@ -105,7 +117,7 @@ const Multiform = () => {
             {page === 6 && <Appreciation />}
           </div>
           <div className="application-button_container">
-            {page > 1 && page < 5 && <></>}
+            {/* {page > 1 && page < 5 && <></>} */}
             {page === 5 && (
               <>
                 <button
@@ -136,6 +148,14 @@ const Multiform = () => {
               </>
             )}
           </div>
+        </div>
+        <div className="application-redirection">
+          <p className="redirection-paragraph">
+            Would you like to organize a collection?
+          </p>
+          <button onClick={handleRedirect} type="button" className="button">
+            Organize
+          </button>
         </div>
       </div>
     </div>
