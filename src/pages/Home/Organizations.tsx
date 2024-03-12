@@ -1,7 +1,8 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { db } from "../../firebase";
 import { Collection, CollectionProps } from "./Collections";
+//Firebase
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 
 // "o_Collections"
 export const Organizations = ({ collectionName }: CollectionProps) => {

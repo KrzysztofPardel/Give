@@ -1,15 +1,10 @@
-import React from "react";
 import "./errors.scss";
 import Decoration from "../assets/Decoration.svg";
-import { LuServerCrash } from "react-icons/lu";
 
 const Error500 = () => {
   return (
     <div className="error-container">
       <div className="error-smaller_container">
-        {/* <div className="error-icon_container">
-          <LuServerCrash className="error-icon" />
-        </div> */}
         <h1 className="error-title">Error 500</h1>
         <div className="donate-text_decoration">
           <img src={Decoration} alt="box" className="donate-decoration_image" />

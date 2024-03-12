@@ -1,12 +1,16 @@
 import { useState } from "react";
-import "./SASS/AuthStyles.scss";
 import { useNavigate } from "react-router-dom";
+//styles
+import "./SASS/AuthStyles.scss";
+import Decoration from "../../assets/Decoration.svg";
+//Redux
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../../Redux/authSlice";
 import { RootState } from "../../Redux/store";
+//Firebase
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import Decoration from "../../assets/Decoration.svg";
+//validation
 import * as Yup from "yup"; // Import Yup
 
 type SignIn = {

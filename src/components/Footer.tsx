@@ -1,8 +1,9 @@
 import "./SCSS/Footer.scss";
 import { Link } from "react-router-dom";
-
+//icons
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { BsPinterest } from "react-icons/bs";
+
 const Footer = () => {
   return (
     <div className="footer_container">

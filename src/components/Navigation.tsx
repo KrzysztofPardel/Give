@@ -1,15 +1,18 @@
-import { Link, animateScroll as scroll } from "react-scroll";
+import "./SCSS/Navigation.scss";
 import { HashLink } from "react-router-hash-link";
+//Hooks
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+//Redux
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../Redux/store";
+import { logout } from "../Redux/authSlice";
+//database
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import "./SCSS/Navigation.scss";
+//icons
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../Redux/authSlice";
-import { RootState } from "../Redux/store";
 
 const MENU_ITEMS = [
   { id: 1, to: "/#start", item: "Start" },
@@ -22,7 +25,6 @@ const MENU_ITEMS = [
 const Navigation = () => {
   const [nav, setNav] = useState<boolean>(false);
   const navigate = useNavigate();
-
   //Redux
   const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();

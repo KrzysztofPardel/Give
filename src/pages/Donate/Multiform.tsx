@@ -1,18 +1,21 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import "./SCSS/Application.scss";
+import { useNavigate } from "react-router-dom";
+//Components
 import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";
 import StepThree from "./stepThree";
 import StepFour from "./stepFour";
 import Summary from "./Summary";
 import Appreciation from "./Appreciation";
-import { useNavigate } from "react-router-dom";
+// Redux
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 import { resetForm } from "../../Redux/formSlice";
+import { incrementCounter } from "../../Redux/dataCounterSlice";
+//Database
 import { dbMultiform } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { incrementCounter } from "../../Redux/dataCounterSlice";
 
 const Multiform = () => {
   const dispatch = useDispatch();

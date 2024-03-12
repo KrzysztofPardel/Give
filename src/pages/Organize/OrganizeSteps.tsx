@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
+//styles
 import "./SCSS/OrganizeSteps.scss";
 import { LuFileSpreadsheet } from "react-icons/lu";
 import { SlEvent } from "react-icons/sl";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import Decoration from "../../assets/Decoration.svg";
+//Redux
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../Redux/store";
 

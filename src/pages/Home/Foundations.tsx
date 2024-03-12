@@ -1,7 +1,9 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { db } from "../../firebase";
+//Components
 import { Collection, CollectionProps } from "./Collections";
+//Firebase
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export const Foundations = ({ collectionName }: CollectionProps) => {
   const [allDocs, setAllDocs] = useState<Collection[]>([]);

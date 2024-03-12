@@ -1,10 +1,14 @@
 import { useState, useRef, FormEvent, useEffect } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { dbContact } from "../../firebase";
+//styles
 import "./SCSS/Contact.scss";
 import Decoration from "../../assets/Decoration.svg";
 import BgForm from "../../assets/BgForm.jpg";
+//Firebase
+import { collection, addDoc } from "firebase/firestore";
+import { dbContact } from "../../firebase";
+//emailjs
 import emailjs from "@emailjs/browser";
+//validation
 import * as Yup from "yup"; // Import Yup
 
 const Contact = () => {

@@ -1,7 +1,6 @@
-import React from "react";
+import { useSelector } from "react-redux";
 import IconOne from "../../assets/IconOne.svg";
 import IconFour from "../../assets/IconFour.svg";
-import { useSelector } from "react-redux";
 
 export const Summary = () => {
   const formData = useSelector((state: any) => state.form);

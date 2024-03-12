@@ -7,7 +7,7 @@ const FourStepsLazy = lazy(() => import("./FourSteps"));
 const AboutLazy = lazy(() => import("./AboutUs"));
 const WhoWeHelpLazy = lazy(() => import("./WhoWeHelp"));
 const ContactLazy = lazy(() => import("../Home/Contact"));
-const FooterLazy = lazy(() => import("../Home/Contact"));
+const FooterLazy = lazy(() => import("../../components/Footer"));
 
 const Home = () => {
   return (

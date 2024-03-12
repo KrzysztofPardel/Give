@@ -1,4 +1,3 @@
-import React from "react";
 import "./errors.scss";
 import Decoration from "../assets/Decoration.svg";
 

@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { registerUser } from "../../Redux/regSlice";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+//styles
 import "./SASS/AuthStyles.scss";
 import Decoration from "../../assets/Decoration.svg";
+//Redux
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../Redux/regSlice";
+//Firebase
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+//validation
 import * as Yup from "yup"; // Import Yup
 
 const SignUp = () => {

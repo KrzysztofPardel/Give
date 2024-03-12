@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+//styles
 import "./SCSS/Hero.scss";
 import HeroImage from "../../assets/HeroImage.jpg";
 import Decoration from "../../assets/Decoration.svg";
-import { Link } from "react-router-dom";
-// import { UserAuth } from "../../context/AuthContext";
 
 const Hero = () => {
   return (

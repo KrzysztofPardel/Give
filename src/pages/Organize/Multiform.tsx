@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "./SCSS/Multiform.scss";
-import "./SCSS/Steps.scss";
+//components
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import Summary from "./Summary";
 import Appreciation from "./Appreciation";
+//styles
+import "./SCSS/Multiform.scss";
+import "./SCSS/Steps.scss";
+//Redux
+import { useDispatch, useSelector } from "react-redux";
 import { resetForm } from "../../Redux/organizeSlice";
-import { RootState } from "../../Redux/store";
+//Firebase
 import { dbMultiformOrganize } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 
 const Multiform = () => {
   const dispatch = useDispatch();
@@ -77,8 +79,6 @@ const Multiform = () => {
     return summaryData;
   };
 
- 
-
   return (
     <div className="multiform-background">
       <div className="multiform-container">
@@ -89,7 +89,6 @@ const Multiform = () => {
           </p>
         </div>
 
-       
         <div className="multiform-container_bottom">
           <p className="multiform-steps">{page !== 4 && `Step ${page} / 3`}</p>
           <div className="multiform-stepsContainer">

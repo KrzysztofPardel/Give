@@ -1,4 +1,5 @@
-import React, { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent } from "react";
+//Redux
 import { useDispatch, useSelector } from "react-redux";
 import { setStep1Data } from "../../Redux/organizeSlice";
 import { Step1 } from "../../Redux/organizeSlice";

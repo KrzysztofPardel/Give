@@ -1,5 +1,6 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
+//Firebase
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 
 export type Collection = {

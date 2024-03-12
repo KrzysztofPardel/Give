@@ -1,10 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import "../Home/Hero";
 import HeroImage from "../../assets/HeroImage.jpg";
 import Decoration from "../../assets/Decoration.svg";
-
-import { Link } from "react-router-dom";
-// import { UserAuth } from "../../context/AuthContext";
 
 const Hero = () => {
   return (

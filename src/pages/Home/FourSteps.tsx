@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+//styles
 import "./SCSS/FourSteps.scss";
+import { useNavigate } from "react-router-dom";
 import IconOne from "../../assets/IconOne.svg";
 import IconTwo from "../../assets/IconTwo.svg";
 import IconThree from "../../assets/IconThree.svg";
 import IconFour from "../../assets/IconFour.svg";
 import Decoration from "../../assets/Decoration.svg";
+//Redux
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../Redux/store";
 

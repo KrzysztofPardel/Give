@@ -1,9 +1,11 @@
 import { useState, FC } from "react";
+//styles
+import "./SCSS/WhoWeHelp.scss";
+import Decoration from "../../assets/Decoration.svg";
+//components
 import { Foundations } from "./Foundations";
 import { Organizations } from "./Organizations";
 import { Collections } from "./Collections";
-import "./SCSS/WhoWeHelp.scss";
-import Decoration from "../../assets/Decoration.svg";
 
 const BUTTONS_GENERAL = [
   { id: 1, option: 1, content: "Foundations" },

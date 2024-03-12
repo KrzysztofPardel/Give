@@ -1,6 +1,8 @@
 import "./SCSS/ThreeColumns.scss";
+//Redux
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/store";
+
 const ThreeColumns = () => {
   const donationsCounter = useSelector(
     (state: RootState) => state.dataCounter.counter
