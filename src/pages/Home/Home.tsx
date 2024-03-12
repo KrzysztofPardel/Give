@@ -13,11 +13,11 @@ const Home = () => {
   return (
     <Suspense fallback={<Loading />}>
       <HeroLazy />
-      <ThreeColumnsLazy />
+      {/* <ThreeColumnsLazy />
       <FourStepsLazy />
       <AboutLazy />
       <WhoWeHelpLazy />
-      <ContactLazy />
+      <ContactLazy /> */}
       <FooterLazy />
     </Suspense>
   );

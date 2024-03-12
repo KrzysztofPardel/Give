@@ -87,15 +87,7 @@ const Navigation = () => {
         <div className="homepage-links_container">
           {/* Menu Items*/}
           {MENU_ITEMS.map(({ id, item, to }) => (
-            <HashLink
-              key={id}
-              // activeClass="active"
-              to={to}
-              // spy
-              smooth
-              // duration={500}
-              className="homepage-link"
-            >
+            <HashLink key={id} to={to} smooth className="homepage-link">
               {item}
             </HashLink>
           ))}
@@ -168,23 +160,7 @@ const Navigation = () => {
               </button>
             )}
           </div>
-          <div className="homepage-links_container_mobile">
-            {/* <NavLink */}
-            {/* {MENU_ITEMS.map(({ id, item, to }) => (
-              <Link
-                key={id}
-                activeClass="active"
-                to={to}
-                spy
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className="homepage-link"
-              >
-                {item}
-              </Link>
-            ))} */}
-          </div>
+          <div className="homepage-links_container_mobile"></div>
         </div>
       </div>
     </div>
