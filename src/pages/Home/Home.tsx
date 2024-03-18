@@ -15,7 +15,7 @@ const Home = () => {
       {/* <HeroLazy /> */}
       {/* <ThreeColumnsLazy /> */}
       {/* <FourStepsLazy /> */}
-      <AboutLazy />
+      {/* <AboutLazy /> */}
       {/* <WhoWeHelpLazy /> */}
       {/* <ContactLazy /> */}
       <FooterLazy />

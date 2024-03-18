@@ -19,9 +19,9 @@ export const Foundations = ({ collectionName }: CollectionProps) => {
   }, []);
 
   return (
-    <div className="">
+    <div className="Item-boxes">
       {allDocs.map(({ id, name, mission, items }) => (
-        <div key={id}>
+        <div key={id} className="Item-box">
           <div className="Item-text_container">
             <div className="Item-header&paragraph_container">
               <h1 className="Item-header">{name}</h1>

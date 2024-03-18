@@ -38,13 +38,13 @@ const WhoWeHelp: FC = () => {
     setCurrentFoundationPage(page);
   };
 
-  const handleOrganizationPage = (page: number) => {
-    setOrganizationPage(page);
-  };
+  // const handleOrganizationPage = (page: number) => {
+  //   setOrganizationPage(page);
+  // };
 
-  const handleCollectionPage = (page: number) => {
-    setCollectionPage(page);
-  };
+  // const handleCollectionPage = (page: number) => {
+  //   setCollectionPage(page);
+  // };
 
   return (
     <div id="help" className="who-background">

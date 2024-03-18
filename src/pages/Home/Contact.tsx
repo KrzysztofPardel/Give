@@ -101,54 +101,54 @@ const Contact = () => {
 
   return (
     <div id="contact" className="form-container">
-      <div className="form-container_left">
+      <div className="form-container_image">
         <img src={BgForm} alt="group of people" className="form-image" />
       </div>
-      <form ref={form} className="form-container_right" onSubmit={handleSubmit}>
+      <form ref={form} className="form-container_text" onSubmit={handleSubmit}>
         <h1 className="form-text_header">Contact us</h1>
         <img src={Decoration} alt="box" className="form-decoration_image" />
         <div className="form-input_container">
           <div className="form-input_container_small">
             <label className="form-label" htmlFor="nameForm">
               Enter your name
-              <input
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                type="text"
-                placeholder="John Smith"
-                className="form-input"
-                id="nameForm"
-              />
             </label>
+            <input
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="John Smith"
+              className="form-input"
+              id="nameForm"
+            />
           </div>
           <div className="form-input_container_small">
             <label className="form-label" htmlFor="emailForm">
               Enter your email
-              <input
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                type="email"
-                placeholder="johnsmith@gmail.com"
-                className="form-input"
-                id="emailForm"
-              />
             </label>
+            <input
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="johnsmith@gmail.com"
+              className="form-input"
+              id="emailForm"
+            />
           </div>
         </div>
         <div className="form-textarea_container">
           <label className="form-label_textarea" htmlFor="messageForm">
             Enter your message
-            <textarea
-              name="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="e.g. I wanted to reach out and commend your efforts in collecting used clothes. Your work is incredibly important and has a positive impact on both the environment and people in need."
-              className="form-textarea"
-              id="messageForm"
-            />
           </label>
+          <textarea
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="e.g. I wanted to reach out and commend your efforts in collecting used clothes. Your work is incredibly important and has a positive impact on both the environment and people in need."
+            className="form-textarea"
+            id="messageForm"
+          />
           {error && <p className="auth-error-message">{error}</p>}
 
           <div className="form-container_button">
