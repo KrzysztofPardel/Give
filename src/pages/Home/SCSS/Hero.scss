@@ -34,7 +34,7 @@
     z-index: -10;
 
     @include sm {
-      width: 45rem;
+      width: 40rem;
     }
 
     @include lg {
@@ -43,6 +43,7 @@
       margin-left: -20rem;
       margin-top: -7rem;
     }
+
     @include xl {
       width: 60rem;
     }

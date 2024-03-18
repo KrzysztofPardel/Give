@@ -16,9 +16,9 @@ const ThreeColumns = () => {
           <h1 className="three-text-header">Bags donated recently</h1>
           <p className="three-text-paragraph">
             {" "}
-            `Thanks to your generous donations we were able to distribute ${10}
+            Thanks to your generous donations we were able to distribute 10
             large bags full of previously enjoyed things to those who would not
-            be able to afford themselves. We wish you could see their joy!`
+            be able to afford themselves. We wish you could see their joy!
           </p>
         </div>
         <div className="three-single_column">
@@ -37,7 +37,7 @@ const ThreeColumns = () => {
           <p className="three-text-paragraph">
             People just like you step up and organize collections which are
             supervised by our organization, to make sure all items are well
-            prepared for transportation and later distribution. Why not try
+            prepared for transportation and later distribution. Why not try it
             yourself?
           </p>
         </div>

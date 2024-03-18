@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <div id="about" className="about-background">
       <div className="about-container">
-        <div className="about-container_left">
+        <div className="about-container_text">
           <h1 className="about-text_header">About us</h1>
           <img src={Decoration} alt="box" className="about-decoration_image" />
           <p className="about-text_paragraph">
@@ -21,7 +21,7 @@ const AboutUs = () => {
           </p>
           <img src={Signature} alt="signature" className="signature" />
         </div>
-        <div className="about-container_right">
+        <div className="about-container_image">
           <img src={People} alt="group of people" className="about-image" />
         </div>
       </div>

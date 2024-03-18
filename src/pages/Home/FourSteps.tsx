@@ -43,10 +43,9 @@ const FOUR_ITEMS = [
 
 const FourSteps = () => {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   //Redux
   const user = useSelector((state: RootState) => state.auth.user);
-  const dispatch = useDispatch();
 
   const handleRedirect = () => {
     if (user) {
@@ -61,7 +60,6 @@ const FourSteps = () => {
       <div className="four-container">
         <h1 className="four-header">It takes 4 simple steps</h1>
         <img src={Decoration} alt="box" className="four-decoration_image" />
-
         <div className="four-columns-container">
           {FOUR_ITEMS.map(({ id, img, alt, header, paragraph }) => (
             <div key={id} className="four-single_column">

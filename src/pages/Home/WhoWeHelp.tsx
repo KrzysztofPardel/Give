@@ -33,12 +33,15 @@ const WhoWeHelp: FC = () => {
   const handleSwitch = (button: number) => {
     setCurrentSwitch(button);
   };
+
   const handleFoundationPage = (page: number) => {
     setCurrentFoundationPage(page);
   };
+
   const handleOrganizationPage = (page: number) => {
     setOrganizationPage(page);
   };
+
   const handleCollectionPage = (page: number) => {
     setCollectionPage(page);
   };
@@ -49,7 +52,6 @@ const WhoWeHelp: FC = () => {
         <div className="who-text-container">
           <h1 className="who-header">Who do we help?</h1>
           <img src={Decoration} alt="box" className="who-decoration_image" />
-
           <div className="who-button_container">
             {BUTTONS_GENERAL.map(({ id, option, content }) => (
               <button

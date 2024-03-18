@@ -1,19 +1,24 @@
-@import "../../../SCSS/variables.scss";
-@import "../../../SCSS/mixins.scss";
+@import "../../../SCSS/main.scss";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// * {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
 
 .who-background {
   width: 100%;
-  height: 40rem;
+  height: 100%;
+  @include md {
+    height: 40rem;
+  }
 }
 .who-container {
   width: 100%;
-  height: 40rem;
+  height: 100%;
+  @include md {
+    height: 40rem;
+  }
 }
 .who-text-container {
   width: 100%;
@@ -32,18 +37,32 @@
     margin-bottom: 3rem;
   }
   .who-text_paragraph {
-    display: flex;
-    text-align: center;
-    font-size: 1.2rem;
+    // display: flex;
+    // justify-content: center;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 1.4rem;
-    width: 40rem;
+    line-height: 1.5rem;
+    width: 80%;
+
+    @include md {
+      width: 40rem;
+      flex-direction: row;
+      font-size: 1rem;
+    }
   }
 }
 .who-button_container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  // flex-direction: column;
   gap: 1rem;
+  margin-bottom: 2rem;
+  @include md {
+    // flex-direction: row;
+    margin-bottom: 0rem;
+  }
+
   .who-button {
     @include button {
       cursor: pointer;
@@ -55,8 +74,10 @@
       width: 20rem;
       height: 5rem;
       border: none;
+      border: 1px solid $color-dark-main;
+
       &:hover {
-        border: 1px solid $color-dark-main;
+        border: 1px solid $color-dark-accent-first;
         transform: scale(0.8);
         transition: transform 0.3s ease-in-out;
       }
@@ -64,7 +85,7 @@
   }
 }
 // Different foundations, organizations and collections
-//Foundations
+
 .Item-container {
   display: flex;
   flex-direction: column;
@@ -74,9 +95,15 @@
 
 .Item-text_container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 55rem;
+  gap: 1rem;
+  width: 100%;
+  @include lg {
+    width: 55rem;
+    flex-direction: row;
+  }
 
   .Item-header {
     font-size: 1rem;
@@ -96,10 +123,14 @@
 }
 .line {
   border: 0.01rem solid;
-  width: 55rem;
+  width: 100%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   color: $color-dark-main;
+
+  @include xl {
+    width: 55rem;
+  }
 }
 
 .button_nr_container {
