@@ -12,12 +12,12 @@ const FooterLazy = lazy(() => import("../../components/Footer"));
 const Home = () => {
   return (
     <Suspense fallback={<Loading />}>
-      {/* <HeroLazy /> */}
-      {/* <ThreeColumnsLazy /> */}
-      {/* <FourStepsLazy /> */}
-      {/* <AboutLazy /> */}
-      {/* <WhoWeHelpLazy /> */}
-      {/* <ContactLazy /> */}
+      <HeroLazy />
+      <ThreeColumnsLazy />
+      <FourStepsLazy />
+      <AboutLazy />
+      <WhoWeHelpLazy />
+      <ContactLazy />
       <FooterLazy />
     </Suspense>
   );

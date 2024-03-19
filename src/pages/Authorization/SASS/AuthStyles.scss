@@ -6,10 +6,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  @include lg {
+  }
   .header-text {
+    text-align: center;
     font-weight: 350;
     margin-top: 3rem;
     font-size: 2rem;
+    line-height: 2.5rem;
   }
   .header-decoration {
     width: 15rem;
@@ -22,9 +27,12 @@
   flex-direction: column;
   justify-content: space-between;
   background: #f0f1f1 0% 0% no-repeat padding-box;
-  width: 30rem;
+  width: 60%;
   height: 20rem;
   padding: 2.5rem;
+  @include lg {
+    width: 30rem;
+  }
 }
 .prolonged {
   height: 25rem;
@@ -39,15 +47,19 @@
   .form-input {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    @include lg {
+      flex-direction: row;
+    }
 
     .data-label {
       text-align: left;
     }
     .data-input {
-      width: 75%;
+      width: 100%;
       padding: 0.6rem;
       border: none;
       border-bottom: 1px solid;
@@ -55,6 +67,9 @@
       font-size: 1rem;
       &:focus {
         outline: none;
+      }
+      @include sm {
+        width: 75%;
       }
     }
   }
@@ -73,6 +88,7 @@
 
   .auth-button {
     padding: 0.5rem 1rem;
+    font-size: 1rem;
     gap: 1rem;
     background: transparent;
     border: 1px lightgray solid;

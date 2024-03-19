@@ -66,7 +66,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="auth-container ">
+    <div className="auth-container">
       <h1 className="header-text">Sign in</h1>
       <img src={Decoration} alt="" className="header-decoration" />
       <form className="auth-form" onSubmit={handleSubmit}>
