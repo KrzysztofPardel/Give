@@ -1,6 +1,4 @@
 @import "../../SCSS/main.scss";
-@import "./MobileNav.scss";
-@import "./DesktopNav.scss";
 
 .navigation-background {
   width: 100vw;
@@ -21,7 +19,7 @@
   flex-direction: column;
   align-items: flex-end;
   // background-color: $color-bright-main;
-  border-bottom: 0.5px solid $color-dark-main;
+  // border-bottom: 0.5px solid $color-dark-main;
   width: 100%;
   height: 100%;
 }

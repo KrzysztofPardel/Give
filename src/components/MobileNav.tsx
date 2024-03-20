@@ -1,4 +1,4 @@
-import "./SCSS/MobileNav.scss";
+import "./SCSS/Navigation.scss";
 import { HashLink } from "react-router-hash-link";
 import { MENU_ITEMS } from "./Navigation";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";

@@ -1,4 +1,4 @@
-import "./SCSS/DesktopNav.scss";
+import "./SCSS/Navigation.scss";
 import { HashLink } from "react-router-hash-link";
 import { MENU_ITEMS } from "./Navigation";
 //Hooks

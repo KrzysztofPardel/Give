@@ -6,6 +6,7 @@ import SignOut from "./pages/Authorization/SignOut";
 import Donate from "./pages/Donate/Donate";
 import ProtectedRoute from "./pages/Authorization/ProtectedRoute";
 import Organize from "./pages/Organize/Organize";
+import Error400 from "../src/Errors/error400";
 
 const App = () => {
   const element = useRoutes([
@@ -23,7 +24,7 @@ const App = () => {
     },
     {
       path: "/signout",
-      element: <SignOut />
+      element: <Error400 />
     },
     {
       path: "/donate",
