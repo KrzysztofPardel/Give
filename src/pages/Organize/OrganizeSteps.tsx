@@ -1,24 +1,26 @@
 import { useNavigate } from "react-router-dom";
 //styles
 import "./SCSS/OrganizeSteps.scss";
-import { LuFileSpreadsheet } from "react-icons/lu";
-import { SlEvent } from "react-icons/sl";
+// import { LuFileSpreadsheet } from "react-icons/lu";
 import { FaHandHoldingHeart } from "react-icons/fa";
+import { HiClipboardDocumentList } from "react-icons/hi2";
+import { BsCalendar2WeekFill } from "react-icons/bs";
+
 import Decoration from "../../assets/Decoration.svg";
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../Redux/store";
 
-const FOUR_ITEMS = [
+const THREE_ITEMS = [
   {
     id: 1,
-    icon: <LuFileSpreadsheet />,
+    icon: <HiClipboardDocumentList />,
     header: "Register a collection",
     paragraph: "Fill out the form below."
   },
   {
     id: 2,
-    icon: <SlEvent />,
+    icon: <BsCalendar2WeekFill />,
     header: "Organize it",
     paragraph: "Have your big day!"
   },
@@ -32,31 +34,23 @@ const FOUR_ITEMS = [
 
 const FourSteps = () => {
   const navigate = useNavigate();
-
   //Redux
   const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
 
-  const handleRedirect = () => {
-    if (user) {
-      navigate("/donate");
-    } else {
-      navigate("/signin");
-    }
-  };
-
   return (
     <div id="" className="organizeSteps-background">
       <div className="organizeSteps-container">
-        <h1 className="organizeSteps-header">Just 3 easy steps</h1>
-        <img
-          src={Decoration}
-          alt="box"
-          className="organizeSteps-decoration_image"
-        />
-
+        <div className="organizeSteps-container_header">
+          <h1 className="organizeSteps-header">Only 3 steps away from it!</h1>
+          <img
+            src={Decoration}
+            alt="box"
+            className="organizeSteps-decoration_image"
+          />
+        </div>
         <div className="organizeSteps-columns-container">
-          {FOUR_ITEMS.map(({ id, icon, paragraph, header }) => (
+          {THREE_ITEMS.map(({ id, icon, paragraph, header }) => (
             <div key={id} className="organizeSteps-single_column">
               <div className="organizeSteps-icon">{icon}</div>
               <h2 className="organizeSteps-text-header">{header}</h2>
@@ -64,14 +58,6 @@ const FourSteps = () => {
               <div className="organizeSteps-line" />
             </div>
           ))}
-        </div>
-        <div className="organizeSteps-bottom_container">
-          <p className="bottom-container_paragraph">
-            Would you like to donate things?
-          </p>
-          <button onClick={handleRedirect} type="button" className="button">
-            Donate
-          </button>
         </div>
       </div>
     </div>

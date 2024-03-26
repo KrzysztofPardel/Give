@@ -79,19 +79,19 @@ const WhoWeHelp: FC = () => {
               {currentFoundationPage === 1 && (
                 <Foundations
                   collectionName="f_Collections"
-                  key="f_Collections"
+                  // key="f_Collections"
                 />
               )}
               {currentFoundationPage === 2 && (
                 <Foundations
                   collectionName="f_Collections_two"
-                  key="f_Collections_two"
+                  // key="f_Collections_two"
                 />
               )}
               {currentFoundationPage === 3 && (
                 <Foundations
                   collectionName="f_Collections_three"
-                  key="f_Collections_three"
+                  // key="f_Collections_three"
                 />
               )}
             </div>

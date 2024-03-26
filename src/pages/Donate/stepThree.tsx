@@ -29,13 +29,13 @@ export const StepThree = ({ setPage }: StepThreeProps) => {
   return (
     <>
       <div className="application-location_container">
-        <h2 className="application-location_header">Location:</h2>
+        <h2 className="application-location_subheader">Location:</h2>
         <select
           className="application-location_select"
           value={step3 ? step3.help : ""}
           onChange={(e) => handleSelect(e.target.value)}
         >
-          <option className="application-location_option">Choose</option>
+          <option className="application-location_option">Choose city</option>
           <option
             onSelect={() => handleSelect("Gdańsk")}
             className="application-location_option"
@@ -127,7 +127,7 @@ export const StepThree = ({ setPage }: StepThreeProps) => {
           </button>
         </div>
         <h3 className="application-location_subheader">
-          Enter the name of a particular organization (optional)
+          Enter the name of a particular organization:
         </h3>
         <input
           value={step3 ? step3.organization ?? "" : ""}

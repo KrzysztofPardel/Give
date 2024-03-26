@@ -1,12 +1,39 @@
+import { useEffect, useState } from "react";
 import "./SCSS/ThreeColumns.scss";
 //Redux
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/store";
+//Firebase
+import { collection, getDocs } from "firebase/firestore";
+import { dbMultiform } from "../../firebase";
 
 const ThreeColumns = () => {
+  const [doc, setAllDocs] = useState([]);
   const donationsCounter = useSelector(
     (state: RootState) => state.dataCounter.counter
+    // {donationsCounter}
   );
+  const uid = useSelector((state: RootState) => state.auth.user?.uid);
+
+  const fetchAll = async () => {
+    const querySnapshot = await getDocs(collection(dbMultiform, "summaries"));
+    //pobieram wszystkie dane
+    const documents = querySnapshot.docs.map((doc) => doc.data());
+    console.log("documents", documents);
+    //wybieram dane od konkretnego uzytkownika
+    const docsForUserId = documents.filter((doc) => doc.step4.uid === uid);
+    //podliczam potrzebny fragment danych, np. bagsAmount
+    const bags = docsForUserId.reduce((acc, cur) => {
+      return acc + cur.step2.bagsAmount;
+    }, 0);
+    console.log("bags", bags);
+
+    setAllDocs(documents as any);
+  };
+
+  useEffect(() => {
+    fetchAll();
+  }, []);
 
   return (
     <div id="start" className="three-background">
@@ -22,7 +49,7 @@ const ThreeColumns = () => {
           </p>
         </div>
         <div className="three-single_column">
-          <div className="three-text-number">{donationsCounter}</div>
+          <div className="three-text-number">3</div>
           <h1 className="three-text-header">Organizations supported</h1>
           <p className="three-text-paragraph">
             We are a channel through which many goodies flow to organizations

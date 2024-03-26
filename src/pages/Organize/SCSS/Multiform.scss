@@ -1,6 +1,4 @@
-// @import "../../../SCSS/reset.scss";
-@import "../../../SCSS/variables.scss";
-@import "../../../SCSS/mixins.scss";
+@import "../../../SCSS/main.scss";
 
 .multiform-container_top {
   display: flex;
@@ -20,7 +18,7 @@
 
 .multiform-container_bottom {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -28,19 +26,30 @@
   position: relative;
   background-color: rgba(255, 245, 160, 0.1);
   color: #fff;
-  padding: 3rem 6rem;
+  padding: 3rem 3rem;
+  @include lg {
+    padding: 3rem 6rem;
+  }
   &:before {
     content: "";
     background: url(../../../assets/GivingHands.png) no-repeat center
       center/cover;
     position: absolute;
-    background-position: 30rem 2rem;
+    background-position: 0rem 0rem;
     background-size: contain;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: -1;
+    opacity: 0;
+    @include lg {
+      opacity: 1;
+      background-position: 30rem 2rem;
+    }
+  }
+  @include md {
+    height: 80vh;
   }
 }
 
@@ -49,10 +58,10 @@
   color: black;
   font-weight: 300;
 }
-.multiform-point_invisible_container {
-  border: 1px solid transparent;
-  height: 40rem;
-}
+// .multiform-point_invisible_container {
+//   border: 1px solid transparent;
+//   height: 40rem;
+// }
 .multiform-point_container {
   display: flex;
   width: 40rem;
@@ -78,3 +87,38 @@
   }
 }
 
+.organizeSteps-bottom_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: $color-dark-accent-first;
+  color: $color-bright-main;
+  padding: 1rem;
+  @include lg {
+    gap: 2rem;
+    padding: 0rem;
+  }
+
+  .bottom-container_paragraph {
+    font-size: 1.2rem;
+    font-family: $font-alt;
+    font-weight: 300;
+    text-align: center;
+    @include lg {
+      font-size: 1.5rem;
+    }
+  }
+}
+.button {
+  @include button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+      color: $color-bright-main;
+    }
+  }
+}

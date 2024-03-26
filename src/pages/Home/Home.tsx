@@ -17,7 +17,7 @@ const Home = () => {
       <FourStepsLazy />
       <AboutLazy />
       <WhoWeHelpLazy />
-      <ContactLazy />
+      {/* <ContactLazy /> */}
       <FooterLazy />
     </Suspense>
   );

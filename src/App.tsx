@@ -24,7 +24,7 @@ const App = () => {
     },
     {
       path: "/signout",
-      element: <Error400 />
+      element: <SignOut />
     },
     {
       path: "/donate",

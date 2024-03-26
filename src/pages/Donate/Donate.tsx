@@ -9,10 +9,10 @@ const FooterLazy = lazy(() => import("../../components/Footer"));
 const Donate = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <HeroLazy />
+      {/* <HeroLazy /> */}
       <MultiformLazy />
-      <ContactLazy />
-      <FooterLazy />
+      {/* <ContactLazy /> */}
+      {/* <FooterLazy /> */}
     </Suspense>
   );
 };

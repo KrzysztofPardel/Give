@@ -46,8 +46,8 @@ export const StepOne = ({ setPage }: StepOneProps) => {
 
   return (
     <>
-      <div className="steps-generalContainer">
-        <h2 className="generalContainer-header">Personal details</h2>
+      <div className="step-container_general">
+        <h2 className="general-header">Personal details</h2>
         <div className="personalDetails-data">
           <label className="personalDetails-label" htmlFor="name">
             Name

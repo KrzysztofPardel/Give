@@ -12,6 +12,7 @@ type StepFourProps = {
 export const StepFour = ({ setPage }: StepFourProps) => {
   const dispatch = useDispatch();
   const step4 = useSelector((state: RootState) => state.form.step4);
+  const uid = useSelector((state: RootState) => state.auth.user?.uid);
 
   const [inputValue, setInputValue] = useState<Step4>(() => ({
     address: step4?.address || "",
@@ -20,7 +21,8 @@ export const StepFour = ({ setPage }: StepFourProps) => {
     phone: step4?.phone || "",
     date: step4?.date || "",
     time: step4?.time || "",
-    courierInfo: step4?.courierInfo || ""
+    courierInfo: step4?.courierInfo || "",
+    uid: uid || ""
   }));
 
   //Handles text area input

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 //components
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
@@ -10,16 +11,31 @@ import "./SCSS/Steps.scss";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { resetForm } from "../../Redux/organizeSlice";
+import { RootState } from "../../Redux/store";
+
 //Firebase
 import { dbMultiformOrganize } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Multiform = () => {
+  const navigate = useNavigate();
+  //Redux
   const dispatch = useDispatch();
   const formData = useSelector((state: any) => state.form);
+  const user = useSelector((state: RootState) => state.auth.user);
+
   // const { step1, step2 } = formData;
   const [page, setPage] = useState<number>(1);
   const [collectionsCounter, setCollectionsCounter] = useState<number>(0);
+
+  //redirection Donate website
+  const handleRedirect = () => {
+    if (user) {
+      navigate("/donate");
+    } else {
+      navigate("/signin");
+    }
+  };
 
   //previous form page
   const handleBack = (e: any) => {
@@ -85,13 +101,13 @@ const Multiform = () => {
         <div className="multiform-container_top">
           <h2 className="multiform-top_header">Important!</h2>
           <p className="multiform-top_paragraph">
-            Fill out the details concerning the collection you want to organize.
+            Fill out the details concerning collection you want to organize.
           </p>
         </div>
 
         <div className="multiform-container_bottom">
           <p className="multiform-steps">{page !== 4 && `Step ${page} / 3`}</p>
-          <div className="multiform-stepsContainer">
+          <div className="multiform-steps_container">
             {page === 1 && <StepOne setPage={() => setPage(2)} />}
             {page === 2 && <StepTwo setPage={(x) => setPage(x)} />}
             {page === 3 && <Summary />}
@@ -128,6 +144,14 @@ const Multiform = () => {
               </>
             )}
           </div>
+        </div>
+        <div className="organizeSteps-bottom_container">
+          <p className="bottom-container_paragraph">
+            Would you like to donate things?
+          </p>
+          <button onClick={handleRedirect} type="button" className="button">
+            Donate
+          </button>
         </div>
       </div>
     </div>

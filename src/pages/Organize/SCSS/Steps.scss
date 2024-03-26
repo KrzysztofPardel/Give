@@ -1,19 +1,25 @@
 @import "../../../SCSS/main.scss";
 
 //Step 1
-.multiform-stepsContainer {
+.multiform-steps_container {
   border: 1px solid transparent;
-  height: 100%;
-  .steps-generalContainer {
+  height: 100vh;
+  .step-container_general {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    width: 45rem;
-    height: 30rem;
+    width: 100%;
+    height: 100%;
     color: black;
-    .generalContainer-header {
-      font-size: 1.3rem;
+
+    @include md {
+      width: 50%;
+      height: 30rem;
+    }
+
+    .general-header {
+      font-size: 1.2rem;
       margin-top: 3rem;
       margin-bottom: 1rem;
       font-family: $font-alt;
@@ -23,12 +29,18 @@
 .personalDetails-data,
 .collectionDetails-data {
   display: flex;
-  width: 30rem;
+  flex-direction: column;
+  width: 100%;
   margin-top: 1.5rem;
   font-weight: 300;
+  @include md {
+    flex-direction: row;
+    width: 30rem;
+  }
 
   .personalDetails-label,
   .collectionDetails-label {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,17 +48,27 @@
     font-weight: 350;
     color: $color-dark-accent-first;
     font-family: $font-alt;
-    width: 30rem;
+    margin-bottom: 1rem;
+    @include lg {
+      width: 30rem;
+      margin-bottom: 0rem;
+    }
   }
   .personalDetails-input,
   .collectionDetails-input {
     padding: 0.5rem;
-    width: 40rem;
+    width: 100%;
+    @include lg {
+      width: 40rem;
+    }
   }
 }
 .chooseHelp-container {
   flex-wrap: wrap;
-  width: 25rem;
+  width: 100%;
+  @include md {
+    width: 25rem;
+  }
   .chooseHelp-header {
     font-weight: 550;
     font-family: $font-alt;
@@ -86,9 +108,13 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  width: 35rem;
-  height: 30rem;
+  width: 100%;
+  height: 100%;
   color: black;
+  @include lg {
+    width: 35rem;
+    height: 30rem;
+  }
   .multiform-text_header {
     font-size: 1.3rem;
     margin-top: 3rem;
@@ -98,11 +124,14 @@
 .collectionDetails-data {
   .collectionDetails-textarea {
     margin-top: 1rem;
-    width: 40rem;
+    width: 100%;
     height: 10rem;
     padding: 0.5rem;
     &:focus {
       outline: none;
+    }
+    @include lg {
+      width: 40rem;
     }
   }
 }
@@ -115,6 +144,11 @@
     font-weight: 400;
     font-size: 2rem;
     margin-top: 1.5rem;
+    line-height: 3rem;
+    text-align: center;
+    @include lg {
+      text-align: none;
+    }
   }
 }
 .summary-container {
@@ -129,6 +163,7 @@
     font-weight: 350;
     font-size: 1.5rem;
     text-decoration: underline;
+    line-height: 2rem;
   }
   .personalData_icon {
     height: 3rem;
@@ -137,9 +172,12 @@
 }
 
 .personalData-dataBox {
-  width: 20em;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  @include md {
+    width: 20em;
+  }
 
   .personalData-p {
     color: $color-dark-accent-first;

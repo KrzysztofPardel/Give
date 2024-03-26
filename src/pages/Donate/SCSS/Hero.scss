@@ -1,49 +1,90 @@
 @import "../../../SCSS/main.scss";
 
-body {
-  font-family: $font-alt;
-}
-
 .donate-hero_background {
-  height: 32rem;
-}
-.donate-hero_container {
-  display: flex;
-  height: 32rem;
-}
-.donate-image_container {
-  height: 30rem;
-  width: 40rem;
-  z-index: -20;
-
-  .donate-hero_image {
-    height: 40rem;
-    width: 50rem;
-    margin-top: -8rem;
+  height: 70vh;
+  width: 100vw;
+  @include lg {
+    height: 32rem;
   }
 }
+
+.donate-hero_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  @include lg {
+    height: 32rem;
+    flex-direction: row;
+    align-items: normal; //added
+  }
+}
+.donate-image_container {
+  height: 100%;
+  z-index: -20;
+  position: absolute;
+  @include lg {
+    position: relative;
+    width: 40rem;
+    height: 30rem;
+  }
+
+  .donate-hero_image {
+    height: 60vh;
+    width: 100%;
+    opacity: 0.2;
+
+    @include lg {
+      margin-top: -8rem;
+      width: 50rem;
+      height: 40rem;
+    }
+    @include xl {
+      opacity: 1;
+    }
+  }
+}
+
 .donate-text_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50rem;
-  height: 32rem;
-  text-align: end;
-  padding-bottom: 5rem;
+  height: 60vh;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+
+  @include lg {
+    padding: 0rem;
+    padding-bottom: 6rem;
+    width: 50rem;
+    height: 32rem;
+    text-align: end;
+  }
 
   .donate-text_paragraph {
+    width: 80%;
     font-size: 1.5rem;
     font-weight: 300;
+    line-height: 2rem;
+    @include lg {
+      text-align: center;
+      width: 100%;
+    }
   }
   .donate-text_decoration {
     display: flex;
     justify-content: center;
-    width: 30rem;
+    width: auto;
     margin-top: 1rem;
     margin-bottom: 2rem;
+    @include lg {
+      width: 30rem;
+    }
     .donate-decoration_image {
-      width: 12rem;
+      width: 15rem;
     }
   }
   .donate-text_paragraph_bottom {
@@ -53,11 +94,18 @@ body {
   }
 }
 .donate-hero_diamond_container {
-  height: 4rem;
-  width: 19rem;
+  height: auto;
+  width: auto;
   display: flex;
   justify-content: center;
+  // align-items: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  @include md {
+    height: 4rem;
+    width: 19rem;
+    flex-wrap: nowrap;
+  }
 
   .donate-diamond {
     display: flex;
@@ -69,6 +117,7 @@ body {
     border: 1px $color-dark-main solid;
     background: transparent;
     transform: translate(0, 0) rotate(45deg);
+
     .donate-number_diamond {
       display: flex;
       justify-content: center;

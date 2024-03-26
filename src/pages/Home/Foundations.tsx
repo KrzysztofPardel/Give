@@ -20,18 +20,20 @@ export const Foundations = ({ collectionName }: CollectionProps) => {
 
   return (
     <div className="Item-boxes">
-      {allDocs.map(({ id, name, mission, items }) => (
-        <div key={id} className="Item-box">
-          <div className="Item-text_container">
-            <div className="Item-header&paragraph_container">
-              <h1 className="Item-header">{name}</h1>
-              <p className="Item-paragraph">{mission} </p>
+      {allDocs.map(({ name, mission, items }) => {
+        return (
+          <div key={name} className="Item-box">
+            <div className="Item-text_container">
+              <div className="Item-header&paragraph_container">
+                <h1 className="Item-header">{name}</h1>
+                <p className="Item-paragraph">{mission} </p>
+              </div>
+              <span className="Item-span">{items}</span>
             </div>
-            <span className="Item-span">{items}</span>
+            <div className="line" />
           </div>
-          <div className="line" />
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

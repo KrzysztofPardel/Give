@@ -22,17 +22,18 @@ export const StepTwo = ({ setPage }: StepTwoProps) => {
         <h2 className="application-text_header">
           Choose the amount of 60 liter bags you wish to donate.
         </h2>
-        <div className="application-point_container">
-          <p className="application-point_text_left">I want to donate</p>
+        <div className="application-point_container ">
+          <p className="application-point_text_left">I wish to donate</p>
+
+          <input
+            onChange={handleInputChange}
+            value={step2 ? step2.bagsAmount : ""}
+            type="number"
+            required
+            className="application-number_bags "
+          />
           <label className="application-point_text" htmlFor="control_reused">
             x 60 liter bag(s).
-            <input
-              onChange={handleInputChange}
-              value={step2 ? step2.bagsAmount : ""}
-              type="number"
-              required
-              className="application-number_bags"
-            />
           </label>
         </div>
       </div>

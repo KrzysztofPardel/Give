@@ -19,6 +19,7 @@ export type Step4 = {
   date: string;
   time: string;
   courierInfo: string;
+  uid: string;
 };
 
 interface Form {

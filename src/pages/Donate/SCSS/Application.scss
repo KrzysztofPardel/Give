@@ -8,54 +8,56 @@
   gap: 0.7rem;
   height: 10rem;
   background-color: $color-bright-accent;
-  padding: 3rem 5rem;
   color: black;
+  padding: 3rem 3rem;
+  @include lg {
+    padding: 3rem 6rem;
+  }
   .application_top_header {
     font-size: 1.5rem;
-  }
-}
-.application-redirection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  background-color: $color-dark-main;
-  .redirection-paragraph {
-    font-size: 1.5rem;
-    font-family: $font-alt;
-    font-weight: 300;
-  }
-  .button {
-    @include button {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      color: $color-bright-main;
-      outline: 1px solid $color-bright-main;
-      cursor: pointer;
-      &:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease-in-out;
-      }
-    }
   }
 }
 
 .application-container_bottom {
   width: 100%;
-  height: 80vh;
+  height: 100vh; //wszystkie
   position: relative;
   background-color: rgba(255, 245, 160, 0.1);
-  padding: 3rem 6rem;
+  padding: 1rem 2rem;
+
+  @include sm {
+    padding: 3rem 3rem;
+  }
+  @include md {
+    height: 80vh;
+  }
+  @include lg {
+    padding: 3rem 6rem;
+  }
+
   &:before {
     content: "";
-    background: url(../../../assets/BackgroundForm.jpg) no-repeat center
-      center/cover;
+    background: url(../../../assets/BackgroundForm.jpg) center/cover;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: -1;
+    opacity: 1;
+    @include md {
+      background: url(../../../assets/BackgroundForm.jpg) no-repeat center
+        center/cover;
+    }
+  }
+}
+.extendedContainer {
+  height: 150vh; //summary
+  @include sm {
+    height: 120vh; //summary
+  }
+  @include md {
+    height: 80vh;
   }
 }
 .application-steps {
@@ -74,29 +76,42 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    width: 35rem;
+    width: auto;
     height: 30rem;
     color: black;
+    @include lg {
+      width: 35rem;
+    }
     .application-text_header {
       font-size: 1.3rem;
       margin-top: 3rem;
       margin-bottom: 1rem;
+      line-height: 2rem;
     }
   }
 }
 .application-point_container {
   display: flex;
-  width: 40rem;
+  width: auto;
   margin-top: 1.5rem;
   font-weight: 300;
+  justify-content: center; //dodane przy step2
+  align-items: center; //dodane przy step2
+  @include lg {
+    width: 40rem;
+  }
 
   .application-point_text {
     display: flex;
+
     flex-direction: row-reverse;
     justify-content: start;
     gap: 1rem;
-    width: 25rem;
+    width: auto;
     font-weight: 350;
+    @include lg {
+      width: 25rem;
+    }
 
     .application-point_button {
       border: 1px solid black;
@@ -110,41 +125,66 @@
 
   //Step 2
   .application-point_text_left {
-    margin-right: 1rem;
+    margin-right: 0.1rem;
+    @include md {
+      margin-right: 1rem;
+    }
   }
   .application-number_bags {
+    display: flex;
     padding: 0.1rem;
     width: 3rem;
     background: transparent;
     border: none;
     border-bottom: 1px solid $color-dark-accent-first;
+    margin: 0rem 0.5rem;
+    font-weight: 350;
+    font-size: 1rem;
     &:focus {
       outline: none;
       border-bottom: 1px solid $color-bright-accent;
     }
+    @include md {
+      margin-left: 0rem;
+    }
   }
 }
+.column {
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
 //Step 3
 .application-location_container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  .application-location_header {
-    font-weight: 300;
-    color: $color-dark-accent-first;
-    margin-top: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
+
   .application-location_select {
-    width: 10rem;
-    padding: 0.5rem 1rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
     background-color: transparent;
+
+    @include sm {
+      width: 15rem;
+    }
+
+    :focus {
+      outline: transparent;
+      border: transparent;
+      border-radius: 0px;
+    }
+
     .application-location_option {
       padding: 0.6rem 1.5rem;
     }
   }
   .application-location_subheader {
+    font-size: 1.3rem;
+    line-height: 2rem;
     font-weight: 300;
     color: $color-dark-accent-first;
     margin-top: 2rem;
@@ -152,10 +192,13 @@
   }
   .application-help_container {
     flex-wrap: wrap;
-    width: 25rem;
+    width: 100%;
+    @include md {
+      width: 25rem;
+    }
     .application-help_button {
-      // background-color: transparent;
       font-weight: 300;
+      font-size: 1rem;
       padding: 0.5rem 1rem;
       margin: 0.3rem;
       border: 1px solid;
@@ -174,23 +217,50 @@
   }
   .application-organization_input {
     background-color: transparent;
-    padding: 0.4rem 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
     border: 1px solid;
-    width: 28rem;
+    width: 100%;
+
+    :focus {
+      outline: none;
+      border: none;
+    }
+
+    @include sm {
+      width: 28rem;
+    }
   }
 }
 //Step 4
 .application-delivery_header {
   color: $color-dark-accent-first;
   font-weight: 300;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
+  @include md {
+    margin-top: 1.5rem;
+  }
 }
 .application-delivery_both_containers {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include md {
+    width: auto;
+    flex-direction: row;
+    gap: 7rem;
+  }
+  @include lg {
+    gap: 3rem;
+  }
+  @include xl {
+    gap: 3rem;
+  }
 
   .application-delivery_left_container,
   .application-delivery_right_container {
-    width: 30%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-weight: 350;
@@ -198,41 +268,69 @@
     height: 20rem;
     justify-content: space-evenly;
     color: $color-dark-accent-first;
-    padding: 1rem 0rem;
+    padding: 0.5rem 0rem;
+    @include sm {
+      padding: 1rem 0rem;
+    }
+    @include md {
+      width: 30%;
+    }
     .application-delivery_subheader {
       font-weight: 350;
       text-align: left;
+      font-size: 1.3rem;
+      line-height: 2rem;
+      width: 100%;
+      @include md {
+        width: 20rem;
+        font-size: 1.3rem;
+      }
     }
     .application-delivery_small_container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      width: 15rem;
+      width: 100%;
+
+      @include md {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 15rem;
+      }
 
       .application-delivery_label {
         margin-right: 1rem;
-        margin-bottom: 1rem;
+        line-height: 1.5rem;
       }
       .application-delivery_input {
         color: $color-dark-accent-first;
-        width: 10rem;
-        padding: 0.2rem 0.5rem;
+        width: 100%;
+        padding: 0.5rem 0.5rem;
         background: transparent;
         border: 1px solid;
         &:focus {
           outline: none;
           background-color: $color-bright-main;
         }
+        @include md {
+          width: 10rem;
+        }
       }
     }
     .application-delivery_textarea {
       background-color: transparent;
-      width: 18rem;
+      min-width: 100%;
       height: 5rem;
       padding: 0.2rem 0.5rem;
+      margin-top: 1rem;
+      padding: 0.5rem 0.5rem;
+
       &:focus {
         outline: none;
         background-color: $color-bright-main;
+      }
+      @include md {
+        width: 18rem;
       }
     }
   }
@@ -243,6 +341,7 @@
   font-size: 1rem;
   text-align: center;
 }
+
 //Summary
 .application-summary_container {
   .application-summary_header {
@@ -264,16 +363,22 @@
     .application-summary_span {
       color: black;
       font-weight: 300;
+      line-height: 1.5rem;
     }
   }
 }
 .application-summary_both_containers {
   display: flex;
   margin-top: -1rem;
+  flex-direction: column;
+  margin-bottom: auto;
+  @include md {
+    flex-direction: row;
+  }
 }
 .application-summary_left_container,
 .application-summary_right_container {
-  width: 35%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   font-weight: 350;
@@ -282,6 +387,9 @@
   justify-content: space-evenly;
   color: $color-dark-accent-first;
   padding: 1rem 0rem;
+  @include md {
+    width: 35%;
+  }
   .application-summary_subheader {
     font-weight: 350;
   }
@@ -289,7 +397,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 20rem;
+    width: 100%;
+    @include sm {
+      width: 20rem;
+    }
 
     .application-summary_label {
       margin-right: 1rem;
@@ -297,13 +408,16 @@
     }
     .application-summary_span {
       color: $color-dark-accent-first;
-      width: 15rem;
+      width: 60%;
       padding: 0.5rem;
       background: transparent;
       border: 1px solid;
       text-align: center;
       font-family: $font-base;
       font-weight: 600;
+      @include md {
+        width: 15rem;
+      }
     }
   }
 }
@@ -313,17 +427,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45rem;
+  width: 100%;
   height: 25rem;
+  @include lg {
+    width: 45rem;
+  }
   .application-appreciation_container_small {
-    width: 25rem;
+    width: 100%;
     text-align: center;
+    @include lg {
+      width: 25rem;
+    }
     .application-appreciation_header {
       color: $color-dark-main;
       font-weight: 300;
+      line-height: 2rem;
     }
     .application-appreciation_decoration {
-      width: 12rem;
+      width: 15rem;
+      @include lg {
+        width: 12rem;
+      }
     }
   }
 }
@@ -331,6 +455,14 @@
 .application-button_container {
   display: flex;
   gap: 1rem;
+  margin-top: 5rem; //wszystkie
+
+  @include sm {
+    margin-top: 3rem;
+  }
+  @include md {
+    margin-top: 0rem;
+  }
   .application-button {
     padding: 0.6rem 1.5rem;
     background: transparent;
@@ -342,6 +474,56 @@
     }
   }
 }
+.longMargin {
+  margin-top: 25rem; //summary
+
+  @include sm {
+    margin-top: 3rem;
+  }
+  @include md {
+    margin-top: 0rem;
+  }
+}
+
+.application-redirection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: $color-dark-main;
+  padding: 3rem 3rem;
+  background-color: $color-bright-accent;
+  color: $color-dark-accent-first;
+
+  @include lg {
+    padding: 3rem 6rem;
+  }
+  .redirection-paragraph {
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: $font-alt;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+  @include lg {
+    font-size: 1.5rem;
+  }
+  .button {
+    @include button {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      color: $color-dark-main;
+      outline: 1px solid $color-dark-accent-first;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+        color: $color-dark-accent-first;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
 // Overall
 .chosen {
   background: $color-bright-accent;
@@ -352,5 +534,7 @@
 .summary-span_bold {
   font-family: $font-base;
   font-weight: 600;
-  // text-decoration: underline;
+}
+.block {
+  display: block;
 }

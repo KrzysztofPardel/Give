@@ -13,7 +13,7 @@ export const MENU_ITEMS = [
 const Navigation = () => {
   return (
     <div className="navigation-container">
-      {/* <DesktopNav /> */}
+      <DesktopNav />
       {/* <MobileNav /> */}
     </div>
   );

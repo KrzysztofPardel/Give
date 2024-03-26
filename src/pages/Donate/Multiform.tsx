@@ -109,7 +109,13 @@ const Multiform = () => {
             we will be able to know who should receive them.
           </p>
         </div>
-        <div className="application-container_bottom">
+        <div
+          className={
+            page === 5
+              ? `application-container_bottom extendedContainer`
+              : `application-container_bottom`
+          }
+        >
           <p className="application-steps">{page !== 6 && `Step ${page}/5`}</p>
           <div className="application-point_invisible_container">
             {page === 1 && <StepOne setPage={() => setPage(2)} />}
@@ -119,8 +125,13 @@ const Multiform = () => {
             {page === 5 && <Summary />}
             {page === 6 && <Appreciation />}
           </div>
-          <div className="application-button_container">
-            {/* {page > 1 && page < 5 && <></>} */}
+          <div
+            className={
+              page === 5
+                ? `application-button_container longMargin`
+                : `application-button_container`
+            }
+          >
             {page === 5 && (
               <>
                 <button
@@ -154,7 +165,7 @@ const Multiform = () => {
         </div>
         <div className="application-redirection">
           <p className="redirection-paragraph">
-            Would you like to organize a collection?
+            What if you organized your own collection?
           </p>
           <button onClick={handleRedirect} type="button" className="button">
             Organize

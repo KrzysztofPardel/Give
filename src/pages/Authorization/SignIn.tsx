@@ -52,8 +52,12 @@ const SignIn = () => {
     setError("");
     try {
       await schema.validate({ email, password }, { abortEarly: false });
-      await signInWithEmailAndPassword(auth, email, password);
-      dispatch(login({ email, password }));
+      const authResponse = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      dispatch(login({ email, password, uid: authResponse.user.uid}));
       navigate("/");
     } catch (e: any) {
       if (e instanceof Yup.ValidationError) {
