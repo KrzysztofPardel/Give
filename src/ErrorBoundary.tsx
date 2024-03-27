@@ -1,8 +1,8 @@
 import { Component, ErrorInfo, ReactNode } from "react";
-import Error400 from "./Errors/Error400";
-import Error401 from "./Errors/Error401";
-import Error403 from "./Errors/Error403";
-import Error405 from "./Errors/Error405";
+import Error400 from "./Errors/error400";
+import Error401 from "./Errors/error401";
+import Error403 from "./Errors/error403";
+import Error405 from "./Errors/error405";
 import Error500 from "./Errors/Error500";
 import DefaultError from "./Errors/DefaultError";
 
