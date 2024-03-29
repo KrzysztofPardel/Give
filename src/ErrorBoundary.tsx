@@ -1,5 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from "react";
-import Error from "Errors/Error";
+import { Error } from "./Errors/Error.js";
 import DefaultError from "./Errors/DefaultError";
 
 interface Props {

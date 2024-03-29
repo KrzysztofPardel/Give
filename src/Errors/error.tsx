@@ -7,7 +7,7 @@ interface ErrorTypes {
   hint: string;
 }
 
-const Error = ({ type, description, hint }: ErrorTypes) => {
+export const Error = ({ type, description, hint }: ErrorTypes) => {
   return (
     <div className="error-container">
       <div className="error-smaller_container">
@@ -24,5 +24,3 @@ const Error = ({ type, description, hint }: ErrorTypes) => {
     </div>
   );
 };
-
-export default Error;
