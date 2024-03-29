@@ -11,7 +11,7 @@
   width: 100%;
   height: 100%;
   @include md {
-    height: 40rem;
+    height: auto;
   }
 }
 .who-text-container {
@@ -28,7 +28,7 @@
   }
   .who-decoration_image {
     width: 15rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
   .who-text_paragraph {
     font-size: 1rem;
@@ -50,9 +50,8 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
+  padding: 1.5rem;
   @include lg {
-    padding: 1rem;
-    margin-bottom: 3rem;
   }
 
   .who-button {
@@ -82,54 +81,79 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2.5rem;
-  // height: 100%;
-}
-.Item-boxes {
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  .Item-box {
-    display: block;
-    height: 100%;
+  height: auto;
+  @include lg {
   }
 }
 
-.Item-text_container {
+.item-boxes {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 0rem 4rem;
+  .item-box {
+    display: block;
+    height: 70%;
+
+    @include lg {
+      height: 100%;
+    }
+  }
+  @include lg {
+    height: 10rem;
+  }
+}
+
+.item-text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   width: 100%;
 
   @include lg {
-    width: 45rem;
+    width: 100%rem;
     flex-direction: row;
+    justify-content: space-between;
+  }
+  .text-main {
+    width: 75%;
   }
 
-  .Item-header {
+  .text-main_header {
     font-size: 1rem;
-    font-weight: 300;
-    text-align: start;
+    font-weight: 400;
+    text-align: center;
     margin-bottom: 0.25rem;
+
+    @include lg {
+      text-align: start;
+    }
   }
-  .Item-paragraph {
-    font-size: 0.7rem;
+  .text-main_paragraph {
+    font-size: 0.75rem;
     font-weight: 350;
     margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+    line-height: 1rem;
+    @include lg {
+      text-align: start;
+    }
   }
-  .Item-span {
+  .item-span {
     font-size: 0.7rem;
     font-weight: 300;
   }
 }
 .line {
   border: 0.01rem solid;
-  width: 100%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   color: $color-dark-main;
-
+  display: flex;
+  justify-content: center;
   @include xl {
     width: 55rem;
   }
@@ -140,7 +164,7 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
-
+  z-index: 100;
   .button_number {
     padding: 0.5rem;
     background: transparent;

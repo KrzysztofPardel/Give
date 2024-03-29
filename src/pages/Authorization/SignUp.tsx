@@ -11,7 +11,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 //validation
 import * as Yup from "yup"; // Import Yup
-
+import { schemaSignUp } from "./Validations";
 const SignUp = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -20,33 +20,12 @@ const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  //validation shema
-  const schema = Yup.object().shape({
-    email: Yup.string()
-      .email("Invalid email")
-      .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/, "Invalid email format")
-      .min(5, "Email is too short")
-      .max(55, "Email is too long")
-      .required("Email is required"),
-    password: Yup.string()
-      .matches(/[A-Z]+/, "Password must contain at least one uppercase letter")
-      .matches(/[0-9]+/, "Password must contain at least one number")
-      .matches(
-        /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/,
-        "Password must contain at least one special character"
-      )
-      .required("Password is required"),
-    repeatpassword: Yup.string()
-      .oneOf([Yup.ref("password")], "Passwords must match")
-      .required("Please repeat the password")
-  });
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
 
     try {
-      await schema.validate(
+      await schemaSignUp.validate(
         { email, password, repeatpassword },
         { abortEarly: false }
       );

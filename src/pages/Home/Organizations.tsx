@@ -19,19 +19,21 @@ export const Organizations = ({ collectionName }: CollectionProps) => {
   }, []);
 
   return (
-    <div className="">
-      {allDocs.map(({ id, name, description, items }) => (
-        <div key={id}>
-          <div className="Item-text_container">
-            <div className="Item-header&paragraph_container">
-              <h1 className="Item-header">{name}</h1>
-              <p className="Item-paragraph">{description} </p>
+    <div className="item-boxes">
+      {allDocs.map(({ name, description, items }) => {
+        return (
+          <div key={name} className="item-box">
+            <div className="item-text_container">
+              <div className="text-main">
+                <h1 className="text-main_header">{name}</h1>
+                <p className="text-main_paragraph">{description} </p>
+              </div>
+              <span className="item-span">{items}</span>
             </div>
-            <span className="Item-span">{items}</span>
+            <div className="line" />
           </div>
-          <div className="line" />
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

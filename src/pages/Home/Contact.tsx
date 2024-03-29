@@ -10,6 +10,7 @@ import { dbContact } from "../../firebase";
 import emailjs from "@emailjs/browser";
 //validation
 import * as Yup from "yup"; // Import Yup
+import { schemaContact } from "../Authorization/Validations";
 
 const Contact = () => {
   const [name, setName] = useState<string>("");
@@ -19,24 +20,6 @@ const Contact = () => {
   const [showSentConfirmation, setShowSentConfirmation] =
     useState<boolean>(false);
   const form = useRef<null>(null); //initial ref value changed from undefined to ref
-
-  //validation shema
-  const schema = Yup.object().shape({
-    name: Yup.string()
-      .min(2, "Name is too short")
-      .max(30, "Name is too long")
-      .required("Name is required"),
-    email: Yup.string()
-      .email("Invalid email")
-      .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/, "Invalid email format")
-      .min(5, "Email is too short")
-      .max(55, "Email is too long")
-      .required("Email is required"),
-    message: Yup.string()
-      .min(5, "Message is too short- min. 2 characters")
-      .max(150, "Message is too long- max. 150 characters")
-      .required("Message is required")
-  });
 
   //show confirmation that the email has been sent
   const showConfirmation = () => {
@@ -51,7 +34,10 @@ const Contact = () => {
     setError(""); // Reset error state
     //validation and adding data to Firebase
     try {
-      await schema.validate({ name, email, message }, { abortEarly: false });
+      await schemaContact.validate(
+        { name, email, message },
+        { abortEarly: false }
+      );
       if (form.current) {
         // Sending email through emailJS
         emailjs

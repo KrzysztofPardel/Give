@@ -61,14 +61,14 @@ const Multiform = () => {
       }
     };
 
-    const CountData = () => {
+    const countData = () => {
       setDonationsCounter((prevValue) => prevValue + 1);
     };
 
     const summaryData = formatSummaryData();
     await addSummary(summaryData);
     //add one form the users' amount of forms
-    CountData();
+    countData();
     dispatch(incrementCounter());
     //reseting all pages of the form
     dispatch(resetForm());
