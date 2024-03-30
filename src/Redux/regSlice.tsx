@@ -8,7 +8,7 @@ import {
 import { auth } from "../firebase";
 
 const regSlice = createSlice({
-  name: "user",
+  name: "reg",
   initialState: {},
   reducers: {
     registerUser: async (state, action) => {

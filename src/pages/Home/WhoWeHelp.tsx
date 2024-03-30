@@ -38,14 +38,6 @@ const WhoWeHelp: FC = () => {
     setCurrentFoundationPage(page);
   };
 
-  // const handleOrganizationPage = (page: number) => {
-  //   setOrganizationPage(page);
-  // };
-
-  // const handleCollectionPage = (page: number) => {
-  //   setCollectionPage(page);
-  // };
-
   return (
     <div id="help" className="who-background">
       <div className="who-container">
@@ -75,24 +67,15 @@ const WhoWeHelp: FC = () => {
         {/* Foundations */}
         {currentSwitch === 1 && (
           <>
-            <div className="Item-container">
+            <div className="item-container">
               {currentFoundationPage === 1 && (
-                <Foundations
-                  collectionName="f_Collections"
-                  // key="f_Collections"
-                />
+                <Foundations collectionName="f_Collections" />
               )}
               {currentFoundationPage === 2 && (
-                <Foundations
-                  collectionName="f_Collections_two"
-                  // key="f_Collections_two"
-                />
+                <Foundations collectionName="f_Collections_two" />
               )}
               {currentFoundationPage === 3 && (
-                <Foundations
-                  collectionName="f_Collections_three"
-                  // key="f_Collections_three"
-                />
+                <Foundations collectionName="f_Collections_three" />
               )}
             </div>
 
@@ -113,7 +96,7 @@ const WhoWeHelp: FC = () => {
         {/* Non-governmental organizations */}
         {currentSwitch === 2 && (
           <>
-            <div className="Item-container">
+            <div className="item-container">
               {organizationPage === 1 && (
                 <Organizations
                   collectionName="o_Collections"
@@ -141,10 +124,11 @@ const WhoWeHelp: FC = () => {
             </div>
           </>
         )}
+
         {/* Local collections */}
         {currentSwitch === 3 && (
           <>
-            <div className="Item-container">
+            <div className="item-container">
               {collectionPage === 1 && (
                 <Collections
                   collectionName="c_Collections"

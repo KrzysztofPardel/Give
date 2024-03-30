@@ -23,8 +23,33 @@ export const StepThree = ({ setPage }: StepThreeProps) => {
     dispatch(setStep3Data({ ...step3, organization: value }));
   };
 
+  //validation
   const isStepValid =
     step3 && step3.help && step3.receivers && step3.organization;
+
+  //mapping through select options
+  const SELECT_OPTIONS = [
+    {
+      id: 1,
+      city: "Gdańsk"
+    },
+    {
+      id: 2,
+      city: "Warszawa"
+    },
+    {
+      id: 3,
+      city: "Wrocław"
+    },
+    {
+      id: 4,
+      city: "Poznań"
+    },
+    {
+      id: 5,
+      city: "Katowice"
+    }
+  ];
 
   return (
     <>
@@ -35,37 +60,20 @@ export const StepThree = ({ setPage }: StepThreeProps) => {
           value={step3 ? step3.help : ""}
           onChange={(e) => handleSelect(e.target.value)}
         >
-          <option className="application-location_option">Choose city</option>
-          <option
-            onSelect={() => handleSelect("Gdańsk")}
-            className="application-location_option"
-          >
-            Gdańsk
+          <option className="application-location_option" disabled>
+            Choose city
           </option>
-          <option
-            onSelect={() => handleSelect("Warszawa")}
-            className="application-location_option"
-          >
-            Warszawa
-          </option>
-          <option
-            onSelect={() => handleSelect("Wrocław")}
-            className="application-location_option"
-          >
-            Wrocław
-          </option>
-          <option
-            onSelect={() => handleSelect("Poznań")}
-            className="application-location_option"
-          >
-            Poznań
-          </option>
-          <option
-            onSelect={() => handleSelect("Katowice")}
-            className="application-location_option"
-          >
-            Katowice
-          </option>
+          {SELECT_OPTIONS.map(({ id, city }) => {
+            return (
+              <option
+                key={id}
+                onSelect={() => handleSelect(`${city}`)}
+                className="application-location_option"
+              >
+                {city}
+              </option>
+            );
+          })}
         </select>
         <div className="application-help_container">
           <h3 className="application-location_subheader">

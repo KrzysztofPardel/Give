@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "./authSlice";
-
+import regSlice from "./regSlice";
 import formSlice from "./formSlice";
 import organizeSlice from "./organizeSlice";
 import dataCounter from "./dataCounterSlice";
@@ -12,6 +12,7 @@ export interface UserState {
 const store = configureStore({
   reducer: {
     auth: authSlice,
+    reg: regSlice,
     form: formSlice,
     organize: organizeSlice,
     dataCounter: dataCounter

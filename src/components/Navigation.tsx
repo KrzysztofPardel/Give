@@ -1,6 +1,8 @@
 import "./SCSS/Navigation.scss";
-import MobileNav from "./MobileNav";
-import DesktopNav from "./DesktopNav";
+//lazy loading
+import { Suspense, lazy } from "react";
+const DesktopNavLazy = lazy(() => import("./DesktopNav"));
+const MobileNavLazy = lazy(() => import("./MobileNav"));
 
 export const MENU_ITEMS = [
   { id: 1, to: "/#start", item: "Start" },
@@ -13,8 +15,8 @@ export const MENU_ITEMS = [
 const Navigation = () => {
   return (
     <div className="navigation-container">
-      <DesktopNav />
-      {/* <MobileNav /> */}
+      <DesktopNavLazy />
+      <MobileNavLazy />
     </div>
   );
 };

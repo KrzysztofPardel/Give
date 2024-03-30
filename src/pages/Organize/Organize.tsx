@@ -11,9 +11,9 @@ const Organize = () => {
   return (
     <Suspense fallback={<Loading />}>
       <HeroLazy />
-      {/* <OrganizeStepsLazy /> */}
+      <OrganizeStepsLazy />
       <MultiformLazy />
-      {/* <ContactLazy /> */}
+      <ContactLazy />
       <FooterLazy />
     </Suspense>
   );

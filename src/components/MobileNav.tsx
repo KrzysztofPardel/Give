@@ -14,7 +14,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
 const MobileNav = () => {
-  const [nav, setNav] = useState<boolean>(false);
+  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const MobileNav = () => {
     }
   };
   const handleNav = () => {
-    setNav(!nav);
+    setIsNavOpen(!isNavOpen);
   };
 
   return (
@@ -41,14 +41,14 @@ const MobileNav = () => {
         onKeyDown={handleNav}
         className="mobileNav-hamburger"
       >
-        {nav ? (
+        {isNavOpen ? (
           <RxCross2 className="hamburger-icon" />
         ) : (
           <RxHamburgerMenu className="hamburger-icon" />
         )}
       </div>
       {/* revealed */}
-      <div className={nav ? "mobileNav" : "mobileNav hidden"}>
+      <div className={isNavOpen ? "mobileNav" : "mobileNav hidden"}>
         <div className="btn-container_mobile">
           {user ? (
             <p className="mobile-userEmail">Welcome: {user && user.email} </p>

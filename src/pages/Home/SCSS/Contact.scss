@@ -25,7 +25,7 @@
     height: auto;
   }
   @include lg {
-    height: 45rem;
+    height: 100%;
     width: 60vw;
     overflow: hidden;
   }
@@ -37,6 +37,7 @@
 
     @include lg {
       height: 45rem;
+      height: 100%;
       width: 80rem;
       overflow: hidden;
     }

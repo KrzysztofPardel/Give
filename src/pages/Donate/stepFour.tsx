@@ -57,6 +57,7 @@ export const StepFour = ({ setPage }: StepFourProps) => {
     };
   }, [inputValue, dispatch]);
 
+  //validation
   const isStepValid =
     step4 &&
     step4.address &&

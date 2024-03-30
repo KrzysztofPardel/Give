@@ -33,6 +33,7 @@ const Contact = () => {
     e.preventDefault();
     setError(""); // Reset error state
     //validation and adding data to Firebase
+    
     try {
       await schemaContact.validate(
         { name, email, message },
