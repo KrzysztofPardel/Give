@@ -103,8 +103,8 @@ const Multiform = () => {
     <div className="application-background">
       <div className="application-container">
         <div className="application-container_top">
-          <h2 className="application_top_header">Important!</h2>
-          <p className="application_top_paragraph">
+          <h2 className="application-top_header">Important!</h2>
+          <p className="application-top_paragraph">
             Fill out the details concerning the items you want to give. This way
             we will be able to know who should receive them.
           </p>

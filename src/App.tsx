@@ -1,10 +1,10 @@
 import { useRoutes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import SignUp from "./pages/Authorization/SignUp";
-import SignIn from "./pages/Authorization/SignIn";
-import SignOut from "./pages/Authorization/SignOut";
+import SignUp from "./pages/Authentication/SignUp";
+import SignIn from "./pages/Authentication/SignIn";
+import SignOut from "./pages/Authentication/SignOut";
 import Donate from "./pages/Donate/Donate";
-import ProtectedRoute from "./pages/Authorization/ProtectedRoute";
+import ProtectedRoute from "./pages/Authentication/ProtectedRoute";
 import Organize from "./pages/Organize/Organize";
 // import Error400 from "../src/Errors/error400";
 

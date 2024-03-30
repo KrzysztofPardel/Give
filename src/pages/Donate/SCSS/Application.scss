@@ -11,10 +11,14 @@
   color: black;
   padding: 3rem 3rem;
   @include lg {
-    padding: 3rem 6rem;
+    padding: 3rem 5rem;
   }
-  .application_top_header {
+  .application-top_header {
     font-size: 1.5rem;
+  }
+  .application-top_paragraph {
+    font-weight: 350;
+    font-size: 1rem;
   }
 }
 
@@ -83,7 +87,8 @@
       width: 35rem;
     }
     .application-text_header {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      font-weight: 400;
       margin-top: 3rem;
       margin-bottom: 1rem;
       line-height: 2rem;
@@ -95,15 +100,14 @@
   width: auto;
   margin-top: 1.5rem;
   font-weight: 300;
-  justify-content: center; //dodane przy step2
-  align-items: center; //dodane przy step2
+  justify-content: start;
+  align-items: center;
   @include lg {
     width: 40rem;
   }
 
   .application-point_text {
     display: flex;
-
     flex-direction: row-reverse;
     justify-content: start;
     gap: 1rem;
@@ -183,9 +187,9 @@
     }
   }
   .application-location_subheader {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 2rem;
-    font-weight: 300;
+    font-weight: 400;
     color: $color-dark-accent-first;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
@@ -234,8 +238,9 @@
 }
 //Step 4
 .application-delivery_header {
+  font-size: 1.2rem;
+  font-weight: 400;
   color: $color-dark-accent-first;
-  font-weight: 300;
   margin-top: 0.5rem;
   @include md {
     margin-top: 1.5rem;
@@ -276,14 +281,13 @@
       width: 30%;
     }
     .application-delivery_subheader {
-      font-weight: 350;
+      font-weight: 400;
       text-align: left;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       line-height: 2rem;
       width: 100%;
       @include md {
         width: 20rem;
-        font-size: 1.3rem;
       }
     }
     .application-delivery_small_container {
@@ -303,6 +307,7 @@
         line-height: 1.5rem;
       }
       .application-delivery_input {
+        font-family: $font-alt;
         color: $color-dark-accent-first;
         width: 100%;
         padding: 0.5rem 0.5rem;
@@ -324,7 +329,7 @@
       padding: 0.2rem 0.5rem;
       margin-top: 1rem;
       padding: 0.5rem 0.5rem;
-
+      font-family: $font-alt;
       &:focus {
         outline: none;
         background-color: $color-bright-main;
@@ -361,6 +366,7 @@
       margin-right: 1rem;
     }
     .application-summary_span {
+      font-family: $font-alt;
       color: black;
       font-weight: 300;
       line-height: 1.5rem;
@@ -391,21 +397,24 @@
     width: 35%;
   }
   .application-summary_subheader {
-    font-weight: 350;
+    font-weight: 400;
+    font-size: 1.2;
   }
   .application-summary_small_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    font-family: $font-alt;
     @include sm {
       width: 20rem;
     }
 
     .application-summary_label {
       margin-right: 1rem;
-      font-weight: 400;
+      font-weight: 300;
     }
+
     .application-summary_span {
       color: $color-dark-accent-first;
       width: 60%;
@@ -421,6 +430,7 @@
     }
   }
 }
+
 //Appreciation
 .application-appreciation_container {
   display: flex;
@@ -467,7 +477,10 @@
     padding: 0.6rem 1.5rem;
     background: transparent;
     border: 1px solid $color-dark-main;
-    &:hover {
+    font-size: 1rem;
+    font-family: $font-alt;
+    font-weight: 300;
+    nt &:hover {
       border: 1px solid $color-dark-main;
       transform: scale(0.9);
       transition: transform 0.3s ease-in-out;
@@ -494,26 +507,22 @@
   padding: 3rem 3rem;
   background-color: $color-bright-accent;
   color: $color-dark-accent-first;
-
   @include lg {
-    padding: 3rem 6rem;
+    padding: 0;
   }
   .redirection-paragraph {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
     font-family: $font-alt;
     font-weight: 300;
     line-height: 2rem;
-  }
-  @include lg {
-    font-size: 1.5rem;
   }
   .button {
     @include button {
       margin-top: 2rem;
       margin-bottom: 2rem;
       color: $color-dark-main;
-      outline: 1px solid $color-dark-accent-first;
+      outline: 0.5px solid $color-dark-accent-first;
       cursor: pointer;
       &:hover {
         transform: scale(1.1);
@@ -531,10 +540,12 @@
   position: relative;
   z-index: 15;
 }
+
 .summary-span_bold {
-  font-family: $font-base;
-  font-weight: 600;
+  font-family: $font-alt;
+  font-weight: 450;
 }
+
 .block {
   display: block;
 }

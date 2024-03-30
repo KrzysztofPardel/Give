@@ -54,7 +54,7 @@ const FourSteps = () => {
             <div key={id} className="organizeSteps-single_column">
               <div className="organizeSteps-icon">{icon}</div>
               <h2 className="organizeSteps-text-header">{header}</h2>
-              <p className="organize-paragraph">{paragraph}</p>
+              <p className="organizeSteps-paragraph">{paragraph}</p>
               <div className="organizeSteps-line" />
             </div>
           ))}

@@ -37,13 +37,18 @@
   }
 
   .welcome-sign {
-    width: 20rem;
+    width: auto;
     font-weight: 300;
     font-size: 1rem;
     font-family: $font-alt;
+    font-weight: 400;
+    color: $color-dark-main;
+  }
+  .welcome-sign_s {
+    font-weight: 300;
   }
 
-  .autho-btn {
+  .auth-btn {
     display: flex;
     align-self: center;
     font-size: 1rem;
@@ -55,6 +60,7 @@
     border: none;
     cursor: pointer;
     border: 1px transparent solid;
+    color: $color-dark-main;
 
     &:hover {
       border-color: yellow;

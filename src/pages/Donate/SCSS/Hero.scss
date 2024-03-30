@@ -20,6 +20,7 @@
     align-items: normal; //added
   }
 }
+
 .donate-image_container {
   height: 100%;
   z-index: -20;
@@ -63,7 +64,11 @@
     height: 32rem;
     text-align: end;
   }
-
+  .donate-text_paragraph:first-child {
+    font-size: 2.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
   .donate-text_paragraph {
     width: 80%;
     font-size: 1.5rem;
@@ -74,6 +79,7 @@
       width: 100%;
     }
   }
+
   .donate-text_decoration {
     display: flex;
     justify-content: center;

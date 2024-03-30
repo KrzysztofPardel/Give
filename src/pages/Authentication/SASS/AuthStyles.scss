@@ -57,6 +57,9 @@
 
     .data-label {
       text-align: left;
+      font-weight: 300;
+      line-height: 1.5rem;
+      font-size: 1rem;
     }
     .data-input {
       width: 100%;
@@ -65,6 +68,8 @@
       border-bottom: 1px solid;
       background: transparent;
       font-size: 1rem;
+      font-family: $font-alt;
+      font-weight: 350;
       &:focus {
         outline: none;
       }
@@ -74,10 +79,15 @@
     }
   }
 }
-.auth-error-message {
-  color: #a60101;
-  font-size: 1rem;
+.auth-error_message_container {
+  height: 5rem;
   text-align: center;
+  line-height: 1.5rem;
+  .error_message {
+    color: #a60101;
+    font-size: 0.8rem;
+    font-weight: 350;
+  }
 }
 .auth-button_container {
   display: flex;

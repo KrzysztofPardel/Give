@@ -99,10 +99,10 @@
 
     .form-label {
       font-size: 1rem;
-
+      font-weight: 350;
       @include lg {
-        width: 15rem;
-        font-size: 1.1rem;
+        width: 10rem;
+        font-size: 1.2rem;
         margin-left: 0.3rem;
       }
     }
@@ -110,7 +110,8 @@
       width: 100%;
       border: none;
       border-bottom: 1px solid $color-dark-main;
-      padding: 0.5rem;
+      padding: 1rem;
+      font-size: 1rem;
 
       @include sm {
         width: 50%;
@@ -144,24 +145,23 @@
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 1rem;
-
+    font-weight: 350;
     @include md {
-      font-size: 1rem;
       display: block;
       margin-left: 0rem;
     }
     @include lg {
+      text-align: start;
       margin-left: 0.3rem;
-      margin-bottom: 0rem;
     }
   }
   .form-textarea {
     width: 100%;
     height: 12rem;
-
+    font-size: 1rem;
     border: none;
     border-bottom: 1px solid $color-dark-main;
-    text-align: justify;
+    text-align: start;
     &:focus {
       outline: none;
     }
@@ -175,16 +175,23 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+
   .form-button {
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2rem;
-    width: 5rem;
-    padding: 1rem;
+    height: auto;
+    width: auto;
+    font-size: 1rem;
+    padding: 1rem 5em;
     background-color: transparent;
     border: 1px solid $color-dark-main;
+    &:hover {
+      transform: scale(1.1);
+      color: $color-dark-accent-first;
+      transition: transform 0.3s ease-in-out;
+    }
   }
 }
 .form-message_sent {
@@ -212,4 +219,5 @@
   color: #a60101;
   font-size: 1rem;
   text-align: center;
+  font-weight: 350;
 }

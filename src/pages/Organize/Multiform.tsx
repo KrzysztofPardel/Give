@@ -99,8 +99,8 @@ const Multiform = () => {
     <div className="multiform-background">
       <div className="multiform-container">
         <div className="multiform-container_top">
-          <h2 className="multiform-top_header">Important!</h2>
-          <p className="multiform-top_paragraph">
+          <h2 className="multiform-top_h">Important!</h2>
+          <p className="multiform-top_p">
             Fill out the details concerning collection you want to organize.
           </p>
         </div>

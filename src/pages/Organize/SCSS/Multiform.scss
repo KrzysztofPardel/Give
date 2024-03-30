@@ -10,9 +10,13 @@
   background-color: $color-dark-accent-first;
   padding: 3rem 5rem;
   color: $color-bright-main;
-  .multiform-top_header {
+  .multiform-top_h {
     font-size: 1.5rem;
     color: $color-bright-accent;
+  }
+  .multiform-top_p {
+    font-weight: 350;
+    font-size: 1rem;
   }
 }
 

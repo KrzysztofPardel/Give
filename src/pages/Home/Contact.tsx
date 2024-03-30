@@ -10,7 +10,7 @@ import { dbContact } from "../../firebase";
 import emailjs from "@emailjs/browser";
 //validation
 import * as Yup from "yup"; // Import Yup
-import { schemaContact } from "../Authorization/Validations";
+import { schemaContact } from "../Authentication/Validations";
 
 const Contact = () => {
   const [name, setName] = useState<string>("");
@@ -33,7 +33,7 @@ const Contact = () => {
     e.preventDefault();
     setError(""); // Reset error state
     //validation and adding data to Firebase
-    
+
     try {
       await schemaContact.validate(
         { name, email, message },
@@ -92,12 +92,12 @@ const Contact = () => {
         <img src={BgForm} alt="group of people" className="form-image" />
       </div>
       <form ref={form} className="form-container_text" onSubmit={handleSubmit}>
-        <h1 className="form-text_header">Contact us</h1>
+        <h1 className="form-text_header">Contact</h1>
         <img src={Decoration} alt="box" className="form-decoration_image" />
         <div className="form-input_container">
           <div className="form-input_container_small">
             <label className="form-label" htmlFor="nameForm">
-              Enter your name
+              Name
             </label>
             <input
               name="name"
@@ -111,7 +111,7 @@ const Contact = () => {
           </div>
           <div className="form-input_container_small">
             <label className="form-label" htmlFor="emailForm">
-              Enter your email
+              Email
             </label>
             <input
               name="email"
@@ -126,7 +126,7 @@ const Contact = () => {
         </div>
         <div className="form-textarea_container">
           <label className="form-label_textarea" htmlFor="messageForm">
-            Enter your message
+            Message
           </label>
           <textarea
             name="message"

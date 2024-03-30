@@ -57,7 +57,7 @@ const MobileNav = () => {
             <button
               onClick={() => navigate("/donate")}
               type="button"
-              className="autho-btn_mobile"
+              className="auth-btn_mobile"
             >
               Donate
             </button>
@@ -66,7 +66,7 @@ const MobileNav = () => {
             <button
               onClick={handleSignout}
               type="button"
-              className="autho-btn_mobile"
+              className="auth-btn_mobile"
             >
               Sign Out
             </button>
@@ -75,7 +75,7 @@ const MobileNav = () => {
             <button
               onClick={() => navigate("/signin")}
               type="button"
-              className="autho-btn_mobile"
+              className="auth-btn_mobile"
             >
               Sign In
             </button>
@@ -84,7 +84,7 @@ const MobileNav = () => {
             <button
               onClick={() => navigate("/signup")}
               type="button"
-              className="autho-btn_mobile"
+              className="auth-btn_mobile"
             >
               Sign Up
             </button>

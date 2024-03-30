@@ -70,8 +70,8 @@
     width: 25rem;
   }
   .chooseHelp-header {
-    font-weight: 550;
     font-family: $font-alt;
+    font-size: 1.2rem;
     color: $color-dark-accent-first;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
@@ -82,6 +82,9 @@
     padding: 0.5rem 1rem;
     margin: 0.3rem;
     border: 1px solid;
+    font-size: 1rem;
+    font-weight: 300;
+    outline: 0.5 solid;
     cursor: pointer;
     &:hover {
       border: 1px solid $color-bright-accent;
@@ -261,6 +264,7 @@
     padding: 0.6rem 1.5rem;
     background: transparent;
     border: 1px solid $color-dark-main;
+    font-size: 1rem;
     &:hover {
       border: 1px solid $color-dark-main;
       transform: scale(0.9);

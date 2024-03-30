@@ -30,19 +30,24 @@ const DesktopNav = () => {
     <nav className="desktopNav-container">
       <div className="btn-container">
         {user ? (
-          <p className="welcome-sign">Welcome: {user && user.email} </p>
+          <>
+            <p className="welcome-sign">
+              <span className="welcome-sign_s">Welcome: </span>
+              {user && user.email}{" "}
+            </p>
+          </>
         ) : null}
         {user ? (
           <button
             onClick={() => navigate("/donate")}
             type="button"
-            className="autho-btn"
+            className="auth-btn"
           >
             Donate
           </button>
         ) : null}
         {user ? (
-          <button onClick={handleSignout} type="button" className="autho-btn">
+          <button onClick={handleSignout} type="button" className="auth-btn">
             Sign Out
           </button>
         ) : null}
@@ -50,7 +55,7 @@ const DesktopNav = () => {
           <button
             onClick={() => navigate("/signin")}
             type="button"
-            className="autho-btn"
+            className="auth-btn"
           >
             Sign In
           </button>
@@ -59,7 +64,7 @@ const DesktopNav = () => {
           <button
             onClick={() => navigate("/signup")}
             type="button"
-            className="autho-btn"
+            className="auth-btn"
           >
             Sign Up
           </button>

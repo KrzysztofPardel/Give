@@ -64,7 +64,7 @@ const SignUp = () => {
           </div>
           <div className="form-input">
             <label className="data-label" htmlFor="passwordInputSignUp">
-              Hasło
+              Password
             </label>
             <input
               value={password}
@@ -76,7 +76,7 @@ const SignUp = () => {
           </div>
           <div className="form-input">
             <label className="data-label" htmlFor="repeatPasswordInputSignUp">
-              Powtórz hasło
+              Repeat password
             </label>
             <input
               value={repeatpassword}
@@ -86,7 +86,9 @@ const SignUp = () => {
               id="repeatPasswordInputSignUp"
             />
           </div>
-          {error && <p className="auth-error-message">{error}</p>}
+          <div className="auth-error_message_container">
+            {error && <p className="error_message">{error}</p>}
+          </div>
         </div>
         <div className="auth-button_container">
           <button type="submit" className="auth-button">
