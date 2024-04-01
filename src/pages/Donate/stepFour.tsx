@@ -4,6 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 import { setStep4Data } from "../../Redux/formSlice";
 import { Step4 } from "../../Redux/formSlice";
+import InputLabel from "components/InputLabel";
+
+{
+  /* <InputLabel labelHTML={} labelCLASSS={} labelCONTENT={} inputOnCHANGE={}  inputVALUE={} inputTYPE={} inputCLASS={} inputID={} /> */
+}
 
 type StepFourProps = {
   setPage: (x: number) => void;
@@ -68,138 +73,135 @@ export const StepFour = ({ setPage }: StepFourProps) => {
     step4.time &&
     step4.zipCode;
 
+  const INPUT_DATA = [
+    {
+      id: 1,
+      htmlFor: "application_delivery_input_street",
+      labelContent: "Street",
+      value: inputValue?.address,
+      idInput: "address"
+    },
+    {
+      id: 2,
+      htmlFor: "application_delivery_input_city",
+      labelContent: "City",
+      value: inputValue?.city,
+      idInput: "city"
+    },
+    {
+      id: 3,
+      htmlFor: "application_delivery_input_zip",
+      labelContent: "Zip Code",
+      value: inputValue?.zipCode,
+      idInput: "zipCode"
+    },
+    {
+      id: 4,
+      htmlFor: "application_delivery_input_phone",
+      labelContent: "Phone number",
+      value: inputValue?.phone,
+      idInput: "phone"
+    }
+  ];
+
+  const INPUT_DATA_TWO = [
+    {
+      id: 1,
+      htmlFor: "application_delivery_input_date",
+      labelContent: "Date",
+      value: inputValue?.date,
+      type: "date"
+    },
+    {
+      id: 2,
+      htmlFor: "application_delivery_input_time",
+      labelContent: "Time",
+      value: inputValue?.time,
+      type: "time"
+    }
+  ];
+
   return (
     <>
-      <div className="application-delivery_container">
-        <h2 className="application-delivery_header">
+      <div className="stepDonate-delivery_container">
+        <h2 className="stepDonate-delivery_header">
           Give us the address that you want the courier to go to:
         </h2>
-        <div className="application-delivery_both_containers">
-          <div className="application-delivery_left_container">
-            <h3 className="application-delivery_subheader">
+        <div className="stepDonate-delivery_both_containers">
+          <div className="stepDonate-delivery_left_container">
+            <h3 className="stepDonate-delivery_subheader">
               Enter the collection address:
             </h3>
-            <div className="application-delivery_small_container">
-              <label
-                htmlFor="application_delivery_input_street"
-                className="application-delivery_label"
-              >
-                Street
-              </label>
-              <input
-                onChange={handleInputChange}
-                value={inputValue?.address}
-                type="text"
-                className="application-delivery_input"
-                id="address"
-              />
-            </div>
-            <div className="application-delivery_small_container">
-              <label
-                htmlFor="application_delivery_input_city"
-                className="application-delivery_label"
-              >
-                City
-              </label>
-              <input
-                onChange={handleInputChange}
-                value={inputValue?.city}
-                type="text"
-                className="application-delivery_input"
-                id="city"
-              />
-            </div>
-            <div className="application-delivery_small_container">
-              <label
-                htmlFor="application_delivery_input_zip"
-                className="application-delivery_label"
-              >
-                Zip Code
-              </label>
-
-              <input
-                onChange={handleInputChange}
-                value={inputValue?.zipCode}
-                type="text"
-                className="application-delivery_input"
-                id="zipCode"
-              />
-            </div>
-            <div className="application-delivery_small_container">
-              <label
-                htmlFor="application_delivery_input_phone"
-                className="application-delivery_label"
-              >
-                Phone number
-              </label>
-              <input
-                onChange={handleInputChange}
-                value={inputValue?.phone}
-                type="text"
-                className="application-delivery_input"
-                id="phone"
-              />
-            </div>
+            {INPUT_DATA.map(({ id, htmlFor, labelContent, value, idInput }) => {
+              return (
+                <div className="stepDonate-delivery_small_container" key={id}>
+                  <label
+                    htmlFor={htmlFor}
+                    className="stepDonate-delivery_label"
+                  >
+                    {labelContent}
+                  </label>
+                  <input
+                    onChange={handleInputChange}
+                    value={value}
+                    type="text"
+                    className="stepDonate-delivery_input"
+                    id={idInput}
+                  />
+                </div>
+              );
+            })}
           </div>
-          <div className="application-delivery_right_container">
-            <h3 className="application-delivery_subheader">
+          <div className="stepDonate-delivery_right_container">
+            <h3 className="stepDonate-delivery_subheader">
               Enter the collection date:
             </h3>
-            <div className="application-delivery_small_container">
-              <label
-                htmlFor="application_delivery_input_date"
-                className="application-delivery_label"
-              >
-                Date
-              </label>
-              <input
-                onChange={handleDateChange}
-                value={inputValue?.date}
-                type="date"
-                className="application-delivery_input"
-              />
-            </div>
-            <div className="application-delivery_small_container">
-              <label
-                htmlFor="application_delivery_input_time"
-                className="application-delivery_label"
-              >
-                Time
-              </label>
-              <input
-                onChange={handleInputChange}
-                value={inputValue?.time}
-                type="time"
-                className="application-delivery_input"
-                id="time"
-              />
-            </div>
+            {INPUT_DATA_TWO.map(
+              ({ id, htmlFor, labelContent, type, value }) => {
+                return (
+                  <div className="stepDonate-delivery_small_container" key={id}>
+                    <label
+                      htmlFor={htmlFor}
+                      className="stepDonate-delivery_label"
+                    >
+                      {labelContent}
+                    </label>
+                    <input
+                      onChange={handleInputChange}
+                      value={value}
+                      type={type}
+                      className="stepDonate-delivery_input"
+                    />
+                  </div>
+                );
+              }
+            )}
             <label
               htmlFor="application_delivery_textarea_info"
-              className="application-delivery_label"
+              className="stepDonate-delivery_label"
             >
               Additional information for the courier
               <textarea
                 onChange={handleTextAreaChange}
                 value={inputValue?.courierInfo}
                 id="courierInfo"
-                className="application-delivery_textarea"
+                className="stepDonate-delivery_textarea"
               />
             </label>
           </div>
         </div>
       </div>
-      <div className="application-button_container">
+      <div className="stepDonate-button_container">
         <button
           type="button"
-          className="application-button"
+          className="stepDonate-button"
           onClick={() => setPage(3)}
         >
           Back
         </button>
         <button
           type="button"
-          className="application-button"
+          className="stepDonate-button"
           onClick={() => setPage(5)}
           disabled={!isStepValid}
         >

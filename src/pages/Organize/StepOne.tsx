@@ -44,102 +44,67 @@ export const StepOne = ({ setPage }: StepOneProps) => {
     step1.phoneNumber &&
     step1.kindofHelp;
 
+  const INPUT_DATA = [
+    { id: 1, type: "name", value: inputValue?.name, content: "Name" },
+    {
+      id: 2,
+      type: "lastName",
+      value: inputValue?.lastName,
+      content: "Last Name"
+    },
+    {
+      id: 3,
+      type: "phoneNumber",
+      value: inputValue?.phoneNumber,
+      content: "Phone"
+    }
+  ];
+
+  const BUTTON_DATA = [
+    { id: 1, type: "children" },
+    { id: 2, type: "single mothers" },
+    { id: 3, type: "homeless" },
+    { id: 4, type: "disabled" },
+    { id: 5, type: "elderly" },
+    { id: 6, type: "anyone" }
+  ];
+
   return (
     <>
       <div className="step-container_general">
         <h2 className="general-header">Personal details</h2>
-        <div className="personalDetails-data">
-          <label className="personalDetails-label" htmlFor="name">
-            Name
-          </label>
-          <input
-            onChange={handleInputChange}
-            value={inputValue?.name}
-            type="text"
-            className="personalDetails-input"
-            id="name"
-          />
-        </div>
-        <div className="personalDetails-data">
-          <label className="personalDetails-label" htmlFor="lastName">
-            Last name
-          </label>
-          <input
-            onChange={handleInputChange}
-            value={inputValue?.lastName}
-            type="text"
-            className="personalDetails-input"
-            id="lastName"
-          />
-        </div>
-        <div className="personalDetails-data">
-          <label className="personalDetails-label" htmlFor="phoneNumber">
-            Phone
-          </label>
-          <input
-            onChange={handleInputChange}
-            value={inputValue?.phoneNumber}
-            type="text"
-            className="personalDetails-input"
-            id="phoneNumber"
-          />
-        </div>
+        {INPUT_DATA.map(({ id, type, value, content }) => {
+          return (
+            <div key={id} className="personalDetails-data">
+              <label className="personalDetails-label" htmlFor={type}>
+                {content}
+              </label>
+              <input
+                onChange={handleInputChange}
+                value={value}
+                type="text"
+                className="personalDetails-input"
+                id={type}
+              />
+            </div>
+          );
+        })}
         <div className="chooseHelp-container">
           <h3 className="chooseHelp-header">Who are you planning to help?</h3>
-          <button
-            onClick={() => handleButtonChange("children")}
-            type="button"
-            className={`chooseHelp-button ${
-              step1 && step1.kindofHelp === "children" ? "chosen" : ""
-            }`}
-          >
-            children
-          </button>
-          <button
-            onClick={() => handleButtonChange("lonely mothers")}
-            type="button"
-            className={`chooseHelp-button ${
-              step1 && step1.kindofHelp === "lonely mothers" ? "chosen" : ""
-            }`}
-          >
-            lonely mothers
-          </button>
-          <button
-            onClick={() => handleButtonChange("homeless")}
-            type="button"
-            className={`chooseHelp-button ${
-              step1 && step1.kindofHelp === "homeless" ? "chosen" : ""
-            }`}
-          >
-            homeless
-          </button>
-          <button
-            onClick={() => handleButtonChange("the disabled")}
-            type="button"
-            className={`chooseHelp-button ${
-              step1 && step1.kindofHelp === "the disabled" ? "chosen" : ""
-            }`}
-          >
-            the disabled
-          </button>
-          <button
-            onClick={() => handleButtonChange("the elderly")}
-            type="button"
-            className={`chooseHelp-button ${
-              step1 && step1.kindofHelp === "the elderly" ? "chosen" : ""
-            }`}
-          >
-            the elderly
-          </button>
-          <button
-            onClick={() => handleButtonChange("anyone")}
-            type="button"
-            className={`chooseHelp-button ${
-              step1 && step1.kindofHelp === "anyone" ? "chosen" : ""
-            }`}
-          >
-            anyone
-          </button>
+          {BUTTON_DATA.map(({ id, type }) => {
+            return (
+              <button
+                key={id}
+                onClick={() => handleButtonChange(`${type}`)}
+                type="button"
+                className={`chooseHelp-button ${
+                  step1 && step1.kindofHelp === `${type}` ? "chosen" : ""
+                }`}
+              >
+                {type}
+              </button>
+            );
+          })}
         </div>
       </div>
       <div className="multiform-button_container">

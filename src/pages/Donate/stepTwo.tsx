@@ -18,38 +18,38 @@ export const StepTwo = ({ setPage }: StepTwoProps) => {
 
   return (
     <>
-      <div className="application-text_container">
-        <h2 className="application-text_header">
+      <div className="stepDonate-text_container">
+        <h2 className="stepDonate-text_header">
           Choose the amount of 60 liter bags you wish to donate.
         </h2>
-        <div className="application-point_container ">
-          <p className="application-point_text_left">I wish to donate</p>
+        <div className="stepDonate-point_container ">
+          <p className="stepDonate-point_text_left">I wish to donate</p>
 
           <input
             onChange={handleInputChange}
             value={step2 ? step2.bagsAmount : ""}
             type="number"
             required
-            className="application-number_bags "
+            className="stepDonate-number_bags "
           />
-          <label className="application-point_text" htmlFor="control_reused">
+          <label className="stepDonate-point_text" htmlFor="control_reused">
             x 60 liter bag(s).
           </label>
         </div>
       </div>
-      <div className="application-button_container">
+      <div className="stepDonate-button_container">
         <button
           type="button"
-          className="application-button"
+          className="stepDonate-button"
           onClick={() => setPage(1)}
         >
           Back
         </button>
         <button
           type="button"
-          className="application-button"
+          className="stepDonate-button"
           onClick={() => setPage(3)}
-          disabled={!step2}
+          disabled={!step2 || step2.bagsAmount <= 0}
         >
           Next
         </button>

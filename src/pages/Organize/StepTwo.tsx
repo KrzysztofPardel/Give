@@ -64,52 +64,61 @@ export const StepTwo = ({ setPage }: StepTwoProps) => {
     step2.street &&
     step2.addInfo;
 
+  const INPUT_DATA = [
+    {
+      id: 1,
+      category: "date",
+      type: "date",
+      onChange: handleDateChange,
+      value: data?.date,
+      content: "Date"
+    },
+    {
+      id: 2,
+      category: "time",
+      type: "time",
+      onChange: handleInputChange,
+      value: data?.time,
+      content: "Time"
+    },
+    {
+      id: 3,
+      category: "city",
+      type: "text",
+      onChange: handleInputChange,
+      value: data?.city,
+      content: "City"
+    },
+    {
+      id: 4,
+      category: "street",
+      type: "text",
+      onChange: handleInputChange,
+      value: data?.street,
+      content: "Street"
+    }
+  ];
+
   return (
     <>
       <div className="multiform-text_container">
         <h2 className="multiform-text_header">Collection details</h2>
-        <div className="collectionDetails-data">
-          <label className="collectionDetails-label" htmlFor="name">
-            Date
-          </label>
-          <input
-            onChange={handleDateChange}
-            value={data?.date}
-            type="date"
-            className="collectionDetails-input"
-            id="date"
-          />
-        </div>
-        <div className="collectionDetails-data">
-          <label className="collectionDetails-label">Time</label>
-          <input
-            onChange={handleInputChange}
-            value={data?.time}
-            type="time"
-            className="collectionDetails-input"
-            id="time"
-          />
-        </div>
-        <div className="collectionDetails-data">
-          <label className="collectionDetails-label">City</label>
-          <input
-            onChange={handleInputChange}
-            value={data?.city}
-            type="text"
-            className="collectionDetails-input"
-            id="city"
-          />
-        </div>
-        <div className="collectionDetails-data">
-          <label className="collectionDetails-label">Street</label>
-          <input
-            onChange={handleInputChange}
-            value={data?.street}
-            type="text"
-            className="collectionDetails-input"
-            id="street"
-          />
-        </div>
+        {INPUT_DATA.map(({ id, category, type, onChange, value, content }) => {
+          return (
+            <div key={id} className="collectionDetails-data">
+              <label className="collectionDetails-label" htmlFor={category}>
+                {content}
+              </label>
+              <input
+                onChange={onChange}
+                value={value}
+                type={type}
+                className="collectionDetails-input"
+                id={category}
+              />
+            </div>
+          );
+        })}
         <div className="collectionDetails-data">
           <label htmlFor="courierInfo" className="collectionDetails-label">
             Additional information:

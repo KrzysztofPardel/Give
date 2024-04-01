@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SCSS/Application.scss";
+import "./SCSS/MultiformDonate.scss";
 import { useNavigate } from "react-router-dom";
 //Components
 import StepOne from "./stepOne";
@@ -101,10 +101,10 @@ const Multiform = () => {
   };
   return (
     <div className="application-background">
-      <div className="application-container">
-        <div className="application-container_top">
-          <h2 className="application-top_header">Important!</h2>
-          <p className="application-top_paragraph">
+      <div className="donateMultiform-container">
+        <div className="donateMultiform-container_top">
+          <h2 className="donateMultiform-top_header">Important!</h2>
+          <p className="donateMultiform-top_paragraph">
             Fill out the details concerning the items you want to give. This way
             we will be able to know who should receive them.
           </p>
@@ -112,12 +112,14 @@ const Multiform = () => {
         <div
           className={
             page === 5
-              ? `application-container_bottom extendedContainer`
-              : `application-container_bottom`
+              ? `donateMultiform-container_bottom extendedContainer`
+              : `donateMultiform-container_bottom`
           }
         >
-          <p className="application-steps">{page !== 6 && `Step ${page}/5`}</p>
-          <div className="application-point_invisible_container">
+          <p className="donateMultiform-steps">
+            {page !== 6 && `Step ${page}/5`}
+          </p>
+          <div className="donateMultiform-point_invisible_container">
             {page === 1 && <StepOne setPage={() => setPage(2)} />}
             {page === 2 && <StepTwo setPage={(x: number) => setPage(x)} />}
             {page === 3 && <StepThree setPage={(x: number) => setPage(x)} />}
@@ -128,22 +130,22 @@ const Multiform = () => {
           <div
             className={
               page === 5
-                ? `application-button_container longMargin`
-                : `application-button_container`
+                ? `stepDonate-button_container longMargin`
+                : `stepDonate-button_container`
             }
           >
             {page === 5 && (
               <>
                 <button
                   type="button"
-                  className="application-button"
+                  className="stepDonate-button"
                   onClick={handleBack}
                 >
                   Back
                 </button>
                 <button
                   type="button"
-                  className="application-button"
+                  className="stepDonate-button"
                   onClick={handleSubmitForm}
                 >
                   Submit Form
@@ -154,7 +156,7 @@ const Multiform = () => {
               <>
                 <button
                   type="button"
-                  className="application-button"
+                  className="stepDonate-button"
                   onClick={handleNewForm}
                 >
                   Start New Form
@@ -163,7 +165,7 @@ const Multiform = () => {
             )}
           </div>
         </div>
-        <div className="application-redirection">
+        <div className="donateMultiform-redirection">
           <p className="redirection-paragraph">
             What if you organized your own collection?
           </p>

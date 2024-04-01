@@ -51,16 +51,43 @@ export const StepThree = ({ setPage }: StepThreeProps) => {
     }
   ];
 
+  const HELP_BUTTONS = [
+    {
+      id: 1,
+      type: "children"
+    },
+    {
+      id: 2,
+      type: "lonely mothers"
+    },
+    {
+      id: 3,
+      type: "homeless"
+    },
+    {
+      id: 4,
+      type: "disabled"
+    },
+    {
+      id: 5,
+      type: "elderly"
+    },
+    {
+      id: 6,
+      type: "anyone"
+    }
+  ];
+
   return (
     <>
-      <div className="application-location_container">
-        <h2 className="application-location_subheader">Location:</h2>
+      <div className="stepDonate-location_container">
+        <h2 className="stepDonate-location_subheader">Location:</h2>
         <select
-          className="application-location_select"
+          className="stepDonate-location_select"
           value={step3 ? step3.help : ""}
           onChange={(e) => handleSelect(e.target.value)}
         >
-          <option className="application-location_option" disabled>
+          <option className="stepDonate-location_option" disabled>
             Choose city
           </option>
           {SELECT_OPTIONS.map(({ id, city }) => {
@@ -68,93 +95,54 @@ export const StepThree = ({ setPage }: StepThreeProps) => {
               <option
                 key={id}
                 onSelect={() => handleSelect(`${city}`)}
-                className="application-location_option"
+                className="stepDonate-location_option"
               >
                 {city}
               </option>
             );
           })}
         </select>
-        <div className="application-help_container">
-          <h3 className="application-location_subheader">
+        <div className="stepDonate-help_container">
+          <h3 className="stepDonate-location_subheader">
             Who would you like to help?
           </h3>
-          <button
-            onClick={() => handleButtonSelect("children")}
-            type="button"
-            className={`application-help_button ${
-              step3 && step3.receivers === "children" ? "chosen" : ""
-            }`}
-          >
-            children
-          </button>
-          <button
-            onClick={() => handleButtonSelect("lonely mothers")}
-            type="button"
-            className={`application-help_button ${
-              step3 && step3.receivers === "lonely mothers" ? "chosen" : ""
-            }`}
-          >
-            lonely mothers
-          </button>
-          <button
-            onClick={() => handleButtonSelect("homeless")}
-            type="button"
-            className={`application-help_button ${
-              step3 && step3.receivers === "homeless" ? "chosen" : ""
-            }`}
-          >
-            homeless
-          </button>
-          <button
-            onClick={() => handleButtonSelect("the disabled")}
-            type="button"
-            className={`application-help_button ${
-              step3 && step3.receivers === "the disabled" ? "chosen" : ""
-            }`}
-          >
-            the disabled
-          </button>
-          <button
-            onClick={() => handleButtonSelect("the elderly")}
-            type="button"
-            className={`application-help_button ${
-              step3 && step3.receivers === "the elderly" ? "chosen" : ""
-            }`}
-          >
-            the elderly
-          </button>
-          <button
-            onClick={() => handleButtonSelect("anyone")}
-            type="button"
-            className={`application-help_button ${
-              step3 && step3.receivers === "anyone" ? "chosen" : ""
-            }`}
-          >
-            anyone
-          </button>
+
+          {HELP_BUTTONS.map(({ id, type }) => {
+            return (
+              <button
+                key={id}
+                onClick={() => handleButtonSelect(`${type}`)}
+                type="button"
+                className={`stepDonate-help_button ${
+                  step3 && step3.receivers === `${type}` ? "chosen" : ""
+                }`}
+              >
+                {type}
+              </button>
+            );
+          })}
         </div>
-        <h3 className="application-location_subheader">
+        <h3 className="stepDonate-location_subheader">
           Enter the name of a particular organization:
         </h3>
         <input
           value={step3 ? step3.organization ?? "" : ""}
           onChange={handleInput}
           type="text"
-          className="application-organization_input"
+          className="stepDonate-organization_input"
         />
       </div>
-      <div className="application-button_container">
+      <div className="stepDonate-button_container">
         <button
           type="button"
-          className="application-button"
+          className="stepDonate-button"
           onClick={() => setPage(2)}
         >
           Back
         </button>
         <button
           type="button"
-          className="application-button"
+          className="stepDonate-button"
           onClick={() => setPage(4)}
           disabled={!isStepValid}
         >

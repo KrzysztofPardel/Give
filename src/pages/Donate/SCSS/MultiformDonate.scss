@@ -1,0 +1,97 @@
+@import "../../../SCSS/main.scss";
+@import "./StepsDonate.scss";
+
+//Multiform
+.donateMultiform-container_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.7rem;
+  height: 10rem;
+  background-color: $color-bright-accent;
+  color: black;
+  padding: 3rem 3rem;
+  @include lg {
+    padding: 3rem 5rem;
+  }
+  .donateMultiform-top_header {
+    font-size: 1.5rem;
+  }
+  .donateMultiform-top_paragraph {
+    font-weight: 350;
+    font-size: 1rem;
+  }
+}
+
+.donateMultiform-container_bottom {
+  width: 100%;
+  height: 100vh; //wszystkie
+  position: relative;
+  background-color: rgba(255, 245, 160, 0.1);
+  padding: 1rem 2rem;
+
+  @include sm {
+    padding: 3rem 3rem;
+  }
+  @include md {
+    height: 80vh;
+  }
+  @include lg {
+    padding: 3rem 6rem;
+  }
+
+  &:before {
+    content: "";
+    background: url(../../../assets/BackgroundForm.jpg) center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+    @include md {
+      background: url(../../../assets/BackgroundForm.jpg) no-repeat center
+        center/cover;
+    }
+  }
+}
+.extendedContainer {
+  height: 150vh; //summary
+  @include sm {
+    height: 120vh; //summary
+  }
+  @include md {
+    height: 80vh;
+  }
+}
+.donateMultiform-steps {
+  text-align: start;
+  color: black;
+  font-weight: 300;
+}
+.donateMultiform-point_invisible_container {
+  border: 1px solid transparent;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// Overall
+.chosen {
+  background: $color-bright-accent;
+  transform: scale(0.8);
+  position: relative;
+  z-index: 15;
+}
+
+.summary-span_bold {
+  font-family: $font-alt;
+  font-weight: 450;
+}
+
+.block {
+  display: block;
+}

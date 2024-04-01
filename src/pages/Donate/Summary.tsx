@@ -7,19 +7,19 @@ export const Summary = () => {
   const { step1, step2, step3, step4 } = formData;
 
   return (
-    <div className="application-summary_container">
-      <h2 className="application-summary_header">
+    <div className="stepDonate_container">
+      <h2 className="stepDonate-summary_header">
         The summary of your donation:
       </h2>
-      <div className="application-summary_iconSpan_container">
-        <div className="application-summary_iconSpan_whatsgiven_container">
+      <div className="stepDonate-summary_iconSpan_container">
+        <div className="stepDonate-summary_iconSpan_whatsgiven_container">
           <img
             src={IconOne}
             alt="clothes"
-            className="application-summary_icon"
+            className="stepDonate-summary_icon"
           />
           {/* Data form Step 1 and Step 2 */}
-          <span className="application-summary_span">
+          <span className="stepDonate-summary_span">
             I donate{" "}
             <span className="summary-span_bold">
               {step1 && `${step2.bagsAmount}`}
@@ -32,14 +32,10 @@ export const Summary = () => {
             .
           </span>
         </div>
-        <div className="application-summary_iconSpan_whatsgiven_container">
-          <img
-            src={IconFour}
-            alt="reuse"
-            className="application-summary_icon"
-          />
+        <div className="stepDonate-summary_iconSpan_whatsgiven_container">
+          <img src={IconFour} alt="reuse" className="stepDonate-summary_icon" />
           {/* Data from Step 3 */}
-          <span className="application-summary_span">
+          <span className="stepDonate-summary_span">
             I desire to help people in{" "}
             <span className="summary-span_bold">
               {step3 && ` ${step3.help}`}{" "}
@@ -51,72 +47,70 @@ export const Summary = () => {
           </span>
         </div>
       </div>
-      <div className="application-summary_both_containers">
+      <div className="stepDonate-summary_both_containers">
         {/* Data from Step 4 */}
         {step4 && (
           <>
-            <div className="application-summary_left_container">
-              <h3 className="application-summary_subheader">
+            <div className="stepDonate-summary_left_container">
+              <h3 className="stepDonate-summary_subheader">
                 The collection address:
               </h3>
 
-              <div className="application-summary_small_container">
+              <div className="stepDonate-summary_small_container">
                 <label
                   htmlFor="application_summary_input_street"
-                  className="application-summary_label"
+                  className="stepDonate-summary_label"
                 >
                   Street
                 </label>
-                <span className="application-summary_span">
+                <span className="stepDonate-summary_span">
                   {step4 && `${step4.address}`}
                 </span>
               </div>
-              <div className="application-summary_small_container">
+              <div className="stepDonate-summary_small_container">
                 <label
                   htmlFor="application_summary_input_city"
-                  className="application-summary_label"
+                  className="stepDonate-summary_label"
                 >
                   City
                 </label>
-                <span className="application-summary_span">
+                <span className="stepDonate-summary_span">
                   {step4 && `${step4.city}`}
                 </span>
               </div>
-              <div className="application-summary_small_container">
-                <label className="application-summary_label">Zip Code</label>
-                <span className="application-summary_span">
+              <div className="stepDonate-summary_small_container">
+                <label className="stepDonate-summary_label">Zip Code</label>
+                <span className="stepDonate-summary_span">
                   {step4 && `${step4.zipCode}`}
                 </span>
               </div>
-              <div className="application-summary_small_container">
-                <label className="application-summary_label">
-                  Phone number
-                </label>
-                <span className="application-summary_span">
+              <div className="stepDonate-summary_small_container">
+                <label className="stepDonate-summary_label">Phone number</label>
+                <span className="stepDonate-summary_span">
                   {step4 && `${step4.phone}`}
                 </span>
               </div>
             </div>
-            <div className="application-summary_right_container">
-              <h3 className="application-summary_subheader">
+            <div className="stepDonate-summary_right_container">
+              <h3 className="stepDonate-summary_subheader">
                 Enter the collection date:
               </h3>
-              <div className="application-summary_small_container">
-                <label className="application-summary_label">Date</label>
-                <span className="application-summary_span">
+              <div className="stepDonate-summary_small_container">
+                <label className="stepDonate-summary_label">Date</label>
+                <span className="stepDonate-summary_span">
                   {step4 && `${step4.date}`}
                 </span>
               </div>
-              <div className="application-summary_small_container">
-                <label className="application-summary_label">Time</label>
-                <span className="application-summary_span">
+              <div className="stepDonate-summary_small_container">
+                <label className="stepDonate-summary_label">Time</label>
+                <span className="stepDonate-summary_span">
                   {step4 && `${step4.time}`}
                 </span>
               </div>
-              <label className="application-summary_label">
+              <label className="stepDonate-summary_label">
                 Additional information for the courier:
               </label>
-              <span className="application-summary_info_span">
+              <span className="stepDonate-summary_info_span">
                 {step4 && `${step4.courierInfo}`}
               </span>
             </div>
