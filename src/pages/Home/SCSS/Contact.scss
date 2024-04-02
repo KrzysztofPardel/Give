@@ -1,8 +1,8 @@
 @import "../../../SCSS/main.scss";
 
 .form-container {
-  display: flex;
   height: 100%;
+  display: flex;
   flex-direction: column;
   @include md {
     height: 100%;
@@ -13,9 +13,9 @@
   }
 }
 .form-container_image {
-  display: block;
   width: 100%;
   height: 100%;
+  display: block;
   overflow: hidden;
   z-index: -20;
   @include sm {
@@ -30,13 +30,12 @@
     overflow: hidden;
   }
   .form-image {
-    display: block;
     height: 100%;
     width: 100%;
+    display: block;
     opacity: 50%;
 
     @include lg {
-      height: 45rem;
       height: 100%;
       width: 80rem;
       overflow: hidden;
@@ -45,14 +44,14 @@
 }
 
 .form-container_text {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding: 2rem;
-  width: 100%;
-  height: 100%;
   gap: 2rem;
+  padding: 2rem;
 
   @include lg {
     width: 50%;
@@ -69,15 +68,15 @@
 }
 
 .auth-error-message {
-  color: #a60101;
   font-size: 1rem;
   text-align: center;
+  color: #a60101;
 }
 .form-input_container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
   @include md {
     width: 80%;
   }
@@ -108,10 +107,10 @@
     }
     .form-input {
       width: 100%;
+      font-size: 1rem;
+      padding: 1rem;
       border: none;
       border-bottom: 1px solid $color-dark-main;
-      padding: 1rem;
-      font-size: 1rem;
 
       @include sm {
         width: 50%;
@@ -143,9 +142,9 @@
   }
   .form-label_textarea {
     font-size: 1.2rem;
+    font-weight: 350;
     text-align: center;
     margin-bottom: 1rem;
-    font-weight: 350;
     @include md {
       display: block;
       margin-left: 0rem;
@@ -178,11 +177,11 @@
 
   .form-button {
     cursor: pointer;
+    height: auto;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
-    width: auto;
     font-size: 1rem;
     padding: 1rem 5em;
     background-color: transparent;
@@ -195,16 +194,16 @@
   }
 }
 .form-message_sent {
-  position: absolute;
   width: 15rem;
+  position: absolute;
+  left: 0;
+  color: $color-bright-main;
   padding: 1.5rem;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 1;
   margin: 2rem;
   margin-left: 4rem;
   background-color: $color-dark-main;
-  color: $color-bright-main;
-  left: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
   .form-message_sent_span {
     color: $color-bright-accent;
   }

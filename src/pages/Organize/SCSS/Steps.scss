@@ -2,15 +2,15 @@
 
 //Step 1
 .multiform-steps_container {
-  border: 1px solid transparent;
   height: 100vh;
+  border: 1px solid transparent;
   .step-container_general {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    width: 100%;
-    height: 100%;
     color: black;
 
     @include md {
@@ -28,12 +28,12 @@
 }
 .personalDetails-data,
 .collectionDetails-data {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin-top: 1.5rem;
   font-weight: 300;
   font-family: $font-alt;
+  margin-top: 1.5rem;
   @include md {
     flex-direction: row;
     width: 30rem;
@@ -45,11 +45,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    font-family: $font-alt;
     font-weight: 350;
     color: $color-dark-accent-first;
-    font-family: $font-alt;
     margin-bottom: 1rem;
+    gap: 1rem;
+
     @include lg {
       width: 30rem;
       margin-bottom: 0rem;
@@ -57,37 +58,39 @@
   }
   .personalDetails-input,
   .collectionDetails-input {
+    width: 100%;
     font-family: $font-alt;
     padding: 0.5rem;
-    width: 100%;
+
     @include lg {
       width: 40rem;
     }
   }
 }
 .chooseHelp-container {
-  flex-wrap: wrap;
   width: 100%;
+  flex-wrap: wrap;
+
   @include md {
     width: 25rem;
   }
   .chooseHelp-header {
-    font-family: $font-alt;
     font-size: 1.2rem;
+    font-family: $font-alt;
     color: $color-dark-accent-first;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
   }
   .chooseHelp-button {
-    background: $color-bright-main;
-    font-weight: 300;
-    padding: 0.5rem 1rem;
-    margin: 0.3rem;
-    border: 1px solid;
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 300;
+    background: $color-bright-main;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid;
     outline: 0.5 solid;
-    cursor: pointer;
+
     &:hover {
       border: 1px solid $color-bright-accent;
       background-color: $color-bright-accent;
@@ -109,13 +112,14 @@
 
 //Step 2
 .multiform-text_container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  width: 100%;
-  height: 100%;
   color: black;
+
   @include lg {
     width: 35rem;
     height: 30rem;
@@ -128,11 +132,12 @@
 }
 .collectionDetails-data {
   .collectionDetails-textarea {
-    margin-top: 1rem;
     width: 100%;
     height: 10rem;
-    padding: 0.5rem;
     font-family: $font-alt;
+    padding: 0.5rem;
+    margin-top: 1rem;
+
     &:focus {
       outline: none;
     }
@@ -146,13 +151,12 @@
 .summary-main_container {
   font-family: $font-alt;
   .summary_header {
-    font-size: 1.2rem;
-    color: $color-dark-accent-first;
     font-weight: 400;
     font-size: 2rem;
-    margin-top: 1.5rem;
     line-height: 3rem;
     text-align: center;
+    color: $color-dark-accent-first;
+    margin-top: 1.5rem;
     @include lg {
       text-align: start;
       font-size: 1.2rem;
@@ -167,11 +171,11 @@
   margin-top: 2rem;
 
   .personalData-header {
-    color: $color-dark-accent-first;
-    font-weight: 350;
     font-size: 1.2rem;
+    font-weight: 350;
     text-decoration: underline;
     line-height: 2rem;
+    color: $color-dark-accent-first;
   }
   .personalData_icon {
     height: 3rem;
@@ -188,49 +192,49 @@
   }
 
   .personalData-p {
-    color: $color-dark-accent-first;
     font-family: $font-alt;
     font-weight: 300;
     font-size: 1rem;
+    color: $color-dark-accent-first;
   }
   .data-span {
-    color: $color-dark-accent-first;
     font-weight: 500;
+    color: $color-dark-accent-first;
     margin-left: 1rem;
   }
 }
 
 .summary-collectionData {
   display: flex;
-  margin-top: -1rem;
   color: $color-dark-accent-first;
+  margin-top: -1rem;
 }
 .summary-side {
   width: 35%;
+  height: 20rem;
   display: flex;
   justify-content: start;
   flex-direction: column;
   font-weight: 350;
-  color: black;
-  height: 20rem;
-  color: $color-dark-accent-first;
   padding: 1rem 0rem;
+  color: $color-dark-accent-first;
+
   .side-header {
-    color: $color-dark-accent-first;
     font-family: $font-base;
     font-size: 1.5rem;
     font-weight: 350;
+    color: $color-dark-accent-first;
   }
 
   .multiform-summary_span {
-    color: $color-dark-accent-first;
     width: 15rem;
-    padding: 0.5rem;
-    background: transparent;
-    border: 1px solid;
-    text-align: center;
+    color: $color-dark-accent-first;
     font-family: $font-base;
     font-weight: 600;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid;
+    background: transparent;
   }
 }
 .bold {
@@ -239,12 +243,12 @@
 
 //Appreciation
 .multiform-appreciation_container {
+  width: 45rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45rem;
-  height: 25rem;
   .multiform-appreciation_container_small {
     width: 25rem;
     text-align: center;

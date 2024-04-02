@@ -5,15 +5,16 @@
 }
 
 .hero-container {
+  height: 10rem;
   display: flex;
   flex-direction: column;
-  height: 10rem;
 
   @include lg {
     height: 30rem;
     flex-direction: row;
   }
 }
+
 .image-container {
   height: 3rem;
   width: auto;
@@ -48,15 +49,13 @@
   }
 }
 .text-container {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  padding: 2rem;
   z-index: 10;
-  padding: 10rem;
-  @include md {
-  }
 
   @include lg {
     width: 100%;
@@ -71,10 +70,11 @@
   }
 
   .text-paragraph {
-    text-align: center;
     font-size: 1.25rem;
     font-weight: 300;
+    text-align: center;
     line-height: 2rem;
+
     @include lg {
       text-align: none;
       font-size: 1.5rem;
@@ -90,15 +90,14 @@
   }
 }
 .hero-button_container {
+  height: auto;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
-  height: auto;
-  width: 80%;
-  @include md {
-  }
+
   @include lg {
     height: 4rem;
     width: 80%;

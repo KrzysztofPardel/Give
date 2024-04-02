@@ -9,11 +9,11 @@
 }
 
 .donate-hero_container {
+  height: 60vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vh;
-  width: 100%;
   @include lg {
     height: 32rem;
     flex-direction: row;
@@ -23,12 +23,12 @@
 
 .donate-image_container {
   height: 100%;
-  z-index: -20;
   position: absolute;
+  z-index: -20;
   @include lg {
-    position: relative;
     width: 40rem;
     height: 30rem;
+    position: relative;
   }
 
   .donate-hero_image {
@@ -37,9 +37,9 @@
     opacity: 0.2;
 
     @include lg {
-      margin-top: -8rem;
       width: 50rem;
       height: 40rem;
+      margin-top: -8rem;
     }
     @include xl {
       opacity: 1;
@@ -48,20 +48,20 @@
 }
 
 .donate-text_container {
+  height: 60vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-  width: 100%;
-  padding: 2rem;
   text-align: center;
+  padding: 2rem;
 
   @include lg {
-    padding: 0rem;
-    padding-bottom: 6rem;
     width: 50rem;
     height: 32rem;
+    padding: 0rem;
+    padding-bottom: 6rem;
     text-align: end;
   }
   .donate-text_paragraph:first-child {
@@ -81,9 +81,9 @@
   }
 
   .donate-text_decoration {
+    width: auto;
     display: flex;
     justify-content: center;
-    width: auto;
     margin-top: 1rem;
     margin-bottom: 2rem;
     @include lg {
@@ -104,7 +104,6 @@
   width: auto;
   display: flex;
   justify-content: center;
-  // align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   @include md {
@@ -114,40 +113,40 @@
   }
 
   .donate-diamond {
+    width: 6.8rem;
+    height: 6.8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 6.8rem;
-    height: 6.8rem;
     border: 1px $color-dark-main solid;
     background: transparent;
     transform: translate(0, 0) rotate(45deg);
 
     .donate-number_diamond {
+      width: 10rem;
+      height: 2.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: $color-dark-main;
       margin-top: -2rem;
       margin-left: -4rem;
       margin-bottom: -0.4rem;
-      width: 10rem;
-      height: 2.5rem;
-      color: $color-dark-main;
-      font-size: 1.2rem;
-      font-weight: 300;
       transform: rotate(-45deg);
     }
     .donate-text_diamond {
+      width: 8rem;
+      height: 2.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      width: 8rem;
-      height: 2.5rem;
-      color: $color-dark-main;
       font-size: 1rem;
       font-weight: 300;
+      text-align: center;
+      color: $color-dark-main;
       transform: rotate(-45deg);
     }
   }

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //components
-import StepOne from "./StepOne";
-import StepTwo from "./StepTwo";
-import Summary from "./Summary";
-import Appreciation from "./Appreciation";
+import StepOne from "./stepOne";
+import StepTwo from "./stepTwo";
+import Summary from "./summary";
+import Appreciation from "./appreciation";
 //styles
 import "./SCSS/Multiform.scss";
 import "./SCSS/Steps.scss";

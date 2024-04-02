@@ -1,28 +1,30 @@
 @import "../../../SCSS/main.scss";
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 .three-background {
-  margin-top: 3rem;
   width: 100%;
   height: auto;
   position: relative;
+  margin-top: 3rem;
   @include xl {
     height: 25rem;
   }
   &:before {
     content: "";
-    background: url(../../../assets/ThreeBackground.png) no-repeat center
-      center/cover;
-    position: absolute;
-    opacity: 75%;
     width: 100%;
     height: 100%;
+    position: absolute;
     top: 0;
     left: 0;
+    opacity: 75%;
     z-index: -1;
+    background: url(../../../assets/ThreeBackground.png) no-repeat center
+      center/cover;
     @include lg {
       opacity: 100%;
     }
@@ -30,16 +32,16 @@
 }
 
 .three-columns-container {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: auto;
   font-family: $font-alt;
 
   @include lg {
-    flex-direction: row;
     height: auto;
+    flex-direction: row;
     justify-content: space-around;
   }
   @include xl {
@@ -48,11 +50,12 @@
   .three-single_column {
     width: 80%;
     height: auto;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+
     @include lg {
       width: 32%;
       height: 25rem;
@@ -67,9 +70,9 @@
     }
     .three-text-header {
       font-size: 1.75rem;
-      margin: 1.5rem;
       font-weight: 300;
       text-align: center;
+      margin: 1.5rem;
     }
     .three-text-paragraph {
       font-size: 1rem;

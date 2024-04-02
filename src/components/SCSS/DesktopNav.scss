@@ -1,0 +1,80 @@
+@import "../../SCSS/main.scss";
+
+.desktopNav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.btn-container {
+  width: 100%;
+  height: 3rem;
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+
+  @include lg {
+    display: flex;
+  }
+
+  .welcome-sign {
+    width: auto;
+    font-family: $font-alt;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $color-dark-main;
+  }
+  .welcome-sign_s {
+    font-weight: 300;
+  }
+
+  .auth-btn {
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 300;
+    text-decoration: none;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px transparent solid;
+    color: $color-dark-main;
+
+    &:hover {
+      border-color: yellow;
+    }
+  }
+}
+
+.homepage-links_container {
+  width: auto;
+  height: 3rem;
+  display: none;
+  justify-content: flex-end;
+
+  @include lg {
+    display: flex;
+  }
+
+  .homepage-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 350;
+    color: black;
+    margin: 0.5rem;
+    padding: 1rem;
+    background: none;
+    border: 1px transparent solid;
+    cursor: pointer;
+    &:hover {
+      border: 1px grey solid;
+    }
+  }
+}

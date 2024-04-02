@@ -35,39 +35,36 @@ const DesktopNav = () => {
               <span className="welcome-sign_s">Welcome: </span>
               {user && user.email}{" "}
             </p>
+            <button
+              onClick={() => navigate("/donate")}
+              type="button"
+              className="auth-btn"
+            >
+              Donate
+            </button>
+            <button onClick={handleSignout} type="button" className="auth-btn">
+              Sign Out
+            </button>
           </>
         ) : null}
-        {user ? (
-          <button
-            onClick={() => navigate("/donate")}
-            type="button"
-            className="auth-btn"
-          >
-            Donate
-          </button>
-        ) : null}
-        {user ? (
-          <button onClick={handleSignout} type="button" className="auth-btn">
-            Sign Out
-          </button>
-        ) : null}
+
         {user ? null : (
-          <button
-            onClick={() => navigate("/signin")}
-            type="button"
-            className="auth-btn"
-          >
-            Sign In
-          </button>
-        )}
-        {user ? null : (
-          <button
-            onClick={() => navigate("/signup")}
-            type="button"
-            className="auth-btn"
-          >
-            Sign Up
-          </button>
+          <>
+            <button
+              onClick={() => navigate("/signin")}
+              type="button"
+              className="auth-btn"
+            >
+              Sign In
+            </button>
+            <button
+              onClick={() => navigate("/signup")}
+              type="button"
+              className="auth-btn"
+            >
+              Sign Up
+            </button>
+          </>
         )}
       </div>
       <div className="homepage-links_container">

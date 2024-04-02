@@ -2,12 +2,12 @@
 
 //Step 1
 .stepDonate-text_container {
+  width: auto;
+  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  width: auto;
-  height: 30rem;
   color: black;
 
   @include lg {
@@ -16,37 +16,37 @@
   .stepDonate-text_header {
     font-size: 1.2rem;
     font-weight: 400;
+    line-height: 2rem;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    line-height: 2rem;
   }
 }
 .stepDonate-point_container {
-  display: flex;
   width: auto;
-  margin-top: 1.5rem;
-  font-weight: 300;
+  display: flex;
   justify-content: start;
   align-items: center;
+  font-weight: 300;
+  margin-top: 1.5rem;
   @include lg {
     width: 40rem;
   }
 
   .stepDonate-point_text {
+    width: auto;
     display: flex;
     flex-direction: row-reverse;
     justify-content: start;
     gap: 1rem;
-    width: auto;
     font-weight: 350;
     @include lg {
       width: 25rem;
     }
 
     .stepDonate-point_button {
-      border: 1px solid black;
       height: 1.5rem;
       width: 1.5rem;
+      border: 1px solid black;
     }
   }
 
@@ -58,15 +58,16 @@
     }
   }
   .stepDonate-number_bags {
-    display: flex;
-    padding: 0.1rem;
     width: 3rem;
+    display: flex;
     background: transparent;
+    font-size: 1rem;
+    font-weight: 350;
+    padding: 0.1rem;
+    margin: 0rem 0.5rem;
     border: none;
     border-bottom: 1px solid $color-dark-accent-first;
-    margin: 0rem 0.5rem;
-    font-weight: 350;
-    font-size: 1rem;
+
     &:focus {
       outline: none;
       border-bottom: 1px solid $color-bright-accent;
@@ -91,8 +92,8 @@
 
   .stepDonate-location_select {
     width: 100%;
-    padding: 0.75rem 1rem;
     font-size: 1rem;
+    padding: 0.75rem 1rem;
     background-color: transparent;
 
     @include sm {
@@ -111,8 +112,8 @@
   }
   .stepDonate-location_subheader {
     font-size: 1.2rem;
-    line-height: 2rem;
     font-weight: 400;
+    line-height: 2rem;
     color: $color-dark-accent-first;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
@@ -124,12 +125,12 @@
       width: 25rem;
     }
     .stepDonate-help_button {
+      cursor: pointer;
       font-weight: 300;
       font-size: 1rem;
       padding: 0.5rem 1rem;
       margin: 0.3rem;
       border: 1px solid;
-      cursor: pointer;
       &:hover {
         border: 1px solid $color-bright-accent;
         background-color: $color-bright-accent;
@@ -143,11 +144,11 @@
     }
   }
   .stepDonate-organization_input {
-    background-color: transparent;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid;
     width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: transparent;
+    border: 1px solid;
 
     :focus {
       outline: none;
@@ -171,9 +172,9 @@
   }
 }
 .stepDonate-delivery_both_containers {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
 
   @include md {
     width: auto;
@@ -190,12 +191,11 @@
   .stepDonate-delivery_left_container,
   .stepDonate-delivery_right_container {
     width: 100%;
+    height: 20rem;
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     font-weight: 350;
-    color: black;
-    height: 20rem;
-    justify-content: space-evenly;
     color: $color-dark-accent-first;
     padding: 0.5rem 0rem;
     @include sm {
@@ -205,35 +205,34 @@
       width: 30%;
     }
     .stepDonate-delivery_subheader {
-      font-weight: 400;
-      text-align: left;
-      font-size: 1.2rem;
-      line-height: 2rem;
       width: 100%;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 2rem;
+      text-align: left;
       @include md {
         width: 20rem;
       }
     }
     .stepDonate-delivery_small_container {
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
-
       @include md {
+        width: 15rem;
         flex-direction: row;
         justify-content: space-between;
-        width: 15rem;
       }
 
       .stepDonate-delivery_label {
-        margin-right: 1rem;
         line-height: 1.5rem;
+        margin-right: 1rem;
       }
       .stepDonate-delivery_input {
+        width: 100%;
         font-family: $font-alt;
         color: $color-dark-accent-first;
-        width: 100%;
         padding: 0.5rem 0.5rem;
         background: transparent;
         border: 1px solid;
@@ -247,13 +246,12 @@
       }
     }
     .stepDonate-delivery_textarea {
-      background-color: transparent;
       min-width: 100%;
       height: 5rem;
-      padding: 0.2rem 0.5rem;
+      font-family: $font-alt;
       margin-top: 1rem;
       padding: 0.5rem 0.5rem;
-      font-family: $font-alt;
+      background-color: transparent;
       &:focus {
         outline: none;
         background-color: $color-bright-main;
@@ -266,17 +264,17 @@
 }
 
 .error-message {
-  color: #a60101;
   font-size: 1rem;
   text-align: center;
+  color: #a60101;
 }
 
 //Summary
 .stepDonate-summary_container {
   .stepDonate-summary_header {
-    color: $color-dark-accent-first;
     font-weight: 400;
     font-size: 1.2rem;
+    color: $color-dark-accent-first;
     margin-top: 1.5rem;
   }
 }
@@ -291,16 +289,16 @@
     }
     .stepDonate-summary_span {
       font-family: $font-alt;
-      color: black;
       font-weight: 300;
       line-height: 1.5rem;
+      color: black;
     }
   }
 }
 .stepDonate-summary_both_containers {
   display: flex;
-  margin-top: -1rem;
   flex-direction: column;
+  margin-top: -1rem;
   margin-bottom: auto;
   @include md {
     flex-direction: row;
@@ -309,14 +307,13 @@
 .stepDonate-summary_left_container,
 .stepDonate-summary_right_container {
   width: 100%;
+  height: 20rem;
   display: flex;
   flex-direction: column;
-  font-weight: 350;
-  color: black;
-  height: 20rem;
   justify-content: space-evenly;
-  color: $color-dark-accent-first;
+  font-weight: 350;
   padding: 1rem 0rem;
+  color: $color-dark-accent-first;
   @include md {
     width: 35%;
   }
@@ -325,29 +322,29 @@
     font-size: 1.2;
   }
   .stepDonate-summary_small_container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     font-family: $font-alt;
     @include sm {
       width: 20rem;
     }
 
     .stepDonate-summary_label {
-      margin-right: 1rem;
       font-weight: 300;
+      margin-right: 1rem;
     }
 
     .stepDonate-summary_span {
-      color: $color-dark-accent-first;
       width: 60%;
+      font-family: $font-base;
+      font-weight: 600;
+      text-align: center;
+      color: $color-dark-accent-first;
       padding: 0.5rem;
       background: transparent;
       border: 1px solid;
-      text-align: center;
-      font-family: $font-base;
-      font-weight: 600;
       @include md {
         width: 15rem;
       }
@@ -357,12 +354,12 @@
 
 //Appreciation
 .stepDonate-appreciation_container {
+  width: 100%;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 25rem;
   @include lg {
     width: 45rem;
   }
@@ -373,9 +370,9 @@
       width: 25rem;
     }
     .stepDonate-appreciation_header {
-      color: $color-dark-main;
       font-weight: 300;
       line-height: 2rem;
+      color: $color-dark-main;
     }
     .stepDonate-appreciation_decoration {
       width: 15rem;
@@ -398,13 +395,13 @@
     margin-top: 0rem;
   }
   .stepDonate-button {
-    padding: 0.6rem 1.5rem;
-    background: transparent;
-    border: 1px solid $color-dark-main;
     font-size: 1rem;
     font-family: $font-alt;
     font-weight: 300;
-    nt &:hover {
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid $color-dark-main;
+    :hover {
       border: 1px solid $color-dark-main;
       transform: scale(0.9);
       transition: transform 0.3s ease-in-out;

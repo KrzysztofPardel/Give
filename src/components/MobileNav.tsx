@@ -51,43 +51,42 @@ const MobileNav = () => {
       <div className={isNavOpen ? "mobileNav" : "mobileNav hidden"}>
         <div className="btn-container_mobile">
           {user ? (
-            <p className="mobile-userEmail">Welcome: {user && user.email} </p>
-          ) : null}
-          {user ? (
-            <button
-              onClick={() => navigate("/donate")}
-              type="button"
-              className="auth-btn_mobile"
-            >
-              Donate
-            </button>
-          ) : null}
-          {user ? (
-            <button
-              onClick={handleSignout}
-              type="button"
-              className="auth-btn_mobile"
-            >
-              Sign Out
-            </button>
+            <>
+              {" "}
+              <p className="mobile-userEmail">Welcome: {user && user.email} </p>
+              <button
+                onClick={() => navigate("/donate")}
+                type="button"
+                className="auth-btn_mobile"
+              >
+                Donate
+              </button>
+              <button
+                onClick={handleSignout}
+                type="button"
+                className="auth-btn_mobile"
+              >
+                Sign Out
+              </button>
+            </>
           ) : null}
           {user ? null : (
-            <button
-              onClick={() => navigate("/signin")}
-              type="button"
-              className="auth-btn_mobile"
-            >
-              Sign In
-            </button>
-          )}
-          {user ? null : (
-            <button
-              onClick={() => navigate("/signup")}
-              type="button"
-              className="auth-btn_mobile"
-            >
-              Sign Up
-            </button>
+            <>
+              <button
+                onClick={() => navigate("/signin")}
+                type="button"
+                className="auth-btn_mobile"
+              >
+                Sign In
+              </button>
+              <button
+                onClick={() => navigate("/signup")}
+                type="button"
+                className="auth-btn_mobile"
+              >
+                Sign Up
+              </button>
+            </>
           )}
         </div>
         <div className="homepage-links_container_mobile">

@@ -6,8 +6,8 @@ import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";
 import StepThree from "./stepThree";
 import StepFour from "./stepFour";
-import Summary from "./Summary";
-import Appreciation from "./Appreciation";
+import Summary from "./summary";
+import Appreciation from "./appreciation";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";

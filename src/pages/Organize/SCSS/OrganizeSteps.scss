@@ -1,19 +1,19 @@
 @import "../../../SCSS/main.scss";
 
 .organizeSteps-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
   background: #ffff;
   border-top: 0.5px solid $color-dark-main;
 
   .organizeSteps-container_header {
+    height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 10rem;
     .organizeSteps-header {
       margin-bottom: 1rem;
       font-size: 1.5rem;
@@ -37,12 +37,12 @@
 }
 
 .organizeSteps-columns-container {
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: auto;
   font-family: $font-alt;
   background-color: $color-bright-main;
   color: $color-dark-accent-first;
@@ -70,14 +70,14 @@
       font-size: 6rem;
     }
     .organizeSteps-text-header {
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
       font-size: 1.5rem;
-      margin: 1rem;
       font-weight: 300;
       text-align: center;
+      margin: 1rem;
     }
     .line {
       width: 70px;
