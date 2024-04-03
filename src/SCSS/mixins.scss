@@ -44,11 +44,8 @@
   border: 1px grey solid;
   @content;
   @include lg {
-    width: 100%;
-    font-size: 1.15rem;
-  }
-  @include xl {
     width: 15rem;
+    font-size: 1.15rem;
   }
 }
 // @include button {

@@ -1,65 +1,112 @@
 # **Give**
 
-#### As you might expect this Give project is a all about giving! What does that mean? The purspose of this website is to mediate between those are are willing to donate things they no longer need or enjoy to a foundation, a non-governmental organization or collection. In result, they will be able to continually support those who are in great need.
+## **Description**
 
-🔎 The project has been deployed and can be visited here:
-_[small-product-browser.vercel.app](small-product-browser.vercel.app)_.
+#### Give,as you might expect is all about giving! What does that mean?
 
-## Author
-- [@KrzysztofPardel](https://github.com/KrzysztofPardel)
----
+When we look around in our country, we can see that over the last 20 years, a major development has taken place. The average John Smith can live on a higher standard and can afford more than ever before. However, that's not everyone's story.
 
-## **_Built with_**
+In proportion to the minimal wage, the prices have gone up signifiacntly and made life harder for some who were already destitude. There are single moders or whole families who struggle to make end meet on monthly basis.
 
-1. [Vite](https://vitejs.dev/guide/)
-2. [TypeScript](https://www.typescriptlang.org/docs/)
-3. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
-4. [React.js](https://react.dev)
-5. [SCSS](https://sass-lang.com/install)
-6. [Firebase](https://firebase.google.com/docs/cli/)
-7. [Context API](https://www.freecodecamp.org/news/context-api-in-react/)
+Give helps in aiding those who are in need. The purspose of this website is to mediate between people who are willing to donate and the ones who are willing to receive. Various resources, such as books, fabric materials, clothes do not need to be thrown away the moment you don't need them. They can be passed to someone else. Did you know that?
 
-
-## **_Installation steps._**
-
-1. **Install Vite Build Tool** 
-
-```bash
-npm create vite@latest
-```
-
-2. **Install SASS preprocessor**
-
-```bash
-npm install -g sass
-```
-3. **Install Firebase Backend Database Tools**
-
-```bash
-npm install -g firebase-tools
-```
----
-
-### 🖥️ **_Screenshots_**
-
-### Overall view
-
-<img style='height: 30rem; display:block; margin-top:1rem; margin-bottom:2rem' src="./assets/BillSplitter.png" alt="screeenshot">
-
-### A view with data and calculation results
-
-<img style='height: 30.8rem; display:block; margin-top:1rem' src="./assets/BillSplitter2.png" alt="screeenshot" >
+**_So do not be indifferent toward those who were less fortunate than you. Get involved today._**
 
 ---
+
+## **Deployment**
+
+
+➡️ Take a look at the live version here - [Give](https://give-pi.vercel.app)
+
+### Important
+
+In order to use all capabilities of the project, create an account (Sign Up).
+Passowrd must have:
+
+- at least 5 characters
+- one uppercase letter
+- one number
+
+### You can also use the following trial account:
+
+##### _Email: kris@gmail.com_
+
+##### _Password: Kris26_
+
+## **Tech Stack**
+
+### Main
+
+🔹 [TypeScript](https://www.typescriptlang.org/docs/)
+🔹 [React](https://react.dev)
+🔹 [Redux](https://redux-toolkit.js.org/)
+
+### Other
+
+1. [Vite](https://vitejs.dev/guide/) - as building tool
+2. [SCSS](https://sass-lang.com/install)
+3. [Firebase](https://firebase.google.com/docs/cli/) - as database (authentication, data from multiforms, contact forms)
+4. [EmailJS](https://www.emailjs.com) - mailing engine
+
+### Libraries
+
+- [React icons](https://react-icons.github.io/react-icons/)
+- [React select](https://react-select.com/home)
+
+## 🖥️ **_Visuals_**
+
+#### Home page view
+
+![Alt text](image.png)
+
+#### Contact form
+
+![Alt text](image-4.png)
+
+#### Authentication
+
+![Alt text](image-1.png)
+
+#### Donate page
+
+##### _(requires auhentication)_
+
+![Alt text](image-2.png)
+
+![Alt text](image-3.png)
+
+#### Organize collection page
+
+##### _(requires auhentication)_
+
+![Alt text](image-6.png)
+
+![Alt text](image-5.png)
+
+### Open up the [live](https://react-select.com/home) version to see more!
+
+## **Installation**
+If you desire to tamper with code and open the project locally 
+**make sure you install dependencies by running:**
+
+```bash
+npm install
+```
+
+
+
+## **_Authors_**
+
+[@KrzysztofPardel](https://github.com/KrzysztofPardel)
+
+## 👏 **_Acknowledgements_**
+
+I appreciate the support of Mr.Paweł Gabryel (https://github.com/pawelgabryel) who was mentoring me while I was doing this project. It is him who helped me understand how some things can be done and what can be improved in the future as well as provided encourgement so needed in the overwhelming world of IT competitiveness.
+
+What is more, this project has been inspired by the UI Design provided to me by [CodersLab](https://coderslab.pl/pl)
+
 
 ### 👉 **_Contibution_**
 
 #### Everyone with a desire to contribute or develop this project is more than welcome to do so.
-
-## 👏 **_Acknowledgements_** 
-I appreciate the support of Mr.Paweł Gabryel (https://github.com/pawelgabryel) who was mentoring me while I was doing this project. It is him who helped me understand how some things can be done and what can be improved in the future as well as provided encourgement so needed in the overwhelming world of IT competitiveness.
-
-What is more, this project has been based on the UX Design provided to me by @CodersLab (https://github.com/CodersLab).
-
-### 🏷️ 
-

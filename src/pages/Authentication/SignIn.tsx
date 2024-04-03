@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 //styles
 import "./SASS/AuthStyles.scss";
@@ -7,6 +7,8 @@ import Decoration from "../../assets/Decoration.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../../Redux/authSlice";
 import { RootState } from "../../Redux/store";
+import { initializeFromLocalStorage } from "../../Redux/authSlice";
+
 //Firebase
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -41,7 +43,10 @@ const SignIn = () => {
         email,
         password
       );
+
       dispatch(login({ email, password, uid: authResponse.user.uid }));
+      console.log(localStorage.getItem("user"));
+
       navigate("/");
     } catch (e: any) {
       if (e instanceof Yup.ValidationError) {
@@ -52,6 +57,10 @@ const SignIn = () => {
       }
     }
   };
+
+  useEffect(() => {
+    dispatch(initializeFromLocalStorage());
+  }, [dispatch]);
 
   return (
     <div className="auth-container">

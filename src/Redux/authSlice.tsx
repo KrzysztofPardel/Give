@@ -22,14 +22,23 @@ const authSlice = createSlice({
   reducers: {
     login: (state, action: { payload: User }) => {
       state.isLoggedIn = true;
-      state.user = action.payload; //?
+      state.user = action.payload;
+      localStorage.setItem("user", JSON.stringify(action.payload));
     },
     logout: (state) => {
       state.isLoggedIn = false;
       state.user = null;
+      localStorage.removeItem("user");
+    },
+    initializeFromLocalStorage: (state) => {
+      const user = localStorage.getItem("user");
+      if (user) {
+        state.isLoggedIn = true;
+        state.user = JSON.parse(user);
+      }
     }
   }
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, initializeFromLocalStorage } = authSlice.actions;
 export default authSlice.reducer;
