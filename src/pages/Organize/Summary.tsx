@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-export const Summary = () => {
+const Summary = () => {
   const formData = useSelector((state: any) => state.organize);
   const { step1, step2 } = formData;
 

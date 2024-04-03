@@ -9,7 +9,7 @@ type StepOneProps = {
   setPage: (x: number) => void;
 };
 
-export const StepOne = ({ setPage }: StepOneProps) => {
+const StepOne = ({ setPage }: StepOneProps) => {
   const dispatch = useDispatch();
   const step1 = useSelector(
     (state: RootState) => state.organize.step1

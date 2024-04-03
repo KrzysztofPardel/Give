@@ -1,6 +1,6 @@
 import Decoration from "../../assets/Decoration.svg";
 
-export const Appreciation = () => {
+const Appreciation = () => {
   return (
     <div className="stepDonate-appreciation_container">
       <div className="stepDonate-appreciation_container_small">

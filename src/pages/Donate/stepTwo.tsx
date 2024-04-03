@@ -6,7 +6,7 @@ type StepTwoProps = {
   setPage: (x: number) => void;
 };
 
-export const StepTwo = ({ setPage }: StepTwoProps) => {
+const StepTwo = ({ setPage }: StepTwoProps) => {
   const dispatch = useDispatch();
   const { step2 } = useSelector((state: any) => state.form);
 

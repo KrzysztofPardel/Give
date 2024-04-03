@@ -6,7 +6,7 @@ type StepOneProps = {
   setPage: () => void;
 };
 
-export const StepOne = ({ setPage }: StepOneProps) => {
+const StepOne = ({ setPage }: StepOneProps) => {
   const dispatch = useDispatch();
   const { step1 } = useSelector((state: any) => state.form);
   const [activeButton, setActiveButton] = useState<string | null>(null);

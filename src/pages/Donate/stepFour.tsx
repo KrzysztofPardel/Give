@@ -5,15 +5,13 @@ import { RootState } from "../../Redux/store";
 import { setStep4Data } from "../../Redux/formSlice";
 import { Step4 } from "../../Redux/formSlice";
 
-{
-  /* <InputLabel labelHTML={} labelCLASSS={} labelCONTENT={} inputOnCHANGE={}  inputVALUE={} inputTYPE={} inputCLASS={} inputID={} /> */
-}
+
 
 type StepFourProps = {
   setPage: (x: number) => void;
 };
 
-export const StepFour = ({ setPage }: StepFourProps) => {
+const StepFour = ({ setPage }: StepFourProps) => {
   const dispatch = useDispatch();
   const step4 = useSelector((state: RootState) => state.form.step4);
   const uid = useSelector((state: RootState) => state.auth.user?.uid);
