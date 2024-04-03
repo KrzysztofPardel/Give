@@ -1,6 +1,7 @@
 import "./SCSS/Navigation.scss";
 //lazy loading
 import { Suspense, lazy } from "react";
+
 const DesktopNavLazy = lazy(() => import("./DesktopNav"));
 const MobileNavLazy = lazy(() => import("./MobileNav"));
 

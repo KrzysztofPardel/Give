@@ -31,10 +31,12 @@ const authSlice = createSlice({
       localStorage.removeItem("user");
     },
     initializeFromLocalStorage: (state) => {
-      const user = localStorage.getItem("user");
-      if (user) {
-        state.isLoggedIn = true;
-        state.user = JSON.parse(user);
+      if (!state.isLoggedIn) {
+        const user = localStorage.getItem("user");
+        if (user) {
+          state.isLoggedIn = true;
+          state.user = JSON.parse(user);
+        }
       }
     }
   }
