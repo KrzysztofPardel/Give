@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 import { setStep4Data } from "../../Redux/formSlice";
 import { Step4 } from "../../Redux/formSlice";
-import InputLabel from "components/InputLabel";
 
 {
   /* <InputLabel labelHTML={} labelCLASSS={} labelCONTENT={} inputOnCHANGE={}  inputVALUE={} inputTYPE={} inputCLASS={} inputID={} /> */
