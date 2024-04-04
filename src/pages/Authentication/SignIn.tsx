@@ -58,9 +58,9 @@ const SignIn = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(initializeFromLocalStorage());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(initializeFromLocalStorage());
+  // }, [dispatch]);
 
   return (
     <div className="auth-container">

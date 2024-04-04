@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useRoutes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import SignUp from "./pages/Authentication/SignUp";
@@ -6,9 +7,14 @@ import SignOut from "./pages/Authentication/SignOut";
 import Donate from "./pages/Donate/Donate";
 import ProtectedRoute from "./pages/Authentication/ProtectedRoute";
 import Organize from "./pages/Organize/Organize";
-// import Error400 from "../src/Errors/error400";
+import { useDispatch } from "react-redux";
+import { initializeFromLocalStorage } from "./Redux/authSlice";
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(initializeFromLocalStorage());
+  }, [dispatch]);
   const element = useRoutes([
     {
       path: "/",
