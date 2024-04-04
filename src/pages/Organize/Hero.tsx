@@ -4,7 +4,7 @@ import Decoration from "../../assets/Decoration.svg";
 
 const Hero = () => {
   return (
-    <div id="" className="hero-background">
+    <div id="organizehero" className="hero-background">
       <div className="hero-container">
         <div className="image-container">
           <img src={HeroImage} alt="box" className="hero-image" />

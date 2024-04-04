@@ -1,6 +1,9 @@
 import { ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setStep3Data } from "../../Redux/formSlice";
+//react select
+import React from "react";
+import Select from "react-select";
 
 type StepThreeProps = {
   setPage: (x: number) => void;
@@ -27,27 +30,54 @@ const StepThree = ({ setPage }: StepThreeProps) => {
   const isStepValid =
     step3 && step3.help && step3.receivers && step3.organization;
 
-  //mapping through select options
+  //select styles
+  const selectStyles = {
+    control: (baseStyles: any, state: any) => ({
+      ...baseStyles,
+      borderColor: state.isFocused ? "#fad648" : "black",
+      width: "15rem",
+      fontSize: "1rem",
+      padding: "0rem 0.5rem",
+      color: "black",
+      backgroundColor: "#ffffff",
+      borderRadius: "0",
+      marginLeft: "none"
+    }),
+    menu: (provided: any) => ({
+      ...provided,
+      backgroundColor: "white" // Change this to the desired background color
+    }),
+    option: (provided: any, state: any) => ({
+      ...provided,
+      color: "black",
+      backgroundColor: state.isSelected ? "white" : "white"
+    }),
+    container: (provided: any, state: any) => ({
+      ...provided,
+      margin: "0rem"
+    })
+  };
+
   const SELECT_OPTIONS = [
     {
-      id: 1,
-      city: "Gdańsk"
+      value: "Gdańsk",
+      label: "Gdańsk"
     },
     {
-      id: 2,
-      city: "Warszawa"
+      value: "Warszawa",
+      label: "Warszawa"
     },
     {
-      id: 3,
-      city: "Wrocław"
+      value: "Wrocław",
+      label: "Wrocław"
     },
     {
-      id: 4,
-      city: "Poznań"
+      value: "Poznań",
+      label: "Poznań"
     },
     {
-      id: 5,
-      city: "Katowice"
+      value: "Katowice",
+      label: "Katowice"
     }
   ];
 
@@ -58,7 +88,7 @@ const StepThree = ({ setPage }: StepThreeProps) => {
     },
     {
       id: 2,
-      type: "lonely mothers"
+      type: "single mothers"
     },
     {
       id: 3,
@@ -82,26 +112,13 @@ const StepThree = ({ setPage }: StepThreeProps) => {
     <>
       <div className="stepDonate-location_container">
         <h2 className="stepDonate-location_subheader">Location:</h2>
-        <select
-          className="stepDonate-location_select"
-          value={step3 ? step3.help : ""}
-          onChange={(e) => handleSelect(e.target.value)}
-        >
-          <option className="stepDonate-location_option" disabled>
-            Choose city
-          </option>
-          {SELECT_OPTIONS.map(({ id, city }) => {
-            return (
-              <option
-                key={id}
-                onSelect={() => handleSelect(`${city}`)}
-                className="stepDonate-location_option"
-              >
-                {city}
-              </option>
-            );
-          })}
-        </select>
+        <Select
+          options={SELECT_OPTIONS}
+          styles={selectStyles}
+          onChange={(option) => handleSelect(option ? option.value : "")}
+          value={step3 ? step3.city : null}
+        />
+
         <div className="stepDonate-help_container">
           <h3 className="stepDonate-location_subheader">
             Who would you like to help?

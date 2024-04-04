@@ -15,7 +15,7 @@ import { resetForm } from "../../Redux/organizeSlice";
 import { RootState } from "../../Redux/store";
 
 //Firebase
-import { dbMultiformOrganize } from "../../firebase";
+import { dbMultiform } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Multiform = () => {
@@ -57,7 +57,7 @@ const Multiform = () => {
     const addSummary = async (summaryData: any) => {
       try {
         const docRef = await addDoc(
-          collection(dbMultiformOrganize, "summaries Organize"),
+          collection(dbMultiform, "summariesCollections"),
           summaryData
         );
         console.log("Summary document written with ID", docRef.id);
@@ -67,15 +67,8 @@ const Multiform = () => {
       }
     };
 
-    const CountData = (e: any) => {
-      e.preventDefault();
-      setCollectionsCounter((prevValue) => prevValue + 1);
-    };
-
     const summaryData = formatSummaryData();
     await addSummary(summaryData);
-    //add one form the the users' amount of forms
-    CountData(collectionsCounter);
     //reseting all pages of the form
     dispatch(resetForm());
     setPage(6);

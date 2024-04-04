@@ -5,8 +5,6 @@ import { RootState } from "../../Redux/store";
 import { setStep4Data } from "../../Redux/formSlice";
 import { Step4 } from "../../Redux/formSlice";
 
-
-
 type StepFourProps = {
   setPage: (x: number) => void;
 };
@@ -43,6 +41,7 @@ const StepFour = ({ setPage }: StepFourProps) => {
       date: value
     }));
   };
+
   //Hanldes any other input
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -103,15 +102,17 @@ const StepFour = ({ setPage }: StepFourProps) => {
 
   const INPUT_DATA_TWO = [
     {
-      id: 1,
+      id: 5,
       htmlFor: "application_delivery_input_date",
+      onChange: handleDateChange,
       labelContent: "Date",
       value: inputValue?.date,
       type: "date"
     },
     {
-      id: 2,
+      id: 6,
       htmlFor: "application_delivery_input_time",
+      onChange: handleInputChange,
       labelContent: "Time",
       value: inputValue?.time,
       type: "time"
@@ -153,26 +154,36 @@ const StepFour = ({ setPage }: StepFourProps) => {
             <h3 className="stepDonate-delivery_subheader">
               Enter the collection date:
             </h3>
-            {INPUT_DATA_TWO.map(
-              ({ id, htmlFor, labelContent, type, value }) => {
-                return (
-                  <div className="stepDonate-delivery_small_container" key={id}>
-                    <label
-                      htmlFor={htmlFor}
-                      className="stepDonate-delivery_label"
-                    >
-                      {labelContent}
-                    </label>
-                    <input
-                      onChange={handleInputChange}
-                      value={value}
-                      type={type}
-                      className="stepDonate-delivery_input"
-                    />
-                  </div>
-                );
-              }
-            )}
+            <div className="stepDonate-delivery_small_container">
+              <label
+                htmlFor="application_delivery_input_date"
+                className="stepDonate-delivery_label"
+              >
+                Date
+              </label>
+              <input
+                onChange={handleDateChange}
+                value={inputValue?.date}
+                type="date"
+                className="stepDonate-delivery_input"
+              />
+            </div>
+            <div className="stepDonate-delivery_small_container">
+              <label
+                htmlFor="application_delivery_input_time"
+                className="stepDonate-delivery_label"
+              >
+                Time
+              </label>
+              <input
+                onChange={handleInputChange}
+                value={inputValue?.time}
+                type="time"
+                className="stepDonate-delivery_input"
+                id="time"
+              />
+            </div>
+
             <label
               htmlFor="application_delivery_textarea_info"
               className="stepDonate-delivery_label"

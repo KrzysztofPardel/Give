@@ -12,6 +12,7 @@ export type Step2 = {
   city: string;
   street: string;
   addInfo: string;
+  loggedUserId: string;
 };
 
 interface Form {

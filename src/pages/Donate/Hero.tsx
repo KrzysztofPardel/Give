@@ -10,7 +10,7 @@ const HERO_DIMONDS = [
 ];
 const DonateHero = () => {
   return (
-    <div id="" className="donate-hero_background">
+    <div id="donatehero" className="donate-hero_background">
       <div className="donate-hero_container">
         <div className="donate-image_container">
           <img

@@ -16,7 +16,6 @@ Give helps in aiding those who are in need. The purspose of this website is to m
 
 ## **Deployment**
 
-
 ➡️ Take a look at the live version here - [Give](https://give-pi.vercel.app)
 
 ### Important
@@ -58,43 +57,52 @@ Passowrd must have:
 
 #### Home page view
 
-![Alt text](image.png)
+![Alt text](./src/assets/homeHero-unsigned.png)
+
+##### When signed in:
+
+![Alt text](./src/assets/homeHero-signed.png)
 
 #### Contact form
 
-![Alt text](image-4.png)
+![Alt text](/src/assets/image-4.png)
+
+##### When validation is triggered:
+![Alt text](image.png)
+![Alt text](./src/assets/contactErrors.png)
 
 #### Authentication
 
-![Alt text](image-1.png)
+![Alt text](/src/assets/authentication.png)
 
 #### Donate page
 
 ##### _(requires auhentication)_
 
-![Alt text](image-2.png)
+![Alt text](/src/assets/image-2.png)
 
-![Alt text](image-3.png)
+![Alt text](./src/assets/donateMultiform.png)
+
+![Alt text](./src/assets/donateMultiformSummary.png)
 
 #### Organize collection page
 
 ##### _(requires auhentication)_
 
-![Alt text](image-6.png)
+![Alt text](/src/assets/image-6.png)
 
-![Alt text](image-5.png)
+![Alt text](./src/assets/organizeMultiform.png)
 
 ### Open up the [live](https://react-select.com/home) version to see more!
 
 ## **Installation**
-If you desire to tamper with code and open the project locally 
+
+If you desire to tamper with code and open the project locally
 **make sure you install dependencies by running:**
 
 ```bash
 npm install
 ```
-
-
 
 ## **_Authors_**
 
@@ -105,7 +113,6 @@ npm install
 I appreciate the support of Mr.Paweł Gabryel (https://github.com/pawelgabryel) who was mentoring me while I was doing this project. It is him who helped me understand how some things can be done and what can be improved in the future as well as provided encourgement so needed in the overwhelming world of IT competitiveness.
 
 What is more, this project has been inspired by the UI Design provided to me by [CodersLab](https://coderslab.pl/pl)
-
 
 ### 👉 **_Contibution_**
 

@@ -73,6 +73,6 @@ export const dbMultiform = getFirestore(multiformApp);
 const multiformOrganizeApp = initializeApp(
   MultiformOrganizeConfig,
   "summaries Organize"
+  // "summary-Organize"
 );
 export const dbMultiformOrganize = getFirestore(multiformOrganizeApp);
-

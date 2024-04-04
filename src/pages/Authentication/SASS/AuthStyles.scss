@@ -70,8 +70,14 @@
       border: none;
       border-bottom: 1px solid;
       background: transparent;
-      &:focus {
+      background-color: transparent;
+
+      &:focus,
+      &:active {
         outline: none;
+        background: transparent;
+        background-color: transparent;
+        box-shadow: none;
       }
       @include sm {
         width: 75%;

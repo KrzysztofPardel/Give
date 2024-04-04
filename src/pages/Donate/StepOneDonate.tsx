@@ -19,8 +19,8 @@ const StepOne = ({ setPage }: StepOneProps) => {
   };
 
   const BUTTONS_MARK = [
-    { number: 1, name: "clothes, which can be reused" },
-    { number: 2, name: "clothes, which cannot be reused" },
+    { number: 1, name: "clothes" },
+    { number: 2, name: "fabrics" },
     { number: 3, name: "toys" },
     { number: 4, name: "books" },
     { number: 5, name: "other" }
@@ -39,7 +39,7 @@ const StepOne = ({ setPage }: StepOneProps) => {
                 <button
                   onClick={() => handleButtonChange(`${name}`)}
                   type="button"
-                  id="control_reused"
+                  // id="control_reused"
                   className={`stepDonate-point_button ${
                     step1 && step1.typeOfHelp === `${name}` ? "chosen" : ""
                   }`}

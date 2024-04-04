@@ -15,12 +15,15 @@ const StepTwo = ({ setPage }: StepTwoProps) => {
     (state: RootState) => state.organize.step2
   ) as Step2;
 
+  const loggedUserId = useSelector((state: RootState) => state.auth.user?.uid);
+
   const [data, setData] = useState<Step2>(() => ({
     date: step2?.date || "",
     time: step2?.time || "",
     city: step2?.city || "",
     street: step2?.street || "",
-    addInfo: step2?.addInfo || ""
+    addInfo: step2?.addInfo || "",
+    loggedUserId: loggedUserId || ""
   }));
 
   //Handles the rest of the inputs

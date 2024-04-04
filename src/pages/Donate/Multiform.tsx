@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./SCSS/MultiformDonate.scss";
+import { HashLink } from "react-router-hash-link";
 import { useNavigate } from "react-router-dom";
 //Components
 import StepOne from "./StepOneDonate";
@@ -169,9 +170,13 @@ const Multiform = () => {
           <p className="redirection-paragraph">
             What if you organized your own collection?
           </p>
-          <button onClick={handleRedirect} type="button" className="button">
+          <HashLink
+            to="/organize#organizehero"
+            type="button"
+            className="redirection-link"
+          >
             Organize
-          </button>
+          </HashLink>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { RootState } from "Redux/store";
 //Firebase
 import { collection, getDocs } from "firebase/firestore";
 import { dbMultiform } from "../../firebase";
+import { dbMultiformOrganize } from "../../firebase";
 
 const ThreeColumns = () => {
   const [doc, setAllDocs] = useState([]);
@@ -15,27 +16,50 @@ const ThreeColumns = () => {
   );
   const user = useSelector((state: RootState) => state.auth.user);
 
-  const uid = useSelector((state: RootState) => state.auth.user?.uid);
+  const loggedUserUid = useSelector((state: RootState) => state.auth.user?.uid);
+
+  const [bags, setBags] = useState(0);
+  const [organizations, setOrganizations] = useState(0);
+  const [collections, setCollections] = useState(0);
 
   //fetching the amount of bags of a user
   const fetchAll = async () => {
     const querySnapshot = await getDocs(collection(dbMultiform, "summaries"));
     //pobieram wszystkie dane
     const documents = querySnapshot.docs.map((doc) => doc.data());
-    // console.log("documents", documents);
     //wybieram dane od konkretnego uzytkownika
-    const docsForUserId = documents.filter((doc) => doc.step4.uid === uid);
+    const docsForUserId = documents.filter(
+      (doc) => doc.step4.uid === loggedUserUid
+    );
     //podliczam potrzebny fragment danych, np. bagsAmount
     const bags = docsForUserId.reduce((acc, cur) => {
       return acc + cur.step2.bagsAmount;
     }, 0);
-    // console.log("bags", bags);
 
+    setOrganizations(docsForUserId.length || 0);
+    setBags(bags);
     setAllDocs(documents as any);
+  };
+
+  const fetchOrganizeCollection = async () => {
+    try {
+      const querySnapshot = await getDocs(
+        collection(dbMultiform, "summariesCollections")
+      );
+      const documents = querySnapshot.docs.map((doc) => doc.data());
+      console.log("doc", documents);
+      const docsForUserId = documents.filter(
+        (doc) => doc.step2.loggedUserUid === loggedUserUid
+      );
+      setCollections(docsForUserId.length || 0);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
     fetchAll();
+    fetchOrganizeCollection();
   }, []);
 
   return (
@@ -44,7 +68,7 @@ const ThreeColumns = () => {
         <div id="start" className="three-background">
           <div className="three-columns-container">
             <div className="three-single_column">
-              <div className="three-text-number">0</div>
+              <div className="three-text-number">{bags}</div>
               <h1 className="three-text-header">Bags donated recently</h1>
               <p className="three-text-paragraph">
                 {" "}
@@ -52,7 +76,7 @@ const ThreeColumns = () => {
               </p>
             </div>
             <div className="three-single_column">
-              <div className="three-text-number">0</div>
+              <div className="three-text-number">{organizations}</div>
               <h1 className="three-text-header">Organizations supported</h1>
               <p className="three-text-paragraph">
                 Here you can see how many organizations you were able to support

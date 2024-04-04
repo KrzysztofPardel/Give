@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./SCSS/Hero.scss";
 import HeroImage from "../../assets/HeroImage.jpg";
 import Decoration from "../../assets/Decoration.svg";
+import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {
   return (
@@ -20,16 +21,16 @@ const Hero = () => {
             <img src={Decoration} alt="box" className="decoration-image" />
           </div>
           <div className="hero-button_container">
-            <Link to={"/donate"}>
-              <button type="button" className="button">
+            <HashLink to="/donate#donatehero">
+              <button type="button" className="redirection-link">
                 Donate things
               </button>
-            </Link>
-            <Link to={"/organize"}>
-              <button type="button" className="button">
+            </HashLink>
+            <HashLink to="/organize#organizehero">
+              <button type="button" className="redirection-link">
                 Organize a collection
               </button>
-            </Link>
+            </HashLink>
           </div>
         </div>
       </div>

@@ -46,6 +46,7 @@
     .stepDonate-point_button {
       height: 1.5rem;
       width: 1.5rem;
+      // background-color: white; //dodane
       border: 1px solid black;
     }
   }
@@ -77,6 +78,7 @@
     }
   }
 }
+
 .column {
   flex-direction: column;
   gap: 1rem;
@@ -95,7 +97,7 @@
     font-size: 1rem;
     padding: 0.75rem 1rem;
     background-color: transparent;
-
+    color: black;
     @include sm {
       width: 15rem;
     }
@@ -119,8 +121,8 @@
     margin-bottom: 0.5rem;
   }
   .stepDonate-help_container {
-    flex-wrap: wrap;
     width: 100%;
+    flex-wrap: wrap;
     @include md {
       width: 25rem;
     }
@@ -131,6 +133,9 @@
       padding: 0.5rem 1rem;
       margin: 0.3rem;
       border: 1px solid;
+      // background: $color-bright-main;
+      background-color: white;
+
       &:hover {
         border: 1px solid $color-bright-accent;
         background-color: $color-bright-accent;
@@ -143,11 +148,17 @@
       }
     }
   }
+  .chosen {
+    background: $color-bright-accent;
+    transform: scale(0.9);
+    position: relative;
+    z-index: 10;
+  }
   .stepDonate-organization_input {
     width: 100%;
     font-size: 1rem;
     padding: 0.75rem 1rem;
-    background-color: transparent;
+    background-color: white;
     border: 1px solid;
 
     :focus {
@@ -232,6 +243,7 @@
       .stepDonate-delivery_input {
         width: 100%;
         font-family: $font-alt;
+        font-size: 1rem;
         color: $color-dark-accent-first;
         padding: 0.5rem 0.5rem;
         background: transparent;
@@ -249,6 +261,7 @@
       min-width: 100%;
       height: 5rem;
       font-family: $font-alt;
+      font-size: 1rem;
       margin-top: 1rem;
       padding: 0.5rem 0.5rem;
       background-color: transparent;
@@ -261,12 +274,6 @@
       }
     }
   }
-}
-
-.error-message {
-  font-size: 1rem;
-  text-align: center;
-  color: #a60101;
 }
 
 //Summary
@@ -333,6 +340,7 @@
 
     .stepDonate-summary_label {
       font-weight: 300;
+      font-size: 1rem;
       margin-right: 1rem;
     }
 
@@ -340,6 +348,7 @@
       width: 60%;
       font-family: $font-base;
       font-weight: 600;
+      font-size: 1rem;
       text-align: center;
       color: $color-dark-accent-first;
       padding: 0.5rem;
@@ -399,7 +408,8 @@
     font-family: $font-alt;
     font-weight: 300;
     padding: 0.6rem 1.5rem;
-    background: transparent;
+    // background: transparent;
+    background: $color-bright-main;
     border: 1px solid $color-dark-main;
     :hover {
       border: 1px solid $color-dark-main;
@@ -408,6 +418,7 @@
     }
   }
 }
+
 .longMargin {
   margin-top: 25rem; //summary
 
@@ -438,8 +449,13 @@
     font-weight: 300;
     line-height: 2rem;
   }
-  .button {
+
+  .redirection-link {
     @include button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
       margin-top: 2rem;
       margin-bottom: 2rem;
       color: $color-dark-main;
@@ -452,4 +468,10 @@
       }
     }
   }
+}
+
+.error-message {
+  font-size: 1rem;
+  text-align: center;
+  color: #a60101;
 }

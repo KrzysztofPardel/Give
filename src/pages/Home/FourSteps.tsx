@@ -1,5 +1,6 @@
 //styles
 import "./SCSS/FourSteps.scss";
+import { HashLink } from "react-router-hash-link";
 import { useNavigate } from "react-router-dom";
 import IconOne from "../../assets/IconOne.svg";
 import IconTwo from "../../assets/IconTwo.svg";
@@ -70,9 +71,13 @@ const FourSteps = () => {
             </div>
           ))}
         </div>
-        <button onClick={handleRedirect} type="button" className="button">
+        <HashLink
+          to="/donate#donatehero"
+          type="button"
+          className="redirection-link"
+        >
           Donate
-        </button>
+        </HashLink>
       </div>
     </div>
   );

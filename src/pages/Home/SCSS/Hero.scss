@@ -106,14 +106,14 @@
   @include xl {
     width: 25rem;
   }
-  // @include xl {
-  // }
-  .button {
+
+  .redirection-link {
     @include button {
       cursor: pointer;
       &:hover {
         transform: scale(1.1);
         transition: transform 0.3s ease-in-out;
+        color: $color-dark-accent-first;
       }
     }
   }
