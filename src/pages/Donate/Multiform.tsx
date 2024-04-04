@@ -2,12 +2,12 @@ import { useState } from "react";
 import "./SCSS/MultiformDonate.scss";
 import { useNavigate } from "react-router-dom";
 //Components
-import StepOne from "./StepOne";
-import StepTwo from "./StepTwo";
-import StepThree from "./StepThree";
-import StepFour from "./StepFour";
-import Summary from "./Summary";
-import Appreciation from "./Appreciation";
+import StepOne from "./StepOneDonate";
+import StepTwo from "./StepTwoDonate";
+import StepThree from "./StepThreeDonate";
+import StepFour from "./StepFourDonate";
+import Summary from "./SummaryDonate";
+import Appreciation from "./AppreciationDonate";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
