@@ -6,13 +6,11 @@ import { RootState } from "Redux/store";
 //Firebase
 import { collection, getDocs } from "firebase/firestore";
 import { dbMultiform } from "../../firebase";
-import { dbMultiformOrganize } from "../../firebase";
 
 const ThreeColumns = () => {
   const [doc, setAllDocs] = useState([]);
   const donationsCounter = useSelector(
     (state: RootState) => state.dataCounter.counter
-    // {donationsCounter}
   );
   const user = useSelector((state: RootState) => state.auth.user);
 
@@ -84,7 +82,7 @@ const ThreeColumns = () => {
               </p>
             </div>
             <div className="three-single_column">
-              <div className="three-text-number">0</div>
+              <div className="three-text-number">{collections}</div>
               <h1 className="three-text-header">Collections organized</h1>
               <p className="three-text-paragraph">
                 Here you can see how many collections you have organized.

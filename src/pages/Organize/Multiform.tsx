@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 //components
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
@@ -27,7 +28,6 @@ const Multiform = () => {
 
   // const { step1, step2 } = formData;
   const [page, setPage] = useState<number>(1);
-  const [collectionsCounter, setCollectionsCounter] = useState<number>(0);
 
   //redirection Donate website
   const handleRedirect = () => {
@@ -71,7 +71,7 @@ const Multiform = () => {
     await addSummary(summaryData);
     //reseting all pages of the form
     dispatch(resetForm());
-    setPage(6);
+    setPage(4);
   };
 
   //begin a new form

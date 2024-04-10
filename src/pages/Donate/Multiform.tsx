@@ -100,6 +100,7 @@ const Multiform = () => {
     };
     return summaryData;
   };
+
   return (
     <div className="application-background">
       <div className="donateMultiform-container">

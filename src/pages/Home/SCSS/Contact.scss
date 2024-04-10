@@ -158,9 +158,11 @@
     width: 100%;
     height: 12rem;
     font-size: 1rem;
+    font-family: $font-alt;
+    text-align: start;
+
     border: none;
     border-bottom: 1px solid $color-dark-main;
-    text-align: start;
     &:focus {
       outline: none;
     }
