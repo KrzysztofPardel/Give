@@ -23,7 +23,7 @@ const Multiform = () => {
   const navigate = useNavigate();
   //Redux
   const dispatch = useDispatch();
-  const formData = useSelector((state: any) => state.form);
+  const formData = useSelector((state: any) => state.organize);
   const user = useSelector((state: RootState) => state.auth.user);
 
   // const { step1, step2 } = formData;
@@ -50,22 +50,21 @@ const Multiform = () => {
     setPage((prev) => prev + 1);
   };
 
+  const addSummary = async (summaryData: any) => {
+    try {
+      const docRef = await addDoc(
+        collection(dbMultiform, "summariesCollections"),
+        summaryData
+      );
+      console.log("Summary document written with ID", docRef.id);
+      return docRef.id;
+    } catch (e: any) {
+      console.error("Error adding summary document: ", e);
+    }
+  };
   //form submission
   const handleSubmitForm = async (e: any) => {
     e.preventDefault();
-
-    const addSummary = async (summaryData: any) => {
-      try {
-        const docRef = await addDoc(
-          collection(dbMultiform, "summariesCollections"),
-          summaryData
-        );
-        console.log("Summary document written with ID", docRef.id);
-        return docRef.id;
-      } catch (e: any) {
-        console.error("Error adding summary document: ", e);
-      }
-    };
 
     const summaryData = formatSummaryData();
     await addSummary(summaryData);

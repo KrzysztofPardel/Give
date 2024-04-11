@@ -45,9 +45,8 @@ const SignIn = () => {
       );
 
       dispatch(login({ email, password, uid: authResponse.user.uid }));
-      console.log(JSON.parse(localStorage.getItem("user") || "null"));
+      // console.log(JSON.parse(localStorage.getItem("user") || "null"));
       navigate("/");
-      
     } catch (e: any) {
       if (e instanceof Yup.ValidationError) {
         const errors = e.inner.map((err: any) => err.message);

@@ -23,7 +23,7 @@ const StepTwo = ({ setPage }: StepTwoProps) => {
     city: step2?.city || "",
     street: step2?.street || "",
     addInfo: step2?.addInfo || "",
-    loggedUserId: loggedUserId || ""
+    loggedUserId: step2?.loggedUserId || ""
   }));
 
   //Handles the rest of the inputs
@@ -145,7 +145,12 @@ const StepTwo = ({ setPage }: StepTwoProps) => {
         <button
           type="button"
           className="multiform-button"
-          onClick={() => setPage(3)}
+          onClick={() => {
+            if (loggedUserId) {
+              dispatch(setStep2Data({ ...step2, loggedUserId }));
+              setPage(3);
+            }
+          }}
           disabled={!isStepTwoValid}
         >
           Next

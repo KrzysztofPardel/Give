@@ -45,10 +45,11 @@ const ThreeColumns = () => {
         collection(dbMultiform, "summariesCollections")
       );
       const documents = querySnapshot.docs.map((doc) => doc.data());
-      console.log("doc", documents);
       const docsForUserId = documents.filter(
-        (doc) => doc.step2.loggedUserUid === loggedUserUid
+        (doc) => doc.step2.loggedUserId === loggedUserUid
       );
+      console.log("doc for user", docsForUserId);
+
       setCollections(docsForUserId.length || 0);
     } catch (err) {
       console.log(err);
